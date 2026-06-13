@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/oauth2TokenData.json",
+  "title": "oauth2TokenData",
+  "properties": {
+    "clientId": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "creationDate": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "isShared": {
+      "type": "boolean",
+      "uniqueItems": false
+    },
+    "nuxeoLogin": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "serviceLogin": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "serviceName": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "sharedWith": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "entity-type",
+    "nuxeoLogin",
+    "serviceLogin",
+    "serviceName"
+  ],
+  "uniqueItems": false
+}

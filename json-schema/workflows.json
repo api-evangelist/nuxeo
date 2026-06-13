@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/workflows.json",
+  "title": "workflows",
+  "properties": {
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "entries": {
+      "items": {
+        "$ref": "#/components/schemas/workflow"
+      },
+      "type": "array",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "entity-type",
+    "entries"
+  ],
+  "uniqueItems": false
+}

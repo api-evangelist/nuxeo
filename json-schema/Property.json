@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/Property.json",
+  "title": "Property",
+  "properties": {
+    "context": {
+      "type": "object",
+      "uniqueItems": false
+    },
+    "params": {
+      "type": "object",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "context",
+    "params"
+  ],
+  "uniqueItems": false
+}

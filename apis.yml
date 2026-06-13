@@ -46,6 +46,8 @@ apis:
       - type: Documentation
         url: https://doc.nuxeo.com/nxdoc/rest-api/
       - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/nuxeo/main/openapi/nuxeo-rest-api-openapi.yaml
+      - type: OpenAPISource
         url: https://github.com/nuxeo-sandbox/nuxeo-openapi
       - type: Swagger
         url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc

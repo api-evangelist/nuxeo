@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/schema.json",
+  "title": "schema",
+  "properties": {
+    "@prefix": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "@prefix",
+    "fields",
+    "name"
+  ]
+}

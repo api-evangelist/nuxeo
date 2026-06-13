@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/Acl.json",
+  "title": "Acl",
+  "properties": {
+    "ace": {
+      "items": {
+        "$ref": "#/components/schemas/Ace"
+      },
+      "type": "array",
+      "uniqueItems": false
+    },
+    "name": {
+      "type": "string",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "ace",
+    "name"
+  ],
+  "uniqueItems": false
+}

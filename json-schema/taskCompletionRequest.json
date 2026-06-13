@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/taskCompletionRequest.json",
+  "title": "taskCompletionRequest",
+  "properties": {
+    "comment": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "nodeVariables": {
+      "items": {
+        "$ref": "#/components/schemas/Property"
+      },
+      "type": "object",
+      "uniqueItems": true
+    },
+    "worflowVariables": {
+      "items": {
+        "$ref": "#/components/schemas/Property"
+      },
+      "type": "object",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "entity-type"
+  ],
+  "uniqueItems": false
+}

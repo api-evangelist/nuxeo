@@ -1,0 +1,1393 @@
+{
+  "vocabulary": "nuxeo-rest-api",
+  "title": "Nuxeo REST API Vocabulary",
+  "description": "Terms, tags, and operations from the Nuxeo Platform REST API",
+  "source": "https://raw.githubusercontent.com/nuxeo-sandbox/nuxeo-openapi/master/docs/openapi.yaml",
+  "tags": [
+    {
+      "name": "Adapter",
+      "description": "Adaptation Endpoints"
+    },
+    {
+      "name": "Configuration",
+      "description": "Configuration Information"
+    },
+    {
+      "name": "Directory",
+      "description": "Directory Operations"
+    },
+    {
+      "name": "Document",
+      "description": "Document Operations"
+    },
+    {
+      "name": "Group",
+      "description": "Group Operations"
+    },
+    {
+      "name": "User",
+      "description": "User Operations"
+    },
+    {
+      "name": "OAuth2",
+      "description": "OAuth2 Operations"
+    },
+    {
+      "name": "Search",
+      "description": "Search Operations"
+    },
+    {
+      "name": "Token",
+      "description": "Authentication Token Operations"
+    },
+    {
+      "name": "Workflow",
+      "description": "Workflow Operations"
+    },
+    {
+      "name": "Workflow Model",
+      "description": "Workflow Model Information"
+    },
+    {
+      "name": "Automation",
+      "description": "Automation Operations"
+    },
+    {
+      "name": "Business Object",
+      "description": "Business Object Operations"
+    }
+  ],
+  "schemas": [
+    "Ace",
+    "Acl",
+    "Acp",
+    "annotation",
+    "annotationList",
+    "LogEntry",
+    "LogEntries",
+    "OperationParamDescription",
+    "OperationDescription",
+    "OperationDescriptionList",
+    "OperationParams",
+    "BusinessObject",
+    "BusinessObjectList",
+    "Property",
+    "Document",
+    "documents",
+    "directoryEntry",
+    "directoryEntries",
+    "docTypes",
+    "docType",
+    "document",
+    "facet",
+    "group",
+    "GroupRef",
+    "user",
+    "userList",
+    "changePassword",
+    "oauth2ClientData",
+    "oauth2ClientDataList",
+    "oauth2ProviderData",
+    "oauth2ProviderDataList",
+    "oauth2ProviderTokenData",
+    "oauth2TokenData",
+    "oauth2TokenDataList",
+    "schema",
+    "savedsearch",
+    "savedsearches",
+    "taskComments",
+    "taskAction",
+    "taskInfo",
+    "task",
+    "tasks",
+    "taskCompletionRequest",
+    "AuthenticationTokenList",
+    "workflow",
+    "workflows",
+    "workflowRequest",
+    "workflowGraph"
+  ],
+  "operations": [
+    {
+      "operationId": "DocumentIdACLAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@acl",
+      "summary": "View the ACL of a document given its id",
+      "tags": [
+        "ACL",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathACLAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@acl",
+      "summary": "View the ACL of a document given its path",
+      "tags": [
+        "ACL",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdAnnotationAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@annotation",
+      "summary": "Get all annotations on a given document blob",
+      "tags": [
+        "Annotation",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdAnnotationAdapterPost",
+      "method": "POST",
+      "path": "/id/{docId}/@annotation",
+      "summary": "Create an annotation on a given document",
+      "tags": [
+        "Annotation"
+      ]
+    },
+    {
+      "operationId": "DocumentIdAnnotationAdapterPut",
+      "method": "PUT",
+      "path": "/id/{docId}/@annotation",
+      "summary": "Update an annotation on a given document",
+      "tags": [
+        "Annotation",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdAnnotationIdAdapterDelete",
+      "method": "DELETE",
+      "path": "/id/{docId}/@annotation/{annotationId}",
+      "summary": "Delete an annotation on a document given its id",
+      "tags": [
+        "Annotation",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdAnnotationIdAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@annotation/{annotationId}",
+      "summary": "Retrieve an annotation on a document given its id",
+      "tags": [
+        "Annotation",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdAuditAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@audit",
+      "summary": "View the audit trail of a document given its id",
+      "tags": [
+        "Audit",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathAuditAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@audit",
+      "summary": "View the audit trail of a document given its path",
+      "tags": [
+        "Audit",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "AutomationGet",
+      "method": "GET",
+      "path": "/automation",
+      "summary": "Gets the list of all operation/chain",
+      "tags": [
+        "Automation"
+      ]
+    },
+    {
+      "operationId": "AutomationOperationGet",
+      "method": "GET",
+      "path": "/automation/{operationName}",
+      "summary": "Gets the description of the operation/chain",
+      "tags": [
+        "Automation"
+      ]
+    },
+    {
+      "operationId": "AutomationOperationPost",
+      "method": "POST",
+      "path": "/automation/{operationName}",
+      "summary": "Execute an operation or a chain on a document",
+      "tags": [
+        "Automation"
+      ]
+    },
+    {
+      "operationId": "DocumentPathChildrenOperationAdapterPost",
+      "method": "POST",
+      "path": "/path/{docPath}/@children/@op/{operationName}",
+      "summary": "Execute an operation or a chain on the children of a document",
+      "tags": [
+        "Automation"
+      ]
+    },
+    {
+      "operationId": "DocumentPathOperationAdapterPost",
+      "method": "POST",
+      "path": "/path/{docPath}/@op/{operationName}",
+      "summary": "Execute an operation or a chain on a document",
+      "tags": [
+        "Automation"
+      ]
+    },
+    {
+      "operationId": "DocumentIdBlobAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@blob/{fieldPath}",
+      "summary": "Get the main blob of a document by its id",
+      "tags": [
+        "Blob",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathBlobAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@blob/{fieldPath}",
+      "summary": "Get the main blob of a document by its path",
+      "tags": [
+        "Blob",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdBusinessObjectAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@bo/{adapterName}",
+      "summary": "Get the business object adapter on a document given its id",
+      "tags": [
+        "Business Object"
+      ]
+    },
+    {
+      "operationId": "DocumentIdBusinessObjectAdapterPut",
+      "method": "PUT",
+      "path": "/id/{docId}/@bo/{adapterName}",
+      "summary": "Updates the business object adapter on a document given its id",
+      "tags": [
+        "Business Object"
+      ]
+    },
+    {
+      "operationId": "DocumentIdBusinessObjectAdapterPost",
+      "method": "POST",
+      "path": "/id/{docId}/@bo/{adapterName}/{docName}",
+      "summary": "Creates a document based on its business object",
+      "tags": [
+        "Business Object"
+      ]
+    },
+    {
+      "operationId": "DocumentIdChildrenBusinessObjectAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@children/@bo/{adapterName}",
+      "summary": "Get the list of business object of the children of a document by its id",
+      "tags": [
+        "Business Object"
+      ]
+    },
+    {
+      "operationId": "DocumentPathBusinessObjectAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@bo/{adapterName}",
+      "summary": "Get the business object adapter on a document given its path",
+      "tags": [
+        "Business Object"
+      ]
+    },
+    {
+      "operationId": "DocumentPathBusinessObjectAdapterPut",
+      "method": "PUT",
+      "path": "/path/{docPath}/@bo/{adapterName}",
+      "summary": "Updates the business object adapter on a document given its path",
+      "tags": [
+        "Business Object"
+      ]
+    },
+    {
+      "operationId": "DocumentPathBusinessObjectAdapterPost",
+      "method": "POST",
+      "path": "/path/{docPath}/@bo/{adapterName}/{docName}",
+      "summary": "Creates a document based on its business object",
+      "tags": [
+        "Business Object"
+      ]
+    },
+    {
+      "operationId": "DocumentPathChildrenBusinessObjectAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@children/@bo/{adapterName}",
+      "summary": "Get the list of business object of the children of a document by its path",
+      "tags": [
+        "Business Object"
+      ]
+    },
+    {
+      "operationId": "DocumentIdChildrenAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@children",
+      "summary": "Get the children of a document by its id",
+      "tags": [
+        "Children",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathChildrenAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@children",
+      "summary": "Get the children of a document by its path",
+      "tags": [
+        "Children",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdBlobConvertAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@blob/{blobXpath}/@convert",
+      "summary": "Convert the Blob at the given xpath of the document",
+      "tags": [
+        "Conversion",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdConvertAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@convert",
+      "summary": "Convert the main Blob of the document",
+      "tags": [
+        "Conversion",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathBlobConvertAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@blob/{blobXpath}/@convert",
+      "summary": "Convert the Blob at the given xpath of the document",
+      "tags": [
+        "Conversion",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathConvertAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@convert",
+      "summary": "Convert the main Blob of the document",
+      "tags": [
+        "Conversion",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DirectoryByNameGet",
+      "method": "GET",
+      "path": "/directory/{directoryName}",
+      "summary": "Get directory entries",
+      "tags": [
+        "Directory"
+      ]
+    },
+    {
+      "operationId": "DirectoryByNamePost",
+      "method": "POST",
+      "path": "/directory/{directoryName}",
+      "summary": "Creates a directory entry",
+      "tags": [
+        "Directory"
+      ]
+    },
+    {
+      "operationId": "DirectoryEntryDelete",
+      "method": "DELETE",
+      "path": "/directory/{directoryName}/{entryId}",
+      "summary": "Delete a directory entry",
+      "tags": [
+        "Directory"
+      ]
+    },
+    {
+      "operationId": "DirectoryEntryGet",
+      "method": "GET",
+      "path": "/directory/{directoryName}/{entryId}",
+      "summary": "Get a directory entry",
+      "tags": [
+        "Directory"
+      ]
+    },
+    {
+      "operationId": "DirectoryEntryPut",
+      "method": "PUT",
+      "path": "/directory/{directoryName}/{entryId}",
+      "summary": "Update a directory entry",
+      "tags": [
+        "Directory"
+      ]
+    },
+    {
+      "operationId": "ConfigurationTypesGet",
+      "method": "GET",
+      "path": "/config/types",
+      "summary": "List registered document type",
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "operationId": "ConfigurationTypeDocumentGet",
+      "method": "GET",
+      "path": "/config/types/{docType}",
+      "summary": "Document type description",
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "operationId": "EmptyWithDefaultGet",
+      "method": "GET",
+      "path": "/@emptyWithDefault",
+      "summary": "Initialize an empty document with default properties given a document type",
+      "tags": [
+        "Empty Document",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdEmptyWithDefaultAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@emptyWithDefault",
+      "summary": "Initialize an empty document with default properties given a document type and a parent",
+      "tags": [
+        "Empty Document",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathEmptyWithDefaultAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@emptyWithDefault",
+      "summary": "Initialize an empty document with default properties given a document type and a parent",
+      "tags": [
+        "Empty Document",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "ConfigurationFacetsGet",
+      "method": "GET",
+      "path": "/config/facets",
+      "summary": "List registered facets",
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "operationId": "ConfigurationFacetGet",
+      "method": "GET",
+      "path": "/config/facets/{facet}",
+      "summary": "Facet description",
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "operationId": "GroupPost",
+      "method": "POST",
+      "path": "/group",
+      "summary": "Create a group",
+      "tags": [
+        "Group"
+      ]
+    },
+    {
+      "operationId": "GroupSearchGet",
+      "method": "GET",
+      "path": "/group/search",
+      "summary": "Search a group",
+      "tags": [
+        "Group"
+      ]
+    },
+    {
+      "operationId": "GroupNameDelete",
+      "method": "DELETE",
+      "path": "/group/{groupName}",
+      "summary": "Delete a group by its name",
+      "tags": [
+        "Group"
+      ]
+    },
+    {
+      "operationId": "GroupNameGet",
+      "method": "GET",
+      "path": "/group/{groupName}",
+      "summary": "Get a group by its name",
+      "tags": [
+        "Group"
+      ]
+    },
+    {
+      "operationId": "GroupNamePut",
+      "method": "PUT",
+      "path": "/group/{groupName}",
+      "summary": "Update a group by its name",
+      "tags": [
+        "Group"
+      ]
+    },
+    {
+      "operationId": "GroupsAdapterGet",
+      "method": "GET",
+      "path": "/group/{groupName}/@groups",
+      "summary": "Get the group members of a group",
+      "tags": [
+        "Group"
+      ]
+    },
+    {
+      "operationId": "UsersAdapterGet",
+      "method": "GET",
+      "path": "/group/{groupName}/@users",
+      "summary": "Get the user members of a group",
+      "tags": [
+        "Group"
+      ]
+    },
+    {
+      "operationId": "GroupUserPost",
+      "method": "POST",
+      "path": "/group/{groupName}/user/{userName}",
+      "summary": "Add a user to a group",
+      "tags": [
+        "Group"
+      ]
+    },
+    {
+      "operationId": "DocumentIdDelete",
+      "method": "DELETE",
+      "path": "/id/{docId}",
+      "summary": "Deletes a document by its id",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "DocumentIdGet",
+      "method": "GET",
+      "path": "/id/{docId}",
+      "summary": "Find a document by its id",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "DocumentIdPost",
+      "method": "POST",
+      "path": "/id/{docId}",
+      "summary": "Creates a document by its parent id",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "DocumentIdPut",
+      "method": "PUT",
+      "path": "/id/{docId}",
+      "summary": "Updates a document by its id",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "RepoIdDocumentIdDelete",
+      "method": "DELETE",
+      "path": "/repo/{repoId}/id/{docId}",
+      "summary": "Deletes a document by its id",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "RepoIdDocumentIdGet",
+      "method": "GET",
+      "path": "/repo/{repoId}/id/{docId}",
+      "summary": "Find a document by its id",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "RepoIdDocumentIdPost",
+      "method": "POST",
+      "path": "/repo/{repoId}/id/{docId}",
+      "summary": "Creates a document by its parent id",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "RepoIdDocumentIdPut",
+      "method": "PUT",
+      "path": "/repo/{repoId}/id/{docId}",
+      "summary": "Updates a document by its id",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "MeGet",
+      "method": "GET",
+      "path": "/me",
+      "summary": "Get the logged in user",
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "operationId": "MePasswordPut",
+      "method": "PUT",
+      "path": "/me/changepassword",
+      "summary": "Change the logged in user's password",
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "operationId": "OAuth2ClientGet",
+      "method": "GET",
+      "path": "/oauth2/client",
+      "summary": "Retrieves a OAuth2 client.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ClientPost",
+      "method": "POST",
+      "path": "/oauth2/client",
+      "summary": "Adds an OAuth2 client.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ClientIdDelete",
+      "method": "DELETE",
+      "path": "/oauth2/client/{oauth2ClientId}",
+      "summary": "Deletes an OAuth2 client token.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ClientIdGet",
+      "method": "GET",
+      "path": "/oauth2/client/{oauth2ClientId}",
+      "summary": "Retrieves an OAuth2 client.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ClientIdPut",
+      "method": "PUT",
+      "path": "/oauth2/client/{oauth2ClientId}",
+      "summary": "Update an OAuth2 client.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ProviderGet",
+      "method": "GET",
+      "path": "/oauth2/provider",
+      "summary": "Retrieves the list of available OAuth2 providers.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ProviderPost",
+      "method": "POST",
+      "path": "/oauth2/provider",
+      "summary": "Adds an OAuth2 provider.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ProviderIdGet",
+      "method": "GET",
+      "path": "/oauth2/provider/{oauth2ProviderId}",
+      "summary": "Retrieves OAuth2 provider data for the current user.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ProviderIdPut",
+      "method": "PUT",
+      "path": "/oauth2/provider/{oauth2ProviderId}",
+      "summary": "Updates an OAuth2 provider.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2ProviderIdTokenGet",
+      "method": "GET",
+      "path": "/oauth2/provider/{oauth2ProviderId}/token",
+      "summary": "Retrieves a valid access token to the current user. A new token will be request if the current one is expired.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenGet",
+      "method": "GET",
+      "path": "/oauth2/token",
+      "summary": "Retrieves all OAuth2 tokens.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenClientGet",
+      "method": "GET",
+      "path": "/oauth2/token/client",
+      "summary": "Retrieves all OAuth2 client tokens for the current user.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenClientIdUserDelete",
+      "method": "DELETE",
+      "path": "/oauth2/token/client/{oauth2ClientId}/user/{userName}",
+      "summary": "Deletes a OAuth2 client token.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenClientIdUserGet",
+      "method": "GET",
+      "path": "/oauth2/token/client/{oauth2ClientId}/user/{userName}",
+      "summary": "Retrieves a OAuth2 client token.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenClientIdUserPut",
+      "method": "PUT",
+      "path": "/oauth2/token/client/{oauth2ClientId}/user/{userName}",
+      "summary": "Updates an OAuth2 client token.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenProviderGet",
+      "method": "GET",
+      "path": "/oauth2/token/provider",
+      "summary": "Retrieves all OAuth2 provider tokens for the current user.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenProviderIdUserDelete",
+      "method": "DELETE",
+      "path": "/oauth2/token/provider/{oauth2ProviderId}/user/{userName}",
+      "summary": "Delete an OAuth2 provider token.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenProviderIdUserGet",
+      "method": "GET",
+      "path": "/oauth2/token/provider/{oauth2ProviderId}/user/{userName}",
+      "summary": "Gets an OAuth2 provider token.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenProviderIdUserPut",
+      "method": "PUT",
+      "path": "/oauth2/token/provider/{oauth2ProviderId}/user/{userName}",
+      "summary": "Updates an OAuth2 provider token.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenSearchGet",
+      "method": "GET",
+      "path": "/oauth2/token/search",
+      "summary": "Search tokens that match service name or user parameter.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "OAuth2TokenTypeGet",
+      "method": "GET",
+      "path": "/oauth2/token/{oAuth2TokenType}",
+      "summary": "Retrieves all OAuth2 tokens by OAuth2 token type. An OAuth2 token can be provided by Nuxeo or consumed.",
+      "tags": [
+        "OAuth2"
+      ]
+    },
+    {
+      "operationId": "DocumentPathDelete",
+      "method": "DELETE",
+      "path": "/path/{docPath}",
+      "summary": "Deletes a document by its path",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "DocumentPathGet",
+      "method": "GET",
+      "path": "/path/{docPath}",
+      "summary": "Find a document by its path",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "DocumentPathPost",
+      "method": "POST",
+      "path": "/path/{docPath}",
+      "summary": "Creates a document by its parent path",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "DocumentPathPut",
+      "method": "PUT",
+      "path": "/path/{docPath}",
+      "summary": "Updates a document by its path",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "RepoIdDocumentPathDelete",
+      "method": "DELETE",
+      "path": "/repo/{repoId}/path/{docPath}",
+      "summary": "Deletes a document by its path",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "RepoIdDocumentPathGet",
+      "method": "GET",
+      "path": "/repo/{repoId}/path/{docPath}",
+      "summary": "Find a document by its path",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "RepoIdDocumentPathPost",
+      "method": "POST",
+      "path": "/repo/{repoId}/path/{docPath}",
+      "summary": "Creates a document by its parent path",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "RepoIdDocumentPathPut",
+      "method": "PUT",
+      "path": "/repo/{repoId}/path/{docPath}",
+      "summary": "Updates a document by its path",
+      "tags": [
+        "Document"
+      ]
+    },
+    {
+      "operationId": "DocumentIdPageProviderAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@pp/{pageProviderName}",
+      "summary": "Execute a page provider on document by its id",
+      "tags": [
+        "Search",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathPageProviderAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@pp/{pageProviderName}",
+      "summary": "Execute a page provider on document by its path",
+      "tags": [
+        "Search",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "QueryGet",
+      "method": "GET",
+      "path": "/query",
+      "summary": "Perform Named Page Provider on the repository",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "QueryProviderGet",
+      "method": "GET",
+      "path": "/query/{providerName}",
+      "summary": "Perform Named Page Provider on the repository",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "DocumentIdRenditionAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@rendition/{renditionName}",
+      "summary": "Returns the specified rendition on document by its id",
+      "tags": [
+        "Rendition",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathRenditionAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@rendition/{renditionName}",
+      "summary": "Returns the specified rendition on document by its path",
+      "tags": [
+        "Rendition",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "ConfigurationSchemasGet",
+      "method": "GET",
+      "path": "/config/schemas",
+      "summary": "List registered schemas",
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "operationId": "ConfigurationSchemaGet",
+      "method": "GET",
+      "path": "/config/schemas/{schema}",
+      "summary": "Schema description",
+      "tags": [
+        "Configuration"
+      ]
+    },
+    {
+      "operationId": "SearchLangBulkActionPost",
+      "method": "POST",
+      "path": "/search/lang/{queryLanguage}/bulk/{actionId}",
+      "summary": "Performs a bulk action on the query result.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchLangExecuteGet",
+      "method": "GET",
+      "path": "/search/lang/{queryLanguage}/execute",
+      "summary": "Performs a search query.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchPageProviderGet",
+      "method": "GET",
+      "path": "/search/pp/{providerName}",
+      "summary": "Gets the definition of a page provider.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchPageProviderBulkPost",
+      "method": "POST",
+      "path": "/search/pp/{providerName}/bulk/{actionId}",
+      "summary": "Performs a bulk action on the query result.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchPageProviderExecuteGet",
+      "method": "GET",
+      "path": "/search/pp/{providerName}/execute",
+      "summary": "Perform Named Page Provider on the repository",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchSavedGet",
+      "method": "GET",
+      "path": "/search/saved",
+      "summary": "Returns the list of saved searches.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchSavedPost",
+      "method": "POST",
+      "path": "/search/saved",
+      "summary": "Saves a search.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchSavedIdDelete",
+      "method": "DELETE",
+      "path": "/search/saved/{searchId}",
+      "summary": "Deletes the saved search with the supplied id.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchSavedIdGet",
+      "method": "GET",
+      "path": "/search/saved/{searchId}",
+      "summary": "Return the saved search with the supplied id.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchSavedIdPut",
+      "method": "PUT",
+      "path": "/search/saved/{searchId}",
+      "summary": "Updates the saved search with the supplied id.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchSavedIdBulkActionPost",
+      "method": "POST",
+      "path": "/search/saved/{searchId}/bulk/{actionId}",
+      "summary": "Performs a bulk action on the saved search result.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "SearchSavedIdExecuteGet",
+      "method": "GET",
+      "path": "/search/saved/{searchId}/execute",
+      "summary": "Executes saved searches, returning its results.",
+      "tags": [
+        "Search"
+      ]
+    },
+    {
+      "operationId": "DocumentIdSearchAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@search",
+      "summary": "Get the children of a document by its id",
+      "tags": [
+        "Search",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentPathSearchAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@search",
+      "summary": "Get the children of a document by its path",
+      "tags": [
+        "Search",
+        "Adapter"
+      ]
+    },
+    {
+      "operationId": "DocumentIdTaskAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@task",
+      "summary": "List tasks of the given document",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "DocumentPathTaskAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@task",
+      "summary": "List tasks of the given document",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "TaskGet",
+      "method": "GET",
+      "path": "/task",
+      "summary": "Query tasks by user and workflow ids",
+      "tags": [
+        "Workflow",
+        "Task"
+      ]
+    },
+    {
+      "operationId": "TaskIdGet",
+      "method": "GET",
+      "path": "/task/{taskId}",
+      "summary": "Get a task by its id",
+      "tags": [
+        "Workflow",
+        "Task"
+      ]
+    },
+    {
+      "operationId": "TaskDelegatePut",
+      "method": "PUT",
+      "path": "/task/{taskId}/delegate",
+      "summary": "Delegate a task",
+      "tags": [
+        "Workflow",
+        "Task"
+      ]
+    },
+    {
+      "operationId": "TaskReassignPut",
+      "method": "PUT",
+      "path": "/task/{taskId}/reassign",
+      "summary": "Reassign a task",
+      "tags": [
+        "Workflow",
+        "Task"
+      ]
+    },
+    {
+      "operationId": "TaskActionPut",
+      "method": "PUT",
+      "path": "/task/{taskId}/{action}",
+      "summary": "Complete task",
+      "tags": [
+        "Workflow",
+        "Task"
+      ]
+    },
+    {
+      "operationId": "TokenGet",
+      "method": "GET",
+      "path": "/token",
+      "summary": "Gets all readable authentication tokens",
+      "tags": [
+        "Token"
+      ]
+    },
+    {
+      "operationId": "TokenPost",
+      "method": "POST",
+      "path": "/token",
+      "summary": "Acquire new authentication token",
+      "tags": [
+        "Token"
+      ]
+    },
+    {
+      "operationId": "TokenDelete",
+      "method": "DELETE",
+      "path": "/token/{token}",
+      "summary": "Delete an existing authentication token",
+      "tags": [
+        "Token"
+      ]
+    },
+    {
+      "operationId": "UserPost",
+      "method": "POST",
+      "path": "/user",
+      "summary": "Create a user",
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "operationId": "UserSearchGet",
+      "method": "GET",
+      "path": "/user/search",
+      "summary": "Get a user by its name",
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "operationId": "UserByNameDelete",
+      "method": "DELETE",
+      "path": "/user/{userName}",
+      "summary": "Delete a user by its name",
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "operationId": "UserByNameGet",
+      "method": "GET",
+      "path": "/user/{userName}",
+      "summary": "Get a user by its name",
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "operationId": "UserByNamePut",
+      "method": "PUT",
+      "path": "/user/{userName}",
+      "summary": "Update a user by its name",
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "operationId": "UserAddGroupPost",
+      "method": "POST",
+      "path": "/user/{userName}/group/{groupName}",
+      "summary": "Add a group to a user",
+      "tags": [
+        "User"
+      ]
+    },
+    {
+      "operationId": "DocumentIdWorkflowAdapterGet",
+      "method": "GET",
+      "path": "/id/{docId}/@workflow",
+      "summary": "Get the workflow instances launched on the given document",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "DocumentIdWorkflowAdapterPost",
+      "method": "POST",
+      "path": "/id/{docId}/@workflow",
+      "summary": "Start a workflow instance on the given document",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "DocumentPathWorkflowAdapterGet",
+      "method": "GET",
+      "path": "/path/{docPath}/@workflow",
+      "summary": "Get the workflow instances launched on the given document",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "DocumentPathWorkflowAdapterPost",
+      "method": "POST",
+      "path": "/path/{docPath}/@workflow",
+      "summary": "Start a workflow instance on the given document",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "WorkflowGet",
+      "method": "GET",
+      "path": "/workflow",
+      "summary": "Get the workflow instances launched by the current user",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "WorkflowPost",
+      "method": "POST",
+      "path": "/workflow",
+      "summary": "Start a workflow instance",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "WorkflowInstanceDelete",
+      "method": "DELETE",
+      "path": "/workflow/{workflowInstanceId}",
+      "summary": "Delete a workflow instance by its id",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "WorkflowInstanceGet",
+      "method": "GET",
+      "path": "/workflow/{workflowInstanceId}",
+      "summary": "Find a workflow instance by its id",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "WorkflowInstanceGraphGet",
+      "method": "GET",
+      "path": "/workflow/{workflowInstanceId}/graph",
+      "summary": "Get the json serialization of a workflow instance graph",
+      "tags": [
+        "Workflow"
+      ]
+    },
+    {
+      "operationId": "WorkflowModelGet",
+      "method": "GET",
+      "path": "/workflowModel",
+      "summary": "Get the workflow models",
+      "tags": [
+        "Workflow Model"
+      ]
+    },
+    {
+      "operationId": "WorkflowModelByNameGet",
+      "method": "GET",
+      "path": "/workflowModel/{modelName}",
+      "summary": "Find a workflow model by its name",
+      "tags": [
+        "Workflow Model"
+      ]
+    },
+    {
+      "operationId": "WorkflowModelGraphGet",
+      "method": "GET",
+      "path": "/workflowModel/{modelName}/graph",
+      "summary": "Get the json serialization of a workflow model graph",
+      "tags": [
+        "Workflow Model"
+      ]
+    }
+  ]
+}

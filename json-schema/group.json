@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/group.json",
+  "title": "group",
+  "properties": {
+    "label": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "name": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "url": {
+      "type": "string",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "label",
+    "name",
+    "url"
+  ],
+  "uniqueItems": false
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/task.json",
+  "title": "task",
+  "properties": {
+    "actors": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "comments": {
+      "items": {
+        "$ref": "#/components/schemas/taskComments"
+      },
+      "type": "array"
+    },
+    "created": {
+      "format": "date",
+      "type": "string",
+      "uniqueItems": false
+    },
+    "directive": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "dueDate": {
+      "format": "date",
+      "type": "string",
+      "uniqueItems": false
+    },
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "id": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "name": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "nodeName": {
+      "format": "date",
+      "type": "string",
+      "uniqueItems": false
+    },
+    "state": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "targetDocumentIds": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "taskInfo": {
+      "$ref": "#/components/schemas/taskInfo"
+    },
+    "type": {
+      "format": "date",
+      "type": "string",
+      "uniqueItems": false
+    },
+    "variables": {
+      "items": {
+        "$ref": "#/components/schemas/Property"
+      },
+      "type": "object",
+      "uniqueItems": true
+    },
+    "workflowId": {
+      "type": "string",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "entity-type"
+  ],
+  "uniqueItems": false
+}

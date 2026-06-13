@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/document.json",
+  "title": "document",
+  "properties": {
+    "changeToken": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "contextParameters": {
+      "type": "object",
+      "uniqueItems": false
+    },
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "facets": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "lastModified": {
+      "format": "date",
+      "type": "string",
+      "uniqueItems": false
+    },
+    "path": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "properties": {
+      "items": {
+        "$ref": "#/components/schemas/Property"
+      },
+      "type": "object",
+      "uniqueItems": true
+    },
+    "repository": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "state": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "title": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "uid": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "versionLabel": {
+      "type": "string",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "entity-type"
+  ],
+  "uniqueItems": false
+}

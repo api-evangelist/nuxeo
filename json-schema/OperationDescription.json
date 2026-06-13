@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/OperationDescription.json",
+  "title": "OperationDescription",
+  "properties": {
+    "category": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "description": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "id": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "label": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "params": {
+      "items": {
+        "$ref": "#/components/schemas/OperationParamDescription"
+      },
+      "type": "array",
+      "uniqueItems": false
+    },
+    "requires": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "signature": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": false
+    },
+    "url": {
+      "type": "string",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "id",
+    "label",
+    "params",
+    "signature",
+    "url"
+  ],
+  "uniqueItems": false
+}

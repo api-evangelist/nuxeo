@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/BusinessObject.json",
+  "title": "BusinessObject",
+  "properties": {
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "value": {
+      "type": "object",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "entity-type"
+  ],
+  "uniqueItems": false
+}

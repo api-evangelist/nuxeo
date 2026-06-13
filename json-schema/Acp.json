@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/Acp.json",
+  "title": "Acp",
+  "properties": {
+    "acls": {
+      "items": {
+        "$ref": "#/components/schemas/Acl"
+      },
+      "type": "array",
+      "uniqueItems": false
+    },
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "entity-type"
+  ],
+  "uniqueItems": false
+}

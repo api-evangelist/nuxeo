@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/oauth2ClientData.json",
+  "title": "oauth2ClientData",
+  "properties": {
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "id": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "isAutoGrant": {
+      "type": "boolean",
+      "uniqueItems": false
+    },
+    "isEnabled": {
+      "type": "boolean",
+      "uniqueItems": false
+    },
+    "name": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "redirectURIs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": false
+    },
+    "secret": {
+      "type": "string",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "entity-type",
+    "id",
+    "name",
+    "redirectURIs"
+  ],
+  "uniqueItems": false
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/docType.json",
+  "title": "docType",
+  "properties": {
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "facets": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "name": {
+      "type": "string"
+    },
+    "parent": {
+      "type": "string"
+    },
+    "schemas": {
+      "items": {},
+      "type": "array"
+    }
+  },
+  "required": [
+    "entity-type",
+    "facets",
+    "name",
+    "parent",
+    "schemas"
+  ]
+}

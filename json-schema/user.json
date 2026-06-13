@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nuxeo/main/json-schema/user.json",
+  "title": "user",
+  "properties": {
+    "entity-type": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "extendedGroups": {
+      "items": {
+        "$ref": "#/components/schemas/GroupRef"
+      },
+      "type": "object",
+      "uniqueItems": false
+    },
+    "id": {
+      "type": "string",
+      "uniqueItems": false
+    },
+    "isAdministrator": {
+      "type": "boolean",
+      "uniqueItems": false
+    },
+    "isAnonymous": {
+      "type": "boolean",
+      "uniqueItems": false
+    },
+    "properties": {
+      "items": {
+        "$ref": "#/components/schemas/Property"
+      },
+      "type": "object",
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "entity-type",
+    "id",
+    "isAdministrator",
+    "isAnonymous"
+  ],
+  "uniqueItems": false
+}
