@@ -1,0 +1,37 @@
+name: Nuxeo Plans and Pricing
+description: Nuxeo is an enterprise-grade, cloud-native content management platform now part of Hyland Software. Pricing is customized per enterprise client and not publicly listed. Prospective customers must contact Hyland directly for a quote.
+url: https://www.hyland.com/en/resources/nuxeo-download
+contact: https://www.hyland.com/en/demos/request-demo
+
+plans:
+  - name: Community / Open Source
+    description: Free, open-source version of the Nuxeo Platform available on GitHub. Suitable for developers and evaluation use. No SLA or commercial support included.
+    price: Free
+    url: https://github.com/nuxeo/nuxeo
+    features:
+      - Full REST API access
+      - Document and asset management
+      - Workflow engine
+      - Search and query APIs
+      - OAuth2 and token authentication
+      - Extensible via Nuxeo Studio and marketplace packages
+
+  - name: Enterprise (Cloud / On-Premise)
+    description: Commercial subscription for production deployments. Pricing is negotiated per organization and based on usage, users, storage, and support level. Includes SLA guarantees, professional support, Nuxeo Studio, and access to Hyland University training.
+    price: Contact Hyland for pricing (estimates start around $2,500/month)
+    url: https://www.hyland.com/en/solutions/products/nuxeo-platform
+    features:
+      - All Community features
+      - Nuxeo Studio (low-code configuration environment)
+      - Nuxeo Insight (trainable AI for tagging and enrichment)
+      - Horizontal scalability and cluster support
+      - 99.9% uptime SLA for Nuxeo Studio cloud services
+      - Hyland University access and certification programs
+      - Priority technical support via Hyland Connect
+      - Digital Asset Management (DAM) capabilities
+      - Cloud-native deployment on AWS or Azure
+
+notes:
+  - Nuxeo was acquired by Hyland Software in 2021.
+  - No self-service pricing tiers are publicly available; all commercial plans require direct engagement with the Hyland sales team.
+  - The open-source community edition is available under the Apache 2.0 license.

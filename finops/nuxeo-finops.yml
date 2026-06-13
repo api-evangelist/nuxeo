@@ -1,0 +1,71 @@
+name: Nuxeo FinOps Guide
+description: Financial operations considerations for organizations deploying and integrating with the Nuxeo Platform. Nuxeo is an enterprise product under Hyland Software with custom pricing; cost management requires active engagement with vendor agreements and infrastructure spending.
+url: https://www.hyland.com/en/solutions/products/nuxeo-platform
+
+cost_drivers:
+  - name: Subscription License
+    description: >
+      Commercial Nuxeo licenses are negotiated per organization. Costs are
+      influenced by number of users, storage volume, deployment model
+      (cloud vs. on-premise), and support tier. Pricing estimates from third-party
+      sources suggest starting costs around $2,500/month, scaling significantly
+      for large enterprises.
+    optimization: Negotiate enterprise agreements based on actual user counts and
+      usage patterns; avoid over-provisioning users.
+
+  - name: Cloud Infrastructure
+    description: >
+      For cloud deployments, Nuxeo runs on AWS or Azure. Compute, storage (S3/Blob),
+      Elasticsearch, and database (PostgreSQL/MongoDB) costs are incurred separately
+      from the Nuxeo license.
+    optimization: Use auto-scaling groups and right-size compute instances based on
+      observed API load. Enable S3 intelligent tiering for large binary stores.
+
+  - name: Storage
+    description: >
+      Nuxeo manages binaries in an object store (typically S3) and indexes metadata
+      in Elasticsearch. Storage costs grow proportionally with content volume.
+    optimization: Implement retention policies and archive workflows to move cold
+      content to lower-cost storage tiers. Monitor Elasticsearch index size and
+      shard allocation.
+
+  - name: Nuxeo Studio
+    description: >
+      Nuxeo Studio is a cloud-based configuration and low-code development
+      environment included in commercial subscriptions. It has a 99.9% SLA
+      for cloud services.
+    optimization: Limit Studio seats to active developers; audit access quarterly.
+
+  - name: Professional Services
+    description: >
+      Implementation, customization, migration, and integration projects typically
+      require professional services engagements. For enterprise deployments, these
+      can range from tens of thousands to hundreds of thousands of dollars.
+    optimization: Invest in Hyland University certifications for internal staff to
+      reduce ongoing dependency on external professional services.
+
+  - name: API Integration Costs
+    description: >
+      Applications consuming the Nuxeo REST API at scale may incur additional
+      infrastructure costs for API gateways, monitoring, and middleware. Bulk
+      operations via the Automation endpoint or Batch Upload can spike compute load.
+    optimization: Cache document metadata aggressively at the application layer.
+      Use Nuxeo's built-in content enrichers to reduce chatty API call patterns.
+
+finops_recommendations:
+  - Instrument API call volumes and latency with Nuxeo metrics endpoints and
+    external APM tools to identify expensive operations.
+  - Establish tagging conventions for cloud resources associated with Nuxeo
+    deployments to enable cost attribution by team or project.
+  - Review Elasticsearch cluster sizing quarterly; over-provisioned search
+    clusters are a common source of wasted spend.
+  - Use the Nuxeo health check endpoint (/nuxeo/runningstatus) in conjunction
+    with cloud autoscaling to right-size the compute fleet.
+  - Negotiate multi-year agreements with Hyland for discounted licensing on
+    long-term deployments.
+
+references:
+  - https://doc.nuxeo.com/nxdoc/nuxeo-scalability-options/
+  - https://doc.nuxeo.com/nxdoc/managing-performance/
+  - https://legal.hyland.com/nuxeo-subscription-terms/nuxeo-subscription-terms-be41ab3c
+  - https://www.hyland.com/en/resources/nuxeo-download

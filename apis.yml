@@ -1,0 +1,90 @@
+aid: nuxeo
+name: Nuxeo
+description: >
+  Nuxeo is an open-source, cloud-native enterprise content management platform
+  owned by Hyland Software. It provides a comprehensive REST API for managing
+  documents, digital assets, workflows, metadata, search, batch uploads, and
+  cloud file storage in large-scale enterprise environments. The API supports
+  OAuth2, token-based, and basic authentication, and exposes automation
+  chains, content enrichers, and web adapters for flexible integration.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/nuxeo/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Content Management
+  - Digital Asset Management
+  - Enterprise
+  - Documents
+  - Workflows
+  - Search
+  - Open Source
+
+apis:
+  - aid: nuxeo:nuxeo-rest-api
+    name: Nuxeo REST API
+    description: >
+      The Nuxeo REST API provides HTTP/HTTPS access to the full Nuxeo Platform,
+      enabling CRUD operations on documents, assets, users, groups, directories,
+      workflows, tasks, and configurations. It exposes an automation command
+      endpoint with over 100 server-side operations, batch upload support, search
+      via NXQL and page providers, OAuth2 resource management, and user preferences.
+      All endpoints follow the base path /nuxeo/api/v1/.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+    baseURL: https://{nuxeo-server}/nuxeo/api/v1
+    tags:
+      - Documents
+      - Assets
+      - Workflows
+      - Search
+      - Automation
+      - Batch Upload
+      - OAuth2
+    properties:
+      - type: Documentation
+        url: https://doc.nuxeo.com/nxdoc/rest-api/
+      - type: OpenAPI
+        url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+      - type: Swagger
+        url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+      - type: Authentication
+        url: https://doc.nuxeo.com/rest-api/1/authentication/
+      - type: Endpoints
+        url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+      - type: HowTos
+        url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+      - type: Automation
+        url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+    contact:
+      - FN: Hyland Nuxeo Support
+        url: https://connect.hyland.com/t5/nuxeo/ct-p/nuxeo1
+
+common:
+  - type: Website
+    url: https://www.hyland.com/en/solutions/products/nuxeo-platform
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/
+  - type: GitHubOrg
+    url: https://github.com/nuxeo
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/nuxeo
+  - type: Blog
+    url: https://connect.hyland.com/t5/nuxeo-blog/bg-p/nuxeo1blog-board
+  - type: Pricing
+    url: https://www.hyland.com/en/resources/nuxeo-download
+  - type: StatusPage
+    url: https://doc.nuxeo.com/nxdoc/health-check/
+  - type: X
+    url: https://x.com/nuxeo
+  - type: Plans
+    url: plans/nuxeo-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/nuxeo-rate-limits.yml
+  - type: FinOps
+    url: finops/nuxeo-finops.yml
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

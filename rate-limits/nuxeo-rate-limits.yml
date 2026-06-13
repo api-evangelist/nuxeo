@@ -1,0 +1,35 @@
+name: Nuxeo API Rate Limits
+description: Nuxeo does not publish explicit, fixed API rate limit policies in its public documentation. The platform is designed for horizontal scalability and high-throughput enterprise workloads. Rate limiting behavior depends on deployment configuration, server resources, and the specific subscription agreement with Hyland.
+url: https://doc.nuxeo.com/nxdoc/nuxeo-scalability-options/
+
+rate_limits:
+  - scope: General REST API
+    limit: Not publicly specified
+    notes: >
+      No fixed rate limit is documented for the Nuxeo REST API. Limits are
+      governed by server configuration, cluster size, and deployment environment.
+      Operators can configure thread pools, connection pools, and work queues to
+      tune throughput.
+
+  - scope: Batch Upload API
+    limit: Not publicly specified
+    notes: >
+      The Batch Upload endpoint (/nuxeo/api/v1/upload/) supports chunked uploads
+      and concurrent uploads. Limits depend on server disk, memory, and async
+      work queue configuration.
+
+  - scope: Automation / Command Endpoint
+    limit: Not publicly specified
+    notes: >
+      The automation endpoint exposes 100+ server-side operations. Heavy
+      automation chains may be subject to server-side timeout policies
+      configurable by the platform administrator.
+
+scalability_notes:
+  - Nuxeo supports horizontal scaling via clustering; multiple Nuxeo nodes can be
+    deployed behind a load balancer to increase aggregate throughput.
+  - Performance tuning guidance is available at https://doc.nuxeo.com/nxdoc/managing-performance/
+  - Health check endpoints are available at /nuxeo/runningstatus for monitoring.
+  - Metrics and monitoring integration is supported via https://doc.nuxeo.com/nxdoc/metrics/
+
+contact: https://connect.hyland.com/t5/nuxeo/ct-p/nuxeo1
