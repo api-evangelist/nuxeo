@@ -7,7 +7,7 @@ description: >
   cloud file storage in large-scale enterprise environments. The API supports
   OAuth2, token-based, and basic authentication, and exposes automation
   chains, content enrichers, and web adapters for flexible integration.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/nuxeo/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -31,7 +31,7 @@ apis:
       endpoint with over 100 server-side operations, batch upload support, search
       via NXQL and page providers, OAuth2 resource management, and user preferences.
       All endpoints follow the base path /nuxeo/api/v1/.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
     baseURL: https://{nuxeo-server}/nuxeo/api/v1
     tags:
