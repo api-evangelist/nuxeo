@@ -64,6 +64,10 @@ apis:
         url: https://connect.hyland.com/t5/nuxeo/ct-p/nuxeo1
 
 common:
+  - type: DomainSecurity
+    url: security/nuxeo-domain-security.yml
+  - type: Authentication
+    url: authentication/nuxeo-authentication.yml
   - type: Website
     url: https://www.hyland.com/en/solutions/products/nuxeo-platform
   - type: Documentation

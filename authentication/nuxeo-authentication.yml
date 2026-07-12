@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/nuxeo-rest-api-openapi.yaml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: basic_auth
+  type: http
+  scheme: basic
+  sources:
+  - openapi/nuxeo-rest-api-openapi.yaml
+- name: token
+  type: apiKey
+  in: header
+  parameter: X-Authentication-Token
+  sources:
+  - openapi/nuxeo-rest-api-openapi.yaml

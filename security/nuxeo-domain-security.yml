@@ -1,0 +1,40 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.hyland.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  6 22:17:07 2026 GMT
+  hsts: false
+- host: doc.nuxeo.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 13 01:48:34 2026 GMT
+  hsts: false
+- host: nightly.nuxeo.com
+  https: false
+domains:
+- domain: hyland.com
+  dnssec: true
+  caa:
+  - 0 issue "firmaprofessional.com"
+  - 0 issue "letsencrypt.org"
+  - 0 issuewild "letsencrypt.org"
+  - 0 issue "digicert.com"
+  - 0 issuewild "entrust.net"
+  - 0 issue "globalsign.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: nuxeo.com
+  dnssec: false
+  caa:
+  - 0 issuewild "amazonaws.com"
+  - 0 issuewild "amazontrust.com"
+  - 0 issuewild "awstrust.com"
+  - 0 issuewild "globalsign.com"
+  - 0 issuewild "letsencrypt.org"
+  - 0 issue "amazon.com"
+  spf: true
+  dmarc: true
