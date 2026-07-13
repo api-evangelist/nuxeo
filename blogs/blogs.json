@@ -3,10 +3,7 @@
   "feeds": [
     {
       "source": "https://connect.hyland.com/puspr69493/rss/board?board.id=nuxeo1blog-board",
-      "feed_url": "https://connect.hyland.com/puspr69493/rss/board?board.id=nuxeo1blog-board",
-      "title": "",
-      "saved": 1,
-      "method": "feed"
+      "error": "HTTPError"
     },
     {
       "source": "https://www.linkedin.com/company/nuxeo",
@@ -17,5 +14,5 @@
     }
   ],
   "post_count": 1,
-  "fetched": "2026-06-27T12:03:07Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
