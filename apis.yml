@@ -64,6 +64,8 @@ apis:
         url: https://connect.hyland.com/t5/nuxeo/ct-p/nuxeo1
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/nuxeo-agentic-access.yml
   - type: DomainSecurity
     url: security/nuxeo-domain-security.yml
   - type: Authentication
