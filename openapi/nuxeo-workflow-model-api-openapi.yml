@@ -1,0 +1,164 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Workflow Model API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Workflow Model
+  description: Workflow Model Information
+paths:
+  /workflowModel:
+    get:
+      operationId: WorkflowModelGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/workflows'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Get the workflow models
+      tags:
+      - Workflow Model
+  /workflowModel/{modelName}:
+    get:
+      operationId: WorkflowModelByNameGet
+      parameters:
+      - description: Name of the workflow model
+        in: path
+        name: modelName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/workflow'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Find a workflow model by its name
+      tags:
+      - Workflow Model
+  /workflowModel/{modelName}/graph:
+    get:
+      operationId: WorkflowModelGraphGet
+      parameters:
+      - description: Name of the workflow model
+        in: path
+        name: modelName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/workflowGraph'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Get the json serialization of a workflow model graph
+      summary: Get the json serialization of a workflow model graph
+      tags:
+      - Workflow Model
+components:
+  schemas:
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    workflow:
+      properties:
+        attachedDocumentIds:
+          items:
+            type: string
+          type: array
+        entity-type:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        initiator:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        variables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+      required:
+      - entity-type
+      uniqueItems: false
+    workflows:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/workflow'
+          type: array
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    workflowGraph:
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

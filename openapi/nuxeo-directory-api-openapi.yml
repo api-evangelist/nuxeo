@@ -1,0 +1,319 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Directory API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Directory
+  description: Directory Operations
+paths:
+  /directory/{directoryName}:
+    get:
+      operationId: DirectoryByNameGet
+      parameters:
+      - description: 'Directory name. Ex: ''subject'''
+        in: path
+        name: directoryName
+        required: true
+        schema:
+          type: string
+      - description: Index of the current page
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored.
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: Size of the page to retrieve. Ignored if offset set
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: Maximum results to retrieve
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: Property to sort by, for example 'dc:title'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: Sort order, accepts 'asc' or 'desc', default is 'desc'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/directoryEntries'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Get directory entries
+      tags:
+      - Directory
+    post:
+      operationId: DirectoryByNamePost
+      parameters:
+      - description: 'Directory name. Ex: ''subject'''
+        in: path
+        name: directoryName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/directoryEntry'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/directoryEntry'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Creates a directory entry
+      tags:
+      - Directory
+  /directory/{directoryName}/{entryId}:
+    delete:
+      operationId: DirectoryEntryDelete
+      parameters:
+      - description: 'Directory name. Ex: ''subject'''
+        in: path
+        name: directoryName
+        required: true
+        schema:
+          type: string
+      - description: Directory entry id
+        in: path
+        name: entryId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Delete a directory entry
+      tags:
+      - Directory
+    get:
+      operationId: DirectoryEntryGet
+      parameters:
+      - description: 'Directory name. Ex: ''subject'''
+        in: path
+        name: directoryName
+        required: true
+        schema:
+          type: string
+      - description: Directory entry id
+        in: path
+        name: entryId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/directoryEntry'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Get a directory entry
+      tags:
+      - Directory
+    put:
+      operationId: DirectoryEntryPut
+      parameters:
+      - description: 'Directory name. Ex: ''subject'''
+        in: path
+        name: directoryName
+        required: true
+        schema:
+          type: string
+      - description: Directory entry id
+        in: path
+        name: entryId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/directoryEntry'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/directoryEntry'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Update a directory entry
+      tags:
+      - Directory
+components:
+  schemas:
+    directoryEntries:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/directoryEntry'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    directoryEntry:
+      properties:
+        directoryName:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: false
+      required:
+      - directoryName
+      - entity-type
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

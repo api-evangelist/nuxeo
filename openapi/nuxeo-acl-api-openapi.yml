@@ -1,0 +1,134 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: ACL
+paths:
+  /id/{docId}/@acl:
+    get:
+      operationId: DocumentIdACLAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Acp'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: View the ACL of a document given its id
+      tags:
+      - ACL
+  /path/{docPath}/@acl:
+    get:
+      operationId: DocumentPathACLAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Acp'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: View the ACL of a document given its path
+      tags:
+      - ACL
+components:
+  schemas:
+    Acp:
+      properties:
+        acls:
+          items:
+            $ref: '#/components/schemas/Acl'
+          type: array
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+    Ace:
+      properties:
+        granted:
+          type: boolean
+          uniqueItems: false
+        permission:
+          type: string
+          uniqueItems: false
+        username:
+          type: string
+          uniqueItems: false
+      required:
+      - granted
+      - permission
+      - username
+      uniqueItems: false
+    Acl:
+      properties:
+        ace:
+          items:
+            $ref: '#/components/schemas/Ace'
+          type: array
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      required:
+      - ace
+      - name
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

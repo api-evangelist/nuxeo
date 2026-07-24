@@ -1,0 +1,276 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Automation API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Automation
+  description: Automation Operations
+paths:
+  /automation:
+    get:
+      operationId: AutomationGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationDescriptionList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Gets the list of all operation/chain
+      tags:
+      - Automation
+  /automation/{operationName}:
+    get:
+      operationId: AutomationOperationGet
+      parameters:
+      - description: Name of the operation
+        in: path
+        name: operationName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationDescription'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Gets the description of the operation/chain
+      tags:
+      - Automation
+    post:
+      operationId: AutomationOperationPost
+      parameters:
+      - description: Name of the operation
+        in: path
+        name: operationName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OperationParams'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Execute an operation or a chain on a document
+      tags:
+      - Automation
+  /path/{docPath}/@children/@op/{operationName}:
+    post:
+      operationId: DocumentPathChildrenOperationAdapterPost
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Name of the operation
+        in: path
+        name: operationName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OperationParams'
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: This works on every API endpoint that return DocumentList
+      summary: Execute an operation or a chain on the children of a document
+      tags:
+      - Automation
+  /path/{docPath}/@op/{operationName}:
+    post:
+      operationId: DocumentPathOperationAdapterPost
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Name of the operation
+        in: path
+        name: operationName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OperationParams'
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Execute an operation or a chain on a document
+      tags:
+      - Automation
+components:
+  schemas:
+    OperationParams:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    OperationDescription:
+      properties:
+        category:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        label:
+          type: string
+          uniqueItems: false
+        params:
+          items:
+            $ref: '#/components/schemas/OperationParamDescription'
+          type: array
+          uniqueItems: false
+        requires:
+          type: string
+          uniqueItems: false
+        signature:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - id
+      - label
+      - params
+      - signature
+      - url
+      uniqueItems: false
+    OperationDescriptionList:
+      properties:
+        codec:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        operations:
+          items:
+            $ref: '#/components/schemas/OperationDescription'
+          type: array
+          uniqueItems: false
+        path:
+          type: object
+          uniqueItems: false
+      required:
+      - codec
+      - operations
+      - path
+      uniqueItems: false
+    OperationParamDescription:
+      properties:
+        description:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        order:
+          type: integer
+          uniqueItems: false
+        required:
+          type: boolean
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        values:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        widget:
+          type: string
+          uniqueItems: false
+      required:
+      - description
+      - name
+      - required
+      - type
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

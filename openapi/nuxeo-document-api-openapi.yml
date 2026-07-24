@@ -1,0 +1,776 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Document API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Document
+  description: Document Operations
+paths:
+  /id/{docId}:
+    delete:
+      operationId: DocumentIdDelete
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Deletes a document by its id
+      tags:
+      - Document
+    get:
+      operationId: DocumentIdGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Find a document by its id
+      tags:
+      - Document
+    post:
+      operationId: DocumentIdPost
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Creates a document by its parent id
+      tags:
+      - Document
+    put:
+      operationId: DocumentIdPut
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update
+      summary: Updates a document by its id
+      tags:
+      - Document
+  /repo/{repoId}/id/{docId}:
+    delete:
+      operationId: RepoIdDocumentIdDelete
+      parameters:
+      - description: The name of the repository
+        in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Deletes a document by its id
+      tags:
+      - Document
+    get:
+      operationId: RepoIdDocumentIdGet
+      parameters:
+      - description: The name of the repository
+        in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Find a document by its id
+      tags:
+      - Document
+    post:
+      operationId: RepoIdDocumentIdPost
+      parameters:
+      - description: The name of the repository
+        in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Creates a document by its parent id
+      tags:
+      - Document
+    put:
+      operationId: RepoIdDocumentIdPut
+      parameters:
+      - description: The name of the repository
+        in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update
+      summary: Updates a document by its id
+      tags:
+      - Document
+  /path/{docPath}:
+    delete:
+      operationId: DocumentPathDelete
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission can be deleted
+      summary: Deletes a document by its path
+      tags:
+      - Document
+    get:
+      operationId: DocumentPathGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Find a document by its path
+      tags:
+      - Document
+    post:
+      operationId: DocumentPathPost
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Creates a document by its parent path
+      tags:
+      - Document
+    put:
+      operationId: DocumentPathPut
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update
+      summary: Updates a document by its path
+      tags:
+      - Document
+  /repo/{repoId}/path/{docPath}:
+    delete:
+      operationId: RepoIdDocumentPathDelete
+      parameters:
+      - description: The name of the repository
+        in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Deletes a document by its path
+      tags:
+      - Document
+    get:
+      operationId: RepoIdDocumentPathGet
+      parameters:
+      - description: The name of the repository
+        in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Find a document by its path
+      tags:
+      - Document
+    post:
+      operationId: RepoIdDocumentPathPost
+      parameters:
+      - description: The name of the repository
+        in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Creates a document by its parent path
+      tags:
+      - Document
+    put:
+      operationId: RepoIdDocumentPathPut
+      parameters:
+      - description: The name of the repository
+        in: path
+        name: repoId
+        required: true
+        schema:
+          type: string
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/document'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update
+      summary: Updates a document by its path
+      tags:
+      - Document
+components:
+  schemas:
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    document:
+      properties:
+        changeToken:
+          type: string
+          uniqueItems: false
+        contextParameters:
+          type: object
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        facets:
+          items:
+            type: string
+          type: array
+        lastModified:
+          format: date
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        repository:
+          type: string
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        uid:
+          type: string
+          uniqueItems: false
+        versionLabel:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

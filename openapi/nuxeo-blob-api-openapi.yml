@@ -1,0 +1,94 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Blob API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Blob
+paths:
+  /id/{docId}/@blob/{fieldPath}:
+    get:
+      operationId: DocumentIdBlobAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: 'The field path you want do download (ex: file:content)'
+        in: path
+        name: fieldPath
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Get the main blob of a document by its id
+      tags:
+      - Blob
+  /path/{docPath}/@blob/{fieldPath}:
+    get:
+      operationId: DocumentPathBlobAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: 'The field path you want do download (ex: file:content)'
+        in: path
+        name: fieldPath
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Get the main blob of a document by its path
+      tags:
+      - Blob
+components:
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

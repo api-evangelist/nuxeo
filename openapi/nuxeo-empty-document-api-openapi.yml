@@ -1,0 +1,208 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Empty Document API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Empty Document
+paths:
+  /@emptyWithDefault:
+    get:
+      operationId: EmptyWithDefaultGet
+      parameters:
+      - description: The type of the empty document to be initialized
+        in: query
+        name: type
+        required: true
+        schema:
+          type: string
+      - description: The name of the empty document to be initialized
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: 'To retrieve all initialized properties, the ''properties: *'' header must be used'
+      summary: Initialize an empty document with default properties given a document type
+      tags:
+      - Empty Document
+  /id/{docId}/@emptyWithDefault:
+    get:
+      operationId: DocumentIdEmptyWithDefaultAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: The type of the empty document to be initialized
+        in: query
+        name: type
+        required: true
+        schema:
+          type: string
+      - description: The name of the empty document to be initialized
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: 'To retrieve all initialized properties, the ''properties: *'' header must be used'
+      summary: Initialize an empty document with default properties given a document type and a parent
+      tags:
+      - Empty Document
+  /path/{docPath}/@emptyWithDefault:
+    get:
+      operationId: DocumentPathEmptyWithDefaultAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: The type of the empty document to be initialized
+        in: query
+        name: type
+        required: true
+        schema:
+          type: string
+      - description: The name of the empty document to be initialized
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/document'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: 'To retrieve all initialized properties, the ''properties: *'' header must be used'
+      summary: Initialize an empty document with default properties given a document type and a parent
+      tags:
+      - Empty Document
+components:
+  schemas:
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    document:
+      properties:
+        changeToken:
+          type: string
+          uniqueItems: false
+        contextParameters:
+          type: object
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        facets:
+          items:
+            type: string
+          type: array
+        lastModified:
+          format: date
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        repository:
+          type: string
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        uid:
+          type: string
+          uniqueItems: false
+        versionLabel:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

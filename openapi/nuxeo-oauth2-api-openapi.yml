@@ -1,0 +1,851 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL OAuth2 API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: OAuth2
+  description: OAuth2 Operations
+paths:
+  /oauth2/client:
+    get:
+      operationId: OAuth2ClientGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ClientDataList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves a OAuth2 client.
+      tags:
+      - OAuth2
+    post:
+      operationId: OAuth2ClientPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/oauth2ClientData'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ClientData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Adds an OAuth2 client.
+      tags:
+      - OAuth2
+  /oauth2/client/{oauth2ClientId}:
+    delete:
+      operationId: OAuth2ClientIdDelete
+      parameters:
+      - description: Name of the OAuth2 client
+        in: path
+        name: oauth2ClientId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Deletes an OAuth2 client token.
+      tags:
+      - OAuth2
+    get:
+      operationId: OAuth2ClientIdGet
+      parameters:
+      - description: Name of the OAuth2 client
+        in: path
+        name: oauth2ClientId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ClientData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves an OAuth2 client.
+      tags:
+      - OAuth2
+    put:
+      operationId: OAuth2ClientIdPut
+      parameters:
+      - description: Name of the OAuth2 client
+        in: path
+        name: oauth2ClientId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/oauth2ClientData'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ClientData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Update an OAuth2 client.
+      tags:
+      - OAuth2
+  /oauth2/provider:
+    get:
+      operationId: OAuth2ProviderGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ProviderDataList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves the list of available OAuth2 providers.
+      tags:
+      - OAuth2
+    post:
+      operationId: OAuth2ProviderPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/oauth2ProviderData'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ProviderData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Adds an OAuth2 provider.
+      tags:
+      - OAuth2
+  /oauth2/provider/{oauth2ProviderId}:
+    get:
+      operationId: OAuth2ProviderIdGet
+      parameters:
+      - description: Name of the OAuth2 provider
+        in: path
+        name: oauth2ProviderId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ProviderData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves OAuth2 provider data for the current user.
+      tags:
+      - OAuth2
+    put:
+      operationId: OAuth2ProviderIdPut
+      parameters:
+      - description: Name of the OAuth2 provider
+        in: path
+        name: oauth2ProviderId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/oauth2ProviderData'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ProviderData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Updates an OAuth2 provider.
+      tags:
+      - OAuth2
+  /oauth2/provider/{oauth2ProviderId}/token:
+    get:
+      operationId: OAuth2ProviderIdTokenGet
+      parameters:
+      - description: Name of the OAuth2 provider
+        in: path
+        name: oauth2ProviderId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2ProviderTokenData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves a valid access token to the current user. A new token will be request if the current one is expired.
+      tags:
+      - OAuth2
+  /oauth2/token:
+    get:
+      operationId: OAuth2TokenGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenDataList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves all OAuth2 tokens.
+      tags:
+      - OAuth2
+  /oauth2/token/client:
+    get:
+      operationId: OAuth2TokenClientGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenDataList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves all OAuth2 client tokens for the current user.
+      tags:
+      - OAuth2
+  /oauth2/token/client/{oauth2ClientId}/user/{userName}:
+    delete:
+      operationId: OAuth2TokenClientIdUserDelete
+      parameters:
+      - description: Name of the OAuth2 client
+        in: path
+        name: oauth2ClientId
+        required: true
+        schema:
+          type: string
+      - description: 'Username of the user, ex: ''Administrator'''
+        in: path
+        name: userName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Deletes a OAuth2 client token.
+      tags:
+      - OAuth2
+    get:
+      operationId: OAuth2TokenClientIdUserGet
+      parameters:
+      - description: Name of the OAuth2 client
+        in: path
+        name: oauth2ClientId
+        required: true
+        schema:
+          type: string
+      - description: 'Username of the user, ex: ''Administrator'''
+        in: path
+        name: userName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves a OAuth2 client token.
+      tags:
+      - OAuth2
+    put:
+      operationId: OAuth2TokenClientIdUserPut
+      parameters:
+      - description: Name of the OAuth2 client
+        in: path
+        name: oauth2ClientId
+        required: true
+        schema:
+          type: string
+      - description: 'Username of the user, ex: ''Administrator'''
+        in: path
+        name: userName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Updates an OAuth2 client token.
+      tags:
+      - OAuth2
+  /oauth2/token/provider:
+    get:
+      operationId: OAuth2TokenProviderGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenDataList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves all OAuth2 provider tokens for the current user.
+      tags:
+      - OAuth2
+  /oauth2/token/provider/{oauth2ProviderId}/user/{userName}:
+    delete:
+      operationId: OAuth2TokenProviderIdUserDelete
+      parameters:
+      - description: Name of the OAuth2 provider
+        in: path
+        name: oauth2ProviderId
+        required: true
+        schema:
+          type: string
+      - description: 'Username of the user, ex: ''Administrator'''
+        in: path
+        name: userName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Delete an OAuth2 provider token.
+      tags:
+      - OAuth2
+    get:
+      operationId: OAuth2TokenProviderIdUserGet
+      parameters:
+      - description: Name of the OAuth2 provider
+        in: path
+        name: oauth2ProviderId
+        required: true
+        schema:
+          type: string
+      - description: 'Username of the user, ex: ''Administrator'''
+        in: path
+        name: userName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Gets an OAuth2 provider token.
+      tags:
+      - OAuth2
+    put:
+      operationId: OAuth2TokenProviderIdUserPut
+      parameters:
+      - description: Name of the OAuth2 provider
+        in: path
+        name: oauth2ProviderId
+        required: true
+        schema:
+          type: string
+      - description: 'Username of the user, ex: ''Administrator'''
+        in: path
+        name: userName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenData'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Updates an OAuth2 provider token.
+      tags:
+      - OAuth2
+  /oauth2/token/search:
+    get:
+      operationId: OAuth2TokenSearchGet
+      parameters:
+      - description: The service name or user name to match.
+        in: query
+        name: q
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenDataList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Search tokens that match service name or user parameter.
+      tags:
+      - OAuth2
+  /oauth2/token/{oAuth2TokenType}:
+    get:
+      operationId: OAuth2TokenTypeGet
+      parameters:
+      - description: The oAuth2 token type. AS_PROVIDER to retrieve the provided tokens or AS_CLIENT to retrieve those consumed.
+        in: path
+        name: oAuth2TokenType
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth2TokenDataList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieves all OAuth2 tokens by OAuth2 token type. An OAuth2 token can be provided by Nuxeo or consumed.
+      tags:
+      - OAuth2
+components:
+  schemas:
+    oauth2ProviderTokenData:
+      properties:
+        token:
+          type: string
+          uniqueItems: false
+      required:
+      - token
+      uniqueItems: false
+    oauth2ClientData:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        isAutoGrant:
+          type: boolean
+          uniqueItems: false
+        isEnabled:
+          type: boolean
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        redirectURIs:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        secret:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      - id
+      - name
+      - redirectURIs
+      uniqueItems: false
+    oauth2ClientDataList:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/oauth2ClientData'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    oauth2TokenDataList:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/oauth2TokenData'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    oauth2ProviderDataList:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/oauth2ProviderData'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    oauth2TokenData:
+      properties:
+        clientId:
+          type: string
+          uniqueItems: false
+        creationDate:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        isShared:
+          type: boolean
+          uniqueItems: false
+        nuxeoLogin:
+          type: string
+          uniqueItems: false
+        serviceLogin:
+          type: string
+          uniqueItems: false
+        serviceName:
+          type: string
+          uniqueItems: false
+        sharedWith:
+          items:
+            type: string
+          type: array
+      required:
+      - entity-type
+      - nuxeoLogin
+      - serviceLogin
+      - serviceName
+      uniqueItems: false
+    oauth2ProviderData:
+      properties:
+        authorizationServerURL:
+          type: string
+          uniqueItems: false
+        authorizationURL:
+          type: string
+          uniqueItems: false
+        clientId:
+          type: string
+          uniqueItems: false
+        clientSecret:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        isAuthorized:
+          type: boolean
+          uniqueItems: false
+        isAvailable:
+          type: boolean
+          uniqueItems: false
+        isEnabled:
+          type: boolean
+          uniqueItems: false
+        scopes:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        serviceName:
+          type: string
+          uniqueItems: false
+        tokenServerURL:
+          type: string
+          uniqueItems: false
+        userAuthorizationURL:
+          type: string
+          uniqueItems: false
+        userId:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      - serviceName
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

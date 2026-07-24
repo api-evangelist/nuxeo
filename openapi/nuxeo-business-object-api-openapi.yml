@@ -1,0 +1,390 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Business Object API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Business Object
+  description: Business Object Operations
+paths:
+  /id/{docId}/@bo/{adapterName}:
+    get:
+      deprecated: true
+      operationId: DocumentIdBusinessObjectAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Name of the adapter
+        in: path
+        name: adapterName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessObject'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Get the business object adapter on a document given its id
+      tags:
+      - Business Object
+    put:
+      deprecated: true
+      operationId: DocumentIdBusinessObjectAdapterPut
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Name of the adapter
+        in: path
+        name: adapterName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessObject'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessObject'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Updates the business object adapter on a document given its id
+      tags:
+      - Business Object
+  /id/{docId}/@bo/{adapterName}/{docName}:
+    post:
+      deprecated: true
+      operationId: DocumentIdBusinessObjectAdapterPost
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Name of the adapter
+        in: path
+        name: adapterName
+        required: true
+        schema:
+          type: string
+      - description: Name of the document
+        in: path
+        name: docName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessObject'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Creates a document based on its business object
+      tags:
+      - Business Object
+  /id/{docId}/@children/@bo/{adapterName}:
+    get:
+      deprecated: true
+      operationId: DocumentIdChildrenBusinessObjectAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Name of the adapter
+        in: path
+        name: adapterName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessObjectList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: <ul><li>If a document can't be adapted, the resulting item will be null</li><li> This type of call works for every API endpoint that responds DocumentList (@search, @pp ...)</li></ul>
+      summary: Get the list of business object of the children of a document by its id
+      tags:
+      - Business Object
+  /path/{docPath}/@bo/{adapterName}:
+    get:
+      deprecated: true
+      operationId: DocumentPathBusinessObjectAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Name of the adapter
+        in: path
+        name: adapterName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessObject'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Get the business object adapter on a document given its path
+      tags:
+      - Business Object
+    put:
+      deprecated: true
+      operationId: DocumentPathBusinessObjectAdapterPut
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Name of the adapter
+        in: path
+        name: adapterName
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessObject'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessObject'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Updates the business object adapter on a document given its path
+      tags:
+      - Business Object
+  /path/{docPath}/@bo/{adapterName}/{docName}:
+    post:
+      deprecated: true
+      operationId: DocumentPathBusinessObjectAdapterPost
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Name of the adapter
+        in: path
+        name: adapterName
+        required: true
+        schema:
+          type: string
+      - description: Name of the document
+        in: path
+        name: docName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessObject'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Creates a document based on its business object
+      tags:
+      - Business Object
+  /path/{docPath}/@children/@bo/{adapterName}:
+    get:
+      deprecated: true
+      operationId: DocumentPathChildrenBusinessObjectAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Name of the adapter
+        in: path
+        name: adapterName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessObjectList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: <ul><li>If a document can't be adapted, the resulting item will be null</li><li> This type of call works for every API endpoint that responds DocumentList (@search, @pp ...)</li></ul>
+      summary: Get the list of business object of the children of a document by its path
+      tags:
+      - Business Object
+components:
+  schemas:
+    BusinessObjectList:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/BusinessObject'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    BusinessObject:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        value:
+          type: object
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

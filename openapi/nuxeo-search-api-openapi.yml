@@ -1,0 +1,1230 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Search API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Search
+  description: Search Operations
+paths:
+  /id/{docId}/@pp/{pageProviderName}:
+    get:
+      operationId: DocumentIdPageProviderAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: 'Name of the page provider, ex: ''user_domains'''
+        in: path
+        name: pageProviderName
+        required: true
+        schema:
+          type: string
+      - description: Index of the current page
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: string
+      - description: Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored.
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: Size of the page to retrieve. Ignored if offset set
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: Maximum results to retrieve
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: Property to sort by, for example 'dc:title'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: Sort order, accepts 'asc' or 'desc', default is 'desc'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Execute a page provider on document by its id
+      tags:
+      - Search
+  /path/{docPath}/@pp/{pageProviderName}:
+    get:
+      operationId: DocumentPathPageProviderAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: 'Name of the page provider, ex: ''user_domains'''
+        in: path
+        name: pageProviderName
+        required: true
+        schema:
+          type: string
+      - description: Index of the current page
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored.
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: Size of the page to retrieve. Ignored if offset set
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: Maximum results to retrieve
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: Property to sort by, for example 'dc:title'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: Sort order, accepts 'asc' or 'desc', default is 'desc'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Execute a page provider on document by its path
+      tags:
+      - Search
+  /query:
+    get:
+      operationId: QueryGet
+      parameters:
+      - description: 'The query to perform. (By default: SELECT * FROM Document)'
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+      - description: 'The number of entries per page. (By default: 0)'
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: 'The selected page index. (By default: 0)'
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: 'The maximum entries. (By default: 200)'
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: 'Property(ies) sorting. (Example: sortBy=''dc:title,dc:description'')'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: 'Sort order. (Example: sortOrder=''DESC,ASC'')'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      - description: 'Ordered parameters. (Example: for ''Select * From Document where dc:title = ?'' -> queryParams=''titleA'')'
+        in: query
+        name: queryParams
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
+      summary: Perform Named Page Provider on the repository
+      tags:
+      - Search
+  /query/{providerName}:
+    get:
+      operationId: QueryProviderGet
+      parameters:
+      - description: The page provider name.
+        in: path
+        name: providerName
+        required: true
+        schema:
+          type: string
+      - description: 'The number of entries per page. (By default: 0)'
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: 'The selected page index. (By default: 0)'
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: 'The maximum entries. (By default: 200)'
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: 'Property(ies) sorting. (Example: sortBy=''dc:title,dc:description'')'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: 'Sort order. (Example: sortOrder=''DESC,ASC'')'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      - description: 'Ordered parameters. (Example: for ''Select * From Document where dc:title = ?'' -> queryParams=''titleA'')'
+        in: query
+        name: queryParams
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
+      summary: Perform Named Page Provider on the repository
+      tags:
+      - Search
+  /search/lang/{queryLanguage}/bulk/{actionId}:
+    post:
+      operationId: SearchLangBulkActionPost
+      parameters:
+      - description: The query language.
+        in: path
+        name: queryLanguage
+        required: true
+        schema:
+          type: string
+      - description: 'The query to perform. (By default: SELECT * FROM Document)'
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+      - description: 'Ordered parameters. (Example: for ''Select * From Document where dc:title = ?'' -> queryParams=''titleA'')'
+        in: query
+        name: queryParams
+        required: false
+        schema:
+          type: string
+      - description: Id of the bulk action
+        in: path
+        name: actionId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
+      summary: Performs a bulk action on the query result.
+      tags:
+      - Search
+  /search/lang/{queryLanguage}/execute:
+    get:
+      operationId: SearchLangExecuteGet
+      parameters:
+      - description: The query language.
+        in: path
+        name: queryLanguage
+        required: true
+        schema:
+          type: string
+      - description: 'The query to perform. (By default: SELECT * FROM Document)'
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+      - description: 'The number of entries per page. (By default: 0)'
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: 'The selected page index. (By default: 0)'
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: The offset of the returned result set. If set, the 'currentPageIndex' parameter is ignored.
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: 'The maximum entries. (By default: 200)'
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: 'Property(ies) sorting. (Example: sortBy=''dc:title,dc:description'')'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: 'Sort order. (Example: sortOrder=''DESC,ASC'')'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      - description: 'Ordered parameters. (Example: for ''Select * From Document where dc:title = ?'' -> queryParams=''titleA'')'
+        in: query
+        name: queryParams
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
+      summary: Performs a search query.
+      tags:
+      - Search
+  /search/pp/{providerName}:
+    get:
+      operationId: SearchPageProviderGet
+      parameters:
+      - description: The page provider name.
+        in: path
+        name: providerName
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Gets the definition of a page provider.
+      tags:
+      - Search
+  /search/pp/{providerName}/bulk/{actionId}:
+    post:
+      operationId: SearchPageProviderBulkPost
+      parameters:
+      - description: The page provider name.
+        in: path
+        name: providerName
+        required: true
+        schema:
+          type: string
+      - description: 'Ordered parameters. (Example: for ''Select * From Document where dc:title = ?'' -> queryParams=''titleA'')'
+        in: query
+        name: queryParams
+        required: false
+        schema:
+          type: string
+      - description: Id of the bulk action
+        in: path
+        name: actionId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
+      summary: Performs a bulk action on the query result.
+      tags:
+      - Search
+  /search/pp/{providerName}/execute:
+    get:
+      operationId: SearchPageProviderExecuteGet
+      parameters:
+      - description: The page provider name.
+        in: path
+        name: providerName
+        required: true
+        schema:
+          type: string
+      - description: 'The number of entries per page. (By default: 0)'
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: 'The selected page index. (By default: 0)'
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: The offset of the returned result set. If set, the 'currentPageIndex' parameter is ignored.
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: 'The maximum entries. (By default: 200)'
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: 'Property(ies) sorting. (Example: sortBy=''dc:title,dc:description'')'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: 'Sort order. (Example: sortOrder=''DESC,ASC'')'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      - description: 'Ordered parameters. (Example: for ''Select * From Document where dc:title = ?'' -> queryParams=''titleA'')'
+        in: query
+        name: queryParams
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
+      summary: Perform Named Page Provider on the repository
+      tags:
+      - Search
+  /search/saved:
+    get:
+      operationId: SearchSavedGet
+      parameters:
+      - description: Name of the page provider.
+        in: query
+        name: pageProvider
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/savedsearches'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Returns the list of saved searches.
+      tags:
+      - Search
+    post:
+      operationId: SearchSavedPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/savedsearch'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/savedsearch'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Saves a search.
+      tags:
+      - Search
+  /search/saved/{searchId}:
+    delete:
+      operationId: SearchSavedIdDelete
+      parameters:
+      - description: The search id.
+        in: path
+        name: searchId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Deletes the saved search with the supplied id.
+      tags:
+      - Search
+    get:
+      operationId: SearchSavedIdGet
+      parameters:
+      - description: The search id.
+        in: path
+        name: searchId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/savedsearch'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Return the saved search with the supplied id.
+      tags:
+      - Search
+    put:
+      operationId: SearchSavedIdPut
+      parameters:
+      - description: The search id.
+        in: path
+        name: searchId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/savedsearch'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/savedsearch'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Updates the saved search with the supplied id.
+      tags:
+      - Search
+  /search/saved/{searchId}/bulk/{actionId}:
+    post:
+      operationId: SearchSavedIdBulkActionPost
+      parameters:
+      - description: The search id.
+        in: path
+        name: searchId
+        required: true
+        schema:
+          type: string
+      - description: Id of the bulk action
+        in: path
+        name: actionId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Performs a bulk action on the saved search result.
+      tags:
+      - Search
+  /search/saved/{searchId}/execute:
+    get:
+      operationId: SearchSavedIdExecuteGet
+      parameters:
+      - description: The search id.
+        in: path
+        name: searchId
+        required: true
+        schema:
+          type: string
+      - description: 'The number of entries per page. (By default: 0)'
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: 'The selected page index. (By default: 0)'
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: The offset of the returned result set. If set, the 'currentPageIndex' parameter is ignored.
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: 'The maximum entries. (By default: 200)'
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: 'Property(ies) sorting. (Example: sortBy=''dc:title,dc:description'')'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: 'Sort order. (Example: sortOrder=''DESC,ASC'')'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Executes saved searches, returning its results.
+      tags:
+      - Search
+  /id/{docId}/@search:
+    get:
+      operationId: DocumentIdSearchAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: NXQL query
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+      - description: A full text query
+        in: query
+        name: fullText
+        required: false
+        schema:
+          type: string
+      - description: Field on which to order
+        in: query
+        name: orderBy
+        required: false
+        schema:
+          type: string
+      - description: Index of the current page
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored.
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: Size of the page to retrieve. Ignored if offset set
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: Maximum results to retrieve
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: Property to sort by, for example 'dc:title'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: Sort order, accepts 'asc' or 'desc', default is 'desc'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Get the children of a document by its id
+      tags:
+      - Search
+  /path/{docPath}/@search:
+    get:
+      operationId: DocumentPathSearchAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: Index of the current page
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored.
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: Size of the page to retrieve. Ignored if offset set
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: Maximum results to retrieve
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: Property to sort by, for example 'dc:title'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: Sort order, accepts 'asc' or 'desc', default is 'desc'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      - description: NXQL query
+        in: query
+        name: query
+        required: false
+        schema:
+          type: string
+      - description: A full text query
+        in: query
+        name: fullText
+        required: false
+        schema:
+          type: string
+      - description: Field on which to order
+        in: query
+        name: orderBy
+        required: false
+        schema:
+          type: string
+      - description: Schemas to be included in response
+        in: header
+        name: X-NXDocumentProperties
+        required: false
+        schema:
+          type: string
+      - description: Categories to be included in context parameters map
+        in: header
+        name: X-NXContext-Category
+        required: false
+        schema:
+          type: string
+      - description: 'Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none'
+        in: header
+        name: X-Versioning-Option
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only documents which you have permission to see will be returned
+      summary: Get the children of a document by its path
+      tags:
+      - Search
+components:
+  schemas:
+    Document:
+      properties:
+        changeToken:
+          type: string
+          uniqueItems: false
+        contextParameters:
+          type: object
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        facets:
+          items:
+            type: string
+          type: array
+        lastModified:
+          format: date
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        repository:
+          type: string
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        uid:
+          type: string
+          uniqueItems: false
+        versionLabel:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+    documents:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/Document'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    savedsearch:
+      properties:
+        currentPageIndex:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        maxResults:
+          type: string
+          uniqueItems: false
+        pageProviderName:
+          type: string
+          uniqueItems: false
+        pageSize:
+          type: string
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+        query:
+          type: string
+          uniqueItems: false
+        queryLanguage:
+          type: string
+          uniqueItems: false
+        queryParams:
+          type: string
+          uniqueItems: false
+        sortBy:
+          type: string
+          uniqueItems: false
+        sortOrder:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      - title
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    savedsearches:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/savedsearch'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

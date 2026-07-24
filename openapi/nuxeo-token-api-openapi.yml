@@ -1,0 +1,145 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Token API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Token
+  description: Authentication Token Operations
+paths:
+  /token:
+    get:
+      operationId: TokenGet
+      parameters:
+      - description: Application symbolic name
+        in: query
+        name: application
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthenticationTokenList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Gets all readable authentication tokens
+      tags:
+      - Token
+    post:
+      operationId: TokenPost
+      parameters:
+      - description: Application symbolic name
+        in: query
+        name: application
+        required: false
+        schema:
+          type: string
+      - description: Device identifier
+        in: query
+        name: deviceId
+        required: true
+        schema:
+          type: string
+      - description: Device description
+        in: query
+        name: deviceDescription
+        required: true
+        schema:
+          type: string
+      - description: Permission granted with the authentication token
+        in: query
+        name: permission
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Acquire new authentication token
+      tags:
+      - Token
+  /token/{token}:
+    delete:
+      operationId: TokenDelete
+      parameters:
+      - description: Authentication Token
+        in: path
+        name: token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Delete an existing authentication token
+      tags:
+      - Token
+components:
+  schemas:
+    AuthenticationTokenList:
+      properties:
+        token:
+          type: string
+          uniqueItems: true
+        url:
+          type: string
+          uniqueItems: false
+        userName:
+          type: string
+          uniqueItems: false
+      required:
+      - token
+      - url
+      - userName
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

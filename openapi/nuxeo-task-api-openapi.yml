@@ -1,0 +1,397 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Task API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Task
+paths:
+  /task:
+    get:
+      operationId: TaskGet
+      parameters:
+      - description: id of the user who is actor of the task
+        in: query
+        name: userId
+        required: true
+        schema:
+          type: string
+      - description: id of the workflow instance the task belongs to
+        in: query
+        name: workflowInstanceId
+        required: false
+        schema:
+          type: string
+      - description: name of the workflow model of the task (i.e. 'SerialDocumentReview', 'ParallelDocumentReview'). Deprecated since 11.1 as this parameter forces post-filtering and prevents paginated results.
+        in: query
+        name: workflowModelName
+        required: false
+        schema:
+          type: string
+      - description: Index of the current page
+        in: query
+        name: currentPageIndex
+        required: false
+        schema:
+          type: integer
+      - description: Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored
+        in: query
+        name: offset
+        required: false
+        schema:
+          type: integer
+      - description: Size of the page to retrieve. Ignored if offset set
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          type: integer
+      - description: Maximum results to retrieve
+        in: query
+        name: maxResults
+        required: false
+        schema:
+          type: integer
+      - description: Property to sort by, for example 'dc:title'
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          type: string
+      - description: Sort order, accepts 'asc' or 'desc', default is 'desc'
+        in: query
+        name: sortOrder
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tasks'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only task instance which you have permission to see will be returned
+      summary: Query tasks by user and workflow ids
+      tags:
+      - Task
+  /task/{taskId}:
+    get:
+      operationId: TaskIdGet
+      parameters:
+      - description: Id of the task
+        in: path
+        name: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Only task instance which you have permission to see will be returned
+      summary: Get a task by its id
+      tags:
+      - Task
+  /task/{taskId}/delegate:
+    put:
+      operationId: TaskDelegatePut
+      parameters:
+      - description: Id of the task
+        in: path
+        name: taskId
+        required: true
+        schema:
+          type: string
+      - description: comma separated ids of the delegated actors
+        in: query
+        name: delegatedActors
+        required: true
+        schema:
+          type: string
+      - description: comment
+        in: query
+        name: comment
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: See https://doc.nuxeo.com/x/34z1
+      summary: Delegate a task
+      tags:
+      - Task
+  /task/{taskId}/reassign:
+    put:
+      operationId: TaskReassignPut
+      parameters:
+      - description: Id of the task
+        in: path
+        name: taskId
+        required: true
+        schema:
+          type: string
+      - description: comma separated ids of the new actors
+        in: query
+        name: actors
+        required: true
+        schema:
+          type: string
+      - description: comment
+        in: query
+        name: comment
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: See https://doc.nuxeo.com/x/1YcZAQ
+      summary: Reassign a task
+      tags:
+      - Task
+  /task/{taskId}/{action}:
+    put:
+      operationId: TaskActionPut
+      parameters:
+      - description: Id of the task
+        in: path
+        name: taskId
+        required: true
+        schema:
+          type: string
+      - description: the action to be applied when completed the task. The action determines the transition to be followed and the next task within the workflow.
+        in: path
+        name: action
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/taskCompletionRequest'
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: Complete a workflow related task
+      summary: Complete task
+      tags:
+      - Task
+components:
+  schemas:
+    tasks:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/task'
+          type: array
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    taskCompletionRequest:
+      properties:
+        comment:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        nodeVariables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        worflowVariables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+      required:
+      - entity-type
+      uniqueItems: false
+    taskInfo:
+      properties:
+        actions:
+          items:
+            $ref: '#/components/schemas/taskAction'
+          type: array
+          uniqueItems: false
+        layoutResource:
+          properties:
+            name:
+              type: string
+              uniqueItems: false
+            url:
+              type: string
+              format: uri
+              uniqueItems: false
+          required:
+          - name
+          - url
+          uniqueItems: false
+      required:
+      - actions
+      - layoutResource
+      uniqueItems: false
+    taskComments:
+      properties:
+        author:
+          type: string
+          uniqueItems: false
+        date:
+          format: date
+          type: string
+          uniqueItems: false
+      required:
+      - author
+      - date
+      uniqueItems: false
+    task:
+      properties:
+        actors:
+          items:
+            type: string
+          type: array
+        comments:
+          items:
+            $ref: '#/components/schemas/taskComments'
+          type: array
+        created:
+          format: date
+          type: string
+          uniqueItems: false
+        directive:
+          type: string
+          uniqueItems: false
+        dueDate:
+          format: date
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        nodeName:
+          format: date
+          type: string
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        targetDocumentIds:
+          items:
+            type: string
+          type: array
+        taskInfo:
+          $ref: '#/components/schemas/taskInfo'
+        type:
+          format: date
+          type: string
+          uniqueItems: false
+        variables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        workflowId:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    taskAction:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - label
+      - name
+      - url
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

@@ -1,0 +1,219 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Configuration API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Configuration
+  description: Configuration Information
+paths:
+  /config/types:
+    get:
+      operationId: ConfigurationTypesGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/docTypes'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: List registered document type
+      tags:
+      - Configuration
+  /config/types/{docType}:
+    get:
+      operationId: ConfigurationTypeDocumentGet
+      parameters:
+      - description: The name of the document type
+        in: path
+        name: docType
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/docType'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Document type description
+      tags:
+      - Configuration
+  /config/facets:
+    get:
+      operationId: ConfigurationFacetsGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/facet'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: List registered facets
+      tags:
+      - Configuration
+  /config/facets/{facet}:
+    get:
+      operationId: ConfigurationFacetGet
+      parameters:
+      - description: The name of the facet
+        in: path
+        name: facet
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/facet'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Facet description
+      tags:
+      - Configuration
+  /config/schemas:
+    get:
+      operationId: ConfigurationSchemasGet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/schema'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: List registered schemas
+      tags:
+      - Configuration
+  /config/schemas/{schema}:
+    get:
+      operationId: ConfigurationSchemaGet
+      parameters:
+      - description: The name of the schema
+        in: path
+        name: schema
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/schema'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Schema description
+      tags:
+      - Configuration
+components:
+  schemas:
+    schema:
+      properties:
+        '@prefix':
+          type: string
+        fields:
+          type: object
+        name:
+          type: string
+      required:
+      - '@prefix'
+      - fields
+      - name
+    docTypes:
+      properties:
+        doctypes:
+          type: object
+        schemas:
+          type: object
+      required:
+      - doctypes
+      - schemas
+    docType:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        facets:
+          items:
+            type: string
+          type: array
+        name:
+          type: string
+        parent:
+          type: string
+        schemas:
+          items: {}
+          type: array
+      required:
+      - entity-type
+      - facets
+      - name
+      - parent
+      - schemas
+    facet:
+      properties:
+        name:
+          type: string
+        schemas:
+          items: {}
+          type: array
+      required:
+      - name
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

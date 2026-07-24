@@ -1,0 +1,258 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Annotation API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Annotation
+paths:
+  /id/{docId}/@annotation:
+    get:
+      operationId: DocumentIdAnnotationAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/annotationList'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Get all annotations on a given document blob
+      tags:
+      - Annotation
+    post:
+      operationId: DocumentIdAnnotationAdapterPost
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/annotation'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/annotation'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Create an annotation on a given document
+      tags:
+      - Annotation
+    put:
+      operationId: DocumentIdAnnotationAdapterPut
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/annotation'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/annotation'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Update an annotation on a given document
+      tags:
+      - Annotation
+  /id/{docId}/@annotation/{annotationId}:
+    delete:
+      operationId: DocumentIdAnnotationIdAdapterDelete
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Id of the annotation
+        in: path
+        name: annotationId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Delete an annotation on a document given its id
+      tags:
+      - Annotation
+    get:
+      operationId: DocumentIdAnnotationIdAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: Id of the annotation
+        in: path
+        name: annotationId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/annotation'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      summary: Retrieve an annotation on a document given its id
+      tags:
+      - Annotation
+components:
+  schemas:
+    annotation:
+      properties:
+        security:
+          type: string
+          uniqueItems: false
+        color:
+          type: string
+          uniqueItems: false
+        creationDate:
+          format: date-time
+          type: string
+          uniqueItems: false
+        date:
+          format: date-time
+          type: string
+          uniqueItems: false
+        documentId:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        flags:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        lastModifier:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        opacity:
+          format: double
+          type: number
+          uniqueItems: false
+        page:
+          type: integer
+          uniqueItems: false
+        position:
+          type: string
+          uniqueItems: false
+        subject:
+          type: string
+          uniqueItems: false
+        xpath:
+          type: string
+          uniqueItems: false
+      required:
+      - creationDate
+      - date
+      - documentId
+      - entity-type
+      - flags
+      - id
+      - lastModifier
+      - name
+      - opacity
+      - page
+      - position
+      - security
+      - subject
+      - xpath
+      uniqueItems: false
+    annotationList:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/annotation'
+          type: array
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/

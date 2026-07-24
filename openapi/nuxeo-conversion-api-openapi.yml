@@ -1,0 +1,352 @@
+openapi: 3.0.2
+info:
+  version: LTS 2021
+  title: Nuxeo Platform ACL Conversion API
+  termsOfService: https://www.nuxeo.com/about/why-nuxeo/
+  contact:
+    email: support@nuxeo.com
+    url: https://www.nuxeo.com/contact/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-nuxeo-logo.png
+  description: '# Nuxeo Platform https://www.nuxeo.com/
+
+    OpenAPI 3.0 Specification for the Nuxeo Platform.'
+servers:
+- url: https://{host}:{port}/nuxeo/api/v1
+  variables:
+    host:
+      default: demo.nuxeo.com
+      description: Nuxeo Platform Host
+    port:
+      default: '443'
+      description: Nuxeo Platform Port
+- url: https://nightly.nuxeo.com/nuxeo/api/v1
+  description: Nuxeo Platform Nightly Test Server
+tags:
+- name: Conversion
+paths:
+  /id/{docId}/@blob/{blobXpath}/@convert:
+    get:
+      operationId: DocumentIdBlobConvertAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: XPath of the blob
+        in: path
+        name: blobXpath
+        required: true
+        schema:
+          type: string
+      - description: The name of the converter to execute
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+      - description: The requested mime type for the converted Blob, such as 'application/pdf'
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+      - description: The requested extension of the converted Blob, such as 'pdf'
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: One of the 'name', 'type' or 'format' parameters must be passed.
+      summary: Convert the Blob at the given xpath of the document
+      tags:
+      - Conversion
+  /id/{docId}/@convert:
+    get:
+      operationId: DocumentIdConvertAdapterGet
+      parameters:
+      - description: Id of the document
+        in: path
+        name: docId
+        required: true
+        schema:
+          type: string
+      - description: The name of the converter to execute
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+      - description: The requested mime type for the converted Blob, such as 'application/pdf'
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+      - description: The requested extension of the converted Blob, such as 'pdf'
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: One of the 'name', 'type' or 'format' parameters must be passed.
+      summary: Convert the main Blob of the document
+      tags:
+      - Conversion
+  /path/{docPath}/@blob/{blobXpath}/@convert:
+    get:
+      operationId: DocumentPathBlobConvertAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: XPath of the blob
+        in: path
+        name: blobXpath
+        required: true
+        schema:
+          type: string
+      - description: The name of the converter to execute
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+      - description: The requested mime type for the converted Blob, such as 'application/pdf'
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+      - description: The requested extension of the converted Blob, such as 'pdf'
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: One of the 'name', 'type' or 'format' parameters must be passed.
+      summary: Convert the Blob at the given xpath of the document
+      tags:
+      - Conversion
+  /path/{docPath}/@convert:
+    get:
+      operationId: DocumentPathConvertAdapterGet
+      parameters:
+      - description: 'Path of the document, ex: ''default-domain'''
+        in: path
+        name: docPath
+        required: true
+        schema:
+          type: string
+      - description: The name of the converter to execute
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+      - description: The requested mime type for the converted Blob, such as 'application/pdf'
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+      - description: The requested extension of the converted Blob, such as 'pdf'
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/documents'
+        '401':
+          description: Not Authorized to get document
+        '404':
+          description: Document not found
+      description: One of the 'name', 'type' or 'format' parameters must be passed.
+      summary: Convert the main Blob of the document
+      tags:
+      - Conversion
+components:
+  schemas:
+    Document:
+      properties:
+        changeToken:
+          type: string
+          uniqueItems: false
+        contextParameters:
+          type: object
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        facets:
+          items:
+            type: string
+          type: array
+        lastModified:
+          format: date
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        repository:
+          type: string
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        uid:
+          type: string
+          uniqueItems: false
+        versionLabel:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    documents:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/Document'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+  securitySchemes:
+    basic_auth:
+      type: http
+      scheme: basic
+    token:
+      type: apiKey
+      in: header
+      name: X-Authentication-Token
+externalDocs:
+  description: Nuxeo Documentation
+  url: https://doc.nuxeo.com/
