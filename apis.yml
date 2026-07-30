@@ -7,7 +7,20 @@ description: >
   cloud file storage in large-scale enterprise environments. The API supports
   OAuth2, token-based, and basic authentication, and exposes automation
   chains, content enrichers, and web adapters for flexible integration.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nuxeo.png
 url: https://raw.githubusercontent.com/api-evangelist/nuxeo/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -22,47 +35,534 @@ tags:
   - Open Source
 
 apis:
-  - aid: nuxeo:nuxeo-rest-api
-    name: Nuxeo REST API
-    description: >
-      The Nuxeo REST API provides HTTP/HTTPS access to the full Nuxeo Platform,
-      enabling CRUD operations on documents, assets, users, groups, directories,
-      workflows, tasks, and configurations. It exposes an automation command
-      endpoint with over 100 server-side operations, batch upload support, search
-      via NXQL and page providers, OAuth2 resource management, and user preferences.
-      All endpoints follow the base path /nuxeo/api/v1/.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
-    baseURL: https://{nuxeo-server}/nuxeo/api/v1
-    tags:
-      - Documents
-      - Assets
-      - Workflows
-      - Search
-      - Automation
-      - Batch Upload
-      - OAuth2
-    properties:
-      - type: Documentation
-        url: https://doc.nuxeo.com/nxdoc/rest-api/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/nuxeo/main/openapi/nuxeo-rest-api-openapi.yaml
-      - type: OpenAPISource
-        url: https://github.com/nuxeo-sandbox/nuxeo-openapi
-      - type: Swagger
-        url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
-      - type: Authentication
-        url: https://doc.nuxeo.com/rest-api/1/authentication/
-      - type: Endpoints
-        url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
-      - type: HowTos
-        url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
-      - type: Automation
-        url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
-    contact:
-      - FN: Hyland Nuxeo Support
-        url: https://connect.hyland.com/t5/nuxeo/ct-p/nuxeo1
-
+- aid: nuxeo:nuxeo-acl-api
+  name: Nuxeo ACL API
+  description: The ACL API from Nuxeo — 2 operation(s) for acl.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - ACL
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-acl-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-adapter-api
+  name: Nuxeo Adapter API
+  description: Adaptation Endpoints
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Adapter
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-adapter-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-annotation-api
+  name: Nuxeo Annotation API
+  description: The Annotation API from Nuxeo — 2 operation(s) for annotation.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Annotation
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-annotation-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-audit-api
+  name: Nuxeo Audit API
+  description: The Audit API from Nuxeo — 2 operation(s) for audit.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Audit
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-audit-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-automation-api
+  name: Nuxeo Automation API
+  description: Automation Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Automation
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-automation-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-blob-api
+  name: Nuxeo Blob API
+  description: The Blob API from Nuxeo — 2 operation(s) for blob.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Blob
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-blob-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-business-object-api
+  name: Nuxeo Business Object API
+  description: Business Object Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Business Object
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-business-object-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-children-api
+  name: Nuxeo Children API
+  description: The Children API from Nuxeo — 2 operation(s) for children.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Children
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-children-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-configuration-api
+  name: Nuxeo Configuration API
+  description: Configuration Information
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-conversion-api
+  name: Nuxeo Conversion API
+  description: The Conversion API from Nuxeo — 4 operation(s) for conversion.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Conversion
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-conversion-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-directory-api
+  name: Nuxeo Directory API
+  description: Directory Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Directory
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-directory-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-document-api
+  name: Nuxeo Document API
+  description: Document Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Document
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-document-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-empty-document-api
+  name: Nuxeo Empty Document API
+  description: The Empty Document API from Nuxeo — 3 operation(s) for empty document.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Empty Document
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-empty-document-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-group-api
+  name: Nuxeo Group API
+  description: Group Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Group
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-group-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-oauth2-api
+  name: Nuxeo OAuth2 API
+  description: OAuth2 Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - OAuth2
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-oauth2-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-rendition-api
+  name: Nuxeo Rendition API
+  description: The Rendition API from Nuxeo — 2 operation(s) for rendition.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Rendition
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-rendition-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-search-api
+  name: Nuxeo Search API
+  description: Search Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-search-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-task-api
+  name: Nuxeo Task API
+  description: The Task API from Nuxeo — 5 operation(s) for task.
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Task
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-task-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-token-api
+  name: Nuxeo Token API
+  description: Authentication Token Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Token
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-token-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-user-api
+  name: Nuxeo User API
+  description: User Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-user-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-workflow-api
+  name: Nuxeo Workflow API
+  description: Workflow Operations
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-workflow-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
+- aid: nuxeo:nuxeo-workflow-model-api
+  name: Nuxeo Workflow Model API
+  description: Workflow Model Information
+  humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
+  baseURL: https://{nuxeo-server}/nuxeo/api/v1
+  tags:
+  - Workflow Model
+  properties:
+  - type: OpenAPI
+    url: openapi/nuxeo-workflow-model-api-openapi.yml
+  - type: Documentation
+    url: https://doc.nuxeo.com/nxdoc/rest-api/
+  - type: OpenAPISource
+    url: https://github.com/nuxeo-sandbox/nuxeo-openapi
+  - type: Swagger
+    url: https://github.com/nuxeo/nuxeo-rest-api-swagger-doc
+  - type: Authentication
+    url: https://doc.nuxeo.com/rest-api/1/authentication/
+  - type: Endpoints
+    url: https://doc.nuxeo.com/nxdoc/rest-api-endpoints/
+  - type: HowTos
+    url: https://doc.nuxeo.com/nxdoc/rest-api-howtos/
+  - type: Automation
+    url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
 common:
   - type: AgenticAccess
     url: agentic-access/nuxeo-agentic-access.yml
