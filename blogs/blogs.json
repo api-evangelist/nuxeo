@@ -2,10 +2,6 @@
   "repo": "nuxeo",
   "feeds": [
     {
-      "source": "https://connect.hyland.com/puspr69493/rss/board?board.id=nuxeo1blog-board",
-      "error": "HTTPError"
-    },
-    {
       "source": "https://www.linkedin.com/company/nuxeo",
       "feed_url": "https://www.linkedin.com/company/nuxeo",
       "title": "",
@@ -14,5 +10,5 @@
     }
   ],
   "post_count": 1,
-  "fetched": "2026-07-11T11:50:51Z"
+  "fetched": "2026-08-01T15:49:00Z"
 }
