@@ -1,0 +1,570 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Document API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Document",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Creates a document by its parent id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a document by its parent id"
+        },
+        {
+          "info": {
+            "name": "Updates a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update"
+        },
+        {
+          "info": {
+            "name": "Deletes a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Find a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/repo/:repoId/id/:docId",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path",
+                "description": "The name of the repository"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Creates a document by its parent id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/repo/:repoId/id/:docId",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path",
+                "description": "The name of the repository"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a document by its parent id"
+        },
+        {
+          "info": {
+            "name": "Updates a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/repo/:repoId/id/:docId",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path",
+                "description": "The name of the repository"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update"
+        },
+        {
+          "info": {
+            "name": "Deletes a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/repo/:repoId/id/:docId",
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path",
+                "description": "The name of the repository"
+              },
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Find a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Creates a document by its parent path",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a document by its parent path"
+        },
+        {
+          "info": {
+            "name": "Updates a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update"
+        },
+        {
+          "info": {
+            "name": "Deletes a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission can be deleted"
+        },
+        {
+          "info": {
+            "name": "Find a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/repo/:repoId/path/:docPath",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path",
+                "description": "The name of the repository"
+              },
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Creates a document by its parent path",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/repo/:repoId/path/:docPath",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path",
+                "description": "The name of the repository"
+              },
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a document by its parent path"
+        },
+        {
+          "info": {
+            "name": "Updates a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/repo/:repoId/path/:docPath",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path",
+                "description": "The name of the repository"
+              },
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update"
+        },
+        {
+          "info": {
+            "name": "Deletes a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/repo/:repoId/path/:docPath",
+            "params": [
+              {
+                "name": "repoId",
+                "value": "",
+                "type": "path",
+                "description": "The name of the repository"
+              },
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

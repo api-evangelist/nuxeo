@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Blob API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Blob",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the main blob of a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@blob/:fieldPath",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "fieldPath",
+                "value": "",
+                "type": "path",
+                "description": "The field path you want do download (ex: file:content)"
+              }
+            ]
+          },
+          "docs": "Get the main blob of a document by its id"
+        },
+        {
+          "info": {
+            "name": "Get the main blob of a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@blob/:fieldPath",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "fieldPath",
+                "value": "",
+                "type": "path",
+                "description": "The field path you want do download (ex: file:content)"
+              }
+            ]
+          },
+          "docs": "Get the main blob of a document by its path"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

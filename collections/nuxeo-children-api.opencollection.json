@@ -1,0 +1,156 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Children API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Children",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the children of a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@children",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "currentPageIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index of the current page"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Size of the page to retrieve. Ignored if offset set"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Maximum results to retrieve"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "Property to sort by, for example 'dc:title'"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, accepts 'asc' or 'desc', default is 'desc'"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Get the children of a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@children",
+            "headers": [
+              {
+                "name": "X-NXDocumentProperties",
+                "value": ""
+              },
+              {
+                "name": "X-NXContext-Category",
+                "value": ""
+              },
+              {
+                "name": "X-Versioning-Option",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "currentPageIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index of the current page"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Size of the page to retrieve. Ignored if offset set"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Maximum results to retrieve"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "Property to sort by, for example 'dc:title'"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, accepts 'asc' or 'desc', default is 'desc'"
+              }
+            ]
+          },
+          "docs": "Only documents which you have permission to see will be returned"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

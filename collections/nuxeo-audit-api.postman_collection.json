@@ -1,0 +1,476 @@
+{
+  "item": [
+    {
+      "id": "86542138-d3f6-439d-a1a3-44de27b868f5",
+      "name": "Audit",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca5ff328-0d10-4a3c-8393-0473e53add30",
+          "name": "View the audit trail of a document given its id",
+          "request": {
+            "name": "View the audit trail of a document given its id",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@audit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0aafcb5c-3050-415d-9948-d1d70410dc04",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@audit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"category\": \"string\",\n      \"comment\": \"string\",\n      \"docLifeCycle\": \"string\",\n      \"docPath\": \"string\",\n      \"docType\": \"string\",\n      \"docUUID\": \"string\",\n      \"entity-type\": \"string\",\n      \"eventDate\": \"1997-03-22T22:28:10.738Z\",\n      \"eventId\": \"string\",\n      \"logDate\": \"1948-01-03T09:10:33.353Z\",\n      \"principalName\": \"string\",\n      \"repositoryId\": \"string\"\n    },\n    {\n      \"category\": \"string\",\n      \"comment\": \"string\",\n      \"docLifeCycle\": \"string\",\n      \"docPath\": \"string\",\n      \"docType\": \"string\",\n      \"docUUID\": \"string\",\n      \"entity-type\": \"string\",\n      \"eventDate\": \"1957-04-08T09:39:52.587Z\",\n      \"eventId\": \"string\",\n      \"logDate\": \"1952-05-08T08:57:22.653Z\",\n      \"principalName\": \"string\",\n      \"repositoryId\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 6455,\n  \"currentPageOffset\": 8248,\n  \"currentPageSize\": 538,\n  \"erroMessage\": \"string\",\n  \"hasError\": true,\n  \"isLastPageAvailable\": true,\n  \"isNext\": false,\n  \"isPaginable\": true,\n  \"isPreviousPageAvailable\": false,\n  \"isSortable\": true,\n  \"maxPageSize\": 7605,\n  \"numberOfPages\": 1469,\n  \"pageCount\": 2994,\n  \"pageIndex\": 3804,\n  \"pageSize\": 4349,\n  \"resultCount\": 6457,\n  \"totalSize\": 6350\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "833143e9-e981-48ac-b2e6-123a2589f5ae",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@audit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "93bc3f7c-364b-4d8d-b017-e6f472e28fe5",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@audit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc2435a2-9773-4cfa-b69f-f175a1c64cd1",
+          "name": "View the audit trail of a document given its path",
+          "request": {
+            "name": "View the audit trail of a document given its path",
+            "description": {},
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@audit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ca91580-3922-4f5a-b583-bf658190e433",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@audit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"category\": \"string\",\n      \"comment\": \"string\",\n      \"docLifeCycle\": \"string\",\n      \"docPath\": \"string\",\n      \"docType\": \"string\",\n      \"docUUID\": \"string\",\n      \"entity-type\": \"string\",\n      \"eventDate\": \"1999-05-15T17:19:03.341Z\",\n      \"eventId\": \"string\",\n      \"logDate\": \"1994-08-17T15:45:45.129Z\",\n      \"principalName\": \"string\",\n      \"repositoryId\": \"string\"\n    },\n    {\n      \"category\": \"string\",\n      \"comment\": \"string\",\n      \"docLifeCycle\": \"string\",\n      \"docPath\": \"string\",\n      \"docType\": \"string\",\n      \"docUUID\": \"string\",\n      \"entity-type\": \"string\",\n      \"eventDate\": \"1984-04-07T07:04:13.137Z\",\n      \"eventId\": \"string\",\n      \"logDate\": \"1954-11-10T21:19:21.439Z\",\n      \"principalName\": \"string\",\n      \"repositoryId\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 5913,\n  \"currentPageOffset\": 5201,\n  \"currentPageSize\": 7483,\n  \"erroMessage\": \"string\",\n  \"hasError\": false,\n  \"isLastPageAvailable\": false,\n  \"isNext\": true,\n  \"isPaginable\": false,\n  \"isPreviousPageAvailable\": false,\n  \"isSortable\": true,\n  \"maxPageSize\": 7227,\n  \"numberOfPages\": 1452,\n  \"pageCount\": 234,\n  \"pageIndex\": 4017,\n  \"pageSize\": 5659,\n  \"resultCount\": 9069,\n  \"totalSize\": 1154\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3668e15-33ea-43ed-8c46-509a358350fb",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@audit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5452e841-4431-411e-84d1-9ee2166a2a6f",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@audit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Nuxeo Platform Host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo.nuxeo.com",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "Nuxeo Platform Port",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "443",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:{{port}}/nuxeo/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "66925273-312f-4c05-8ce5-7647a40ad385",
+    "name": "Nuxeo Platform ACL Audit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Nuxeo Platform https://www.nuxeo.com/\nOpenAPI 3.0 Specification for the Nuxeo Platform.\n\nContact Support:\n Email: support@nuxeo.com",
+      "type": "text/plain"
+    }
+  }
+}

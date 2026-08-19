@@ -1,0 +1,1241 @@
+{
+  "item": [
+    {
+      "id": "ee781c5c-3b23-41b9-a013-176de7a89c12",
+      "name": "Annotation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "53fc57c3-11b2-40d0-883f-42f0d5b70ae5",
+          "name": "Get all annotations on a given document blob",
+          "request": {
+            "name": "Get all annotations on a given document blob",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@annotation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec34b246-5af9-4e14-8717-9e19679334ca",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"creationDate\": \"1971-09-07T18:44:50.354Z\",\n      \"date\": \"2014-08-16T03:01:01.018Z\",\n      \"documentId\": \"string\",\n      \"entity-type\": \"string\",\n      \"flags\": \"string\",\n      \"id\": \"string\",\n      \"lastModifier\": \"string\",\n      \"name\": \"string\",\n      \"opacity\": 4566.734188340356,\n      \"page\": 20,\n      \"position\": \"string\",\n      \"security\": \"string\",\n      \"subject\": \"string\",\n      \"xpath\": \"string\",\n      \"color\": \"string\"\n    },\n    {\n      \"creationDate\": \"1951-12-03T05:11:37.598Z\",\n      \"date\": \"1950-08-02T06:35:57.477Z\",\n      \"documentId\": \"string\",\n      \"entity-type\": \"string\",\n      \"flags\": \"string\",\n      \"id\": \"string\",\n      \"lastModifier\": \"string\",\n      \"name\": \"string\",\n      \"opacity\": 2656.309130516513,\n      \"page\": 3779,\n      \"position\": \"string\",\n      \"security\": \"string\",\n      \"subject\": \"string\",\n      \"xpath\": \"string\",\n      \"color\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "86cd0642-6508-4cb1-994d-d88cec927c22",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7af6a6e6-207c-41f2-9adb-914a29049b66",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8d761ee-ac27-4e2f-9857-e71ecb962706",
+          "name": "Create an annotation on a given document",
+          "request": {
+            "name": "Create an annotation on a given document",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@annotation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "97044137-ee65-42a9-ba6d-36472c28312d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "abb0dfa5-290a-4108-ae17-c0196f241879",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "31874aaa-c521-4469-9cdf-40fa5f884633",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "954f72e4-cda5-4d37-aeb1-af1a8e758115",
+          "name": "Update an annotation on a given document",
+          "request": {
+            "name": "Update an annotation on a given document",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@annotation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4f5d7e83-a0a7-47c6-add9-f0185dfc1c18",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "669f3a51-b7e7-4f76-9940-c599b68319e4",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b7bf7db-2990-41c6-ad83-a3391af5716b",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7a4501f0-7938-491f-9c6e-aad8ebd9751b",
+          "name": "Delete an annotation on a document given its id",
+          "request": {
+            "name": "Delete an annotation on a document given its id",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@annotation",
+                ":annotationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "annotationId",
+                  "description": "(Required) Id of the annotation"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0174c10d-b7e4-40e5-95ac-c6e0836adb36",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation",
+                    ":annotationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "annotationId",
+                      "description": "(Required) Id of the annotation"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f2e0e8ca-da88-41a0-b018-096a7caee261",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation",
+                    ":annotationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "annotationId",
+                      "description": "(Required) Id of the annotation"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9a3794c1-94c5-410d-82a8-c7fdee9dae45",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation",
+                    ":annotationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "annotationId",
+                      "description": "(Required) Id of the annotation"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81c0d576-c1bc-4159-a3e1-a4ec829046ad",
+          "name": "Retrieve an annotation on a document given its id",
+          "request": {
+            "name": "Retrieve an annotation on a document given its id",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@annotation",
+                ":annotationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "annotationId",
+                  "description": "(Required) Id of the annotation"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3559f3de-1c2f-4042-b636-1071b470fd94",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation",
+                    ":annotationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "annotationId",
+                      "description": "(Required) Id of the annotation"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"creationDate\": \"<dateTime>\",\n  \"date\": \"<dateTime>\",\n  \"documentId\": \"<string>\",\n  \"entity-type\": \"<string>\",\n  \"flags\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"name\": \"<string>\",\n  \"opacity\": \"<double>\",\n  \"page\": \"<integer>\",\n  \"position\": \"<string>\",\n  \"security\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"xpath\": \"<string>\",\n  \"color\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e259c8e-76fb-4714-a940-943ef55ab101",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation",
+                    ":annotationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "annotationId",
+                      "description": "(Required) Id of the annotation"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "62ee69fa-ee42-4028-b5ea-7c33119ae02f",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@annotation",
+                    ":annotationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "annotationId",
+                      "description": "(Required) Id of the annotation"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Nuxeo Platform Host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo.nuxeo.com",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "Nuxeo Platform Port",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "443",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:{{port}}/nuxeo/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5863f0de-22e3-4c32-b09a-d72e54e4b64f",
+    "name": "Nuxeo Platform ACL Annotation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Nuxeo Platform https://www.nuxeo.com/\nOpenAPI 3.0 Specification for the Nuxeo Platform.\n\nContact Support:\n Email: support@nuxeo.com",
+      "type": "text/plain"
+    }
+  }
+}

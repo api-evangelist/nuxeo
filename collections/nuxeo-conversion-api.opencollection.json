@@ -1,0 +1,178 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Conversion API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Conversion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Convert the Blob at the given xpath of the document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@blob/:blobXpath/@convert",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "blobXpath",
+                "value": "",
+                "type": "path",
+                "description": "XPath of the blob"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the converter to execute"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The requested mime type for the converted Blob, such as 'application/pdf'"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "The requested extension of the converted Blob, such as 'pdf'"
+              }
+            ]
+          },
+          "docs": "One of the 'name', 'type' or 'format' parameters must be passed."
+        },
+        {
+          "info": {
+            "name": "Convert the main Blob of the document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@convert",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the converter to execute"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The requested mime type for the converted Blob, such as 'application/pdf'"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "The requested extension of the converted Blob, such as 'pdf'"
+              }
+            ]
+          },
+          "docs": "One of the 'name', 'type' or 'format' parameters must be passed."
+        },
+        {
+          "info": {
+            "name": "Convert the Blob at the given xpath of the document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@blob/:blobXpath/@convert",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "blobXpath",
+                "value": "",
+                "type": "path",
+                "description": "XPath of the blob"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the converter to execute"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The requested mime type for the converted Blob, such as 'application/pdf'"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "The requested extension of the converted Blob, such as 'pdf'"
+              }
+            ]
+          },
+          "docs": "One of the 'name', 'type' or 'format' parameters must be passed."
+        },
+        {
+          "info": {
+            "name": "Convert the main Blob of the document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@convert",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the converter to execute"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The requested mime type for the converted Blob, such as 'application/pdf'"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query",
+                "description": "The requested extension of the converted Blob, such as 'pdf'"
+              }
+            ]
+          },
+          "docs": "One of the 'name', 'type' or 'format' parameters must be passed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

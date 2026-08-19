@@ -1,0 +1,2162 @@
+{
+  "item": [
+    {
+      "id": "b2e6eb87-09ec-48d7-9246-87a67cd53681",
+      "name": "Business Object",
+      "description": {
+        "content": "Business Object Operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cbb0e9c3-ef5b-40f7-96d9-f323a6381a4a",
+          "name": "Get the business object adapter on a document given its id",
+          "request": {
+            "name": "Get the business object adapter on a document given its id",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@bo",
+                ":adapterName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "adapterName",
+                  "description": "(Required) Name of the adapter"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56e0ea4e-69fe-4d9c-8d5c-72ab64b8cdf3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"value\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2438016-8e98-448a-8254-eea42c6220e4",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "883dc0fc-ffa0-4682-a7bb-0cf83417ca47",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43a494be-5b3d-45e9-b3a2-93ff57229cf3",
+          "name": "Updates the business object adapter on a document given its id",
+          "request": {
+            "name": "Updates the business object adapter on a document given its id",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@bo",
+                ":adapterName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "adapterName",
+                  "description": "(Required) Name of the adapter"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5e2d4794-f5bb-453f-95c8-f3e72545ed17",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "241325c1-2038-4ee0-8ce9-2f07b0810037",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "70487a9e-0646-478a-869d-219643735c28",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f37af24-2408-419e-b083-d067cfdd709c",
+          "name": "Creates a document based on its business object",
+          "request": {
+            "name": "Creates a document based on its business object",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@bo",
+                ":adapterName",
+                ":docName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "adapterName",
+                  "description": "(Required) Name of the adapter"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docName",
+                  "description": "(Required) Name of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffdda214-0737-46d8-877a-d13bd5e0e7cd",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName",
+                    ":docName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docName",
+                      "description": "(Required) Name of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6773f5d3-0d09-4c0e-85fa-e5445e4ce1a1",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName",
+                    ":docName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docName",
+                      "description": "(Required) Name of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1656ea43-113b-4d66-80c6-4f94f5627774",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@bo",
+                    ":adapterName",
+                    ":docName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docName",
+                      "description": "(Required) Name of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7da43db-c018-474b-beb0-688449fdaf74",
+          "name": "Get the list of business object of the children of a document by its id",
+          "request": {
+            "name": "Get the list of business object of the children of a document by its id",
+            "description": {
+              "content": "<ul><li>If a document can't be adapted, the resulting item will be null</li><li> This type of call works for every API endpoint that responds DocumentList (@search, @pp ...)</li></ul>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@children",
+                "@bo",
+                ":adapterName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "adapterName",
+                  "description": "(Required) Name of the adapter"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "faeabc4b-9957-4625-b098-45d3bf65c26a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@children",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"<string>\",\n      \"value\": \"<object>\"\n    },\n    {\n      \"entity-type\": \"<string>\",\n      \"value\": \"<object>\"\n    }\n  ],\n  \"currentPageIndex\": 2433,\n  \"currentPageOffset\": 9429,\n  \"currentPageSize\": 1526,\n  \"erroMessage\": \"string\",\n  \"hasError\": true,\n  \"isLastPageAvailable\": true,\n  \"isNext\": false,\n  \"isPaginable\": false,\n  \"isPreviousPageAvailable\": true,\n  \"isSortable\": true,\n  \"maxPageSize\": 4350,\n  \"numberOfPages\": 8310,\n  \"pageCount\": 1238,\n  \"pageIndex\": 3125,\n  \"pageSize\": 1697,\n  \"resultCount\": 7542,\n  \"totalSize\": 1936\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "22f20242-6d4d-4827-ade1-7bf70fba82a3",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@children",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "560deb7b-b6e8-441b-9b69-66e7bcff67ee",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@children",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d23b6f6c-99a4-4aa3-81fe-b9c71a9de0f4",
+          "name": "Get the business object adapter on a document given its path",
+          "request": {
+            "name": "Get the business object adapter on a document given its path",
+            "description": {},
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@bo",
+                ":adapterName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "adapterName",
+                  "description": "(Required) Name of the adapter"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff3d6c3c-dc93-48be-9345-8c74d9183ca7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ef691b51-1a53-485d-99ea-3f85f99f5f37",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "45472549-5caa-42d9-bb1f-4e6e13c63515",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6548740-3ef5-4e10-a1f6-56607df8efc5",
+          "name": "Updates the business object adapter on a document given its path",
+          "request": {
+            "name": "Updates the business object adapter on a document given its path",
+            "description": {},
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@bo",
+                ":adapterName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "adapterName",
+                  "description": "(Required) Name of the adapter"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "480d7f16-7931-4b53-a299-b711045896d8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b2bb24b-2385-41c1-8614-518948a816d7",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a66e2827-db4a-4163-ad7d-513698537c80",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e6edf6a-3baf-4c6d-b449-268f85b5e691",
+          "name": "Creates a document based on its business object",
+          "request": {
+            "name": "Creates a document based on its business object",
+            "description": {},
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@bo",
+                ":adapterName",
+                ":docName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "adapterName",
+                  "description": "(Required) Name of the adapter"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docName",
+                  "description": "(Required) Name of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74fc2f6c-127d-471f-b960-ef98655f27db",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName",
+                    ":docName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docName",
+                      "description": "(Required) Name of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"value\": \"<object>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d45bc50d-7488-4e9e-af67-dc6ee7e0574d",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName",
+                    ":docName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docName",
+                      "description": "(Required) Name of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39c8848e-7383-4c73-a22b-8bee0c91bfdf",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@bo",
+                    ":adapterName",
+                    ":docName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docName",
+                      "description": "(Required) Name of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37086911-a3db-4d7c-a819-b030bdb4843b",
+          "name": "Get the list of business object of the children of a document by its path",
+          "request": {
+            "name": "Get the list of business object of the children of a document by its path",
+            "description": {
+              "content": "<ul><li>If a document can't be adapted, the resulting item will be null</li><li> This type of call works for every API endpoint that responds DocumentList (@search, @pp ...)</li></ul>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@children",
+                "@bo",
+                ":adapterName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "adapterName",
+                  "description": "(Required) Name of the adapter"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "310a60e8-de4d-4e3b-af6b-5077e62491ec",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@children",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"<string>\",\n      \"value\": \"<object>\"\n    },\n    {\n      \"entity-type\": \"<string>\",\n      \"value\": \"<object>\"\n    }\n  ],\n  \"currentPageIndex\": 3653,\n  \"currentPageOffset\": 7960,\n  \"currentPageSize\": 6077,\n  \"erroMessage\": \"string\",\n  \"hasError\": true,\n  \"isLastPageAvailable\": true,\n  \"isNext\": false,\n  \"isPaginable\": true,\n  \"isPreviousPageAvailable\": false,\n  \"isSortable\": true,\n  \"maxPageSize\": 1795,\n  \"numberOfPages\": 2806,\n  \"pageCount\": 7801,\n  \"pageIndex\": 7975,\n  \"pageSize\": 8446,\n  \"resultCount\": 7179,\n  \"totalSize\": 9698\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8851633-2c02-413c-a8b7-4aead63b8ea5",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@children",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3b7d9a9f-e050-4bd6-9d5f-828cb4866e94",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@children",
+                    "@bo",
+                    ":adapterName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "adapterName",
+                      "description": "(Required) Name of the adapter"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Nuxeo Platform Host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo.nuxeo.com",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "Nuxeo Platform Port",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "443",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:{{port}}/nuxeo/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "04d43d45-69f5-4070-b3e1-4cbd32582324",
+    "name": "Nuxeo Platform ACL Business Object API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Nuxeo Platform https://www.nuxeo.com/\nOpenAPI 3.0 Specification for the Nuxeo Platform.\n\nContact Support:\n Email: support@nuxeo.com",
+      "type": "text/plain"
+    }
+  }
+}

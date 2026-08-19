@@ -1,0 +1,858 @@
+{
+  "item": [
+    {
+      "id": "b22a6b34-8bc9-4119-a1d6-f00b208753ea",
+      "name": "Children",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "48aaeb97-db3b-44b2-b0d5-2f464007eede",
+          "name": "Get the children of a document by its id",
+          "request": {
+            "name": "Get the children of a document by its id",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@children"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "currentPageIndex",
+                  "value": "<integer>",
+                  "description": "Index of the current page"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Size of the page to retrieve. Ignored if offset set"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>",
+                  "description": "Maximum results to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "Property to sort by, for example 'dc:title'"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "<string>",
+                  "description": "Sort order, accepts 'asc' or 'desc', default is 'desc'"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3cb7381-c28a-4e7e-a55a-e5cc524201d4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@children"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "currentPageIndex",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"2022-04-17\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    },\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1996-10-23\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 1240,\n  \"currentPageOffset\": 2599,\n  \"currentPageSize\": 9002,\n  \"erroMessage\": \"string\",\n  \"hasError\": false,\n  \"isLastPageAvailable\": false,\n  \"isNext\": true,\n  \"isPaginable\": false,\n  \"isPreviousPageAvailable\": true,\n  \"isSortable\": true,\n  \"maxPageSize\": 1247,\n  \"numberOfPages\": 6370,\n  \"pageCount\": 476,\n  \"pageIndex\": 9356,\n  \"pageSize\": 5687,\n  \"resultCount\": 4151,\n  \"totalSize\": 6283\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da06070c-4b92-41f2-a3cb-92a04f541a9e",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@children"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "currentPageIndex",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "71cd2841-d1dd-4327-8796-3eb933be3a5c",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@children"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "currentPageIndex",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5b025cf-9e08-4a03-b3c8-1e367d4f775a",
+          "name": "Get the children of a document by its path",
+          "request": {
+            "name": "Get the children of a document by its path",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@children"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "currentPageIndex",
+                  "value": "<string>",
+                  "description": "Index of the current page"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "Size of the page to retrieve. Ignored if offset set"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>",
+                  "description": "Maximum results to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "Property to sort by, for example 'dc:title'"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "<string>",
+                  "description": "Sort order, accepts 'asc' or 'desc', default is 'desc'"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "756ce135-9cbb-43f5-b6a6-a68b7e513a10",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@children"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "currentPageIndex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"2012-06-05\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    },\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1974-12-14\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 3882,\n  \"currentPageOffset\": 9681,\n  \"currentPageSize\": 9503,\n  \"erroMessage\": \"string\",\n  \"hasError\": false,\n  \"isLastPageAvailable\": true,\n  \"isNext\": false,\n  \"isPaginable\": false,\n  \"isPreviousPageAvailable\": false,\n  \"isSortable\": false,\n  \"maxPageSize\": 5545,\n  \"numberOfPages\": 3007,\n  \"pageCount\": 277,\n  \"pageIndex\": 1762,\n  \"pageSize\": 4772,\n  \"resultCount\": 7629,\n  \"totalSize\": 6397\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fbd2b630-85b0-4604-a49a-912b0d370690",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@children"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "currentPageIndex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "29ed3023-a225-4e3c-9a73-8853eb027e07",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@children"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "currentPageIndex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Nuxeo Platform Host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo.nuxeo.com",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "Nuxeo Platform Port",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "443",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:{{port}}/nuxeo/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "af6d0efa-a3f7-4100-8051-c7119cec6f6f",
+    "name": "Nuxeo Platform ACL Children API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Nuxeo Platform https://www.nuxeo.com/\nOpenAPI 3.0 Specification for the Nuxeo Platform.\n\nContact Support:\n Email: support@nuxeo.com",
+      "type": "text/plain"
+    }
+  }
+}

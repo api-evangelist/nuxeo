@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Empty Document API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Empty Document",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Initialize an empty document with default properties given a document type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/@emptyWithDefault",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the empty document to be initialized"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the empty document to be initialized"
+              }
+            ]
+          },
+          "docs": "To retrieve all initialized properties, the 'properties: *' header must be used"
+        },
+        {
+          "info": {
+            "name": "Initialize an empty document with default properties given a document type and a parent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@emptyWithDefault",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the empty document to be initialized"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the empty document to be initialized"
+              }
+            ]
+          },
+          "docs": "To retrieve all initialized properties, the 'properties: *' header must be used"
+        },
+        {
+          "info": {
+            "name": "Initialize an empty document with default properties given a document type and a parent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@emptyWithDefault",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the empty document to be initialized"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the empty document to be initialized"
+              }
+            ]
+          },
+          "docs": "To retrieve all initialized properties, the 'properties: *' header must be used"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

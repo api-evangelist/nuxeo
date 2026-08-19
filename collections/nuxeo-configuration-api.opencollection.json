@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Configuration API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List registered document type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/config/types"
+          },
+          "docs": "List registered document type"
+        },
+        {
+          "info": {
+            "name": "Document type description",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/config/types/:docType",
+            "params": [
+              {
+                "name": "docType",
+                "value": "",
+                "type": "path",
+                "description": "The name of the document type"
+              }
+            ]
+          },
+          "docs": "Document type description"
+        },
+        {
+          "info": {
+            "name": "List registered facets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/config/facets"
+          },
+          "docs": "List registered facets"
+        },
+        {
+          "info": {
+            "name": "Facet description",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/config/facets/:facet",
+            "params": [
+              {
+                "name": "facet",
+                "value": "",
+                "type": "path",
+                "description": "The name of the facet"
+              }
+            ]
+          },
+          "docs": "Facet description"
+        },
+        {
+          "info": {
+            "name": "List registered schemas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/config/schemas"
+          },
+          "docs": "List registered schemas"
+        },
+        {
+          "info": {
+            "name": "Schema description",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/config/schemas/:schema",
+            "params": [
+              {
+                "name": "schema",
+                "value": "",
+                "type": "path",
+                "description": "The name of the schema"
+              }
+            ]
+          },
+          "docs": "Schema description"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

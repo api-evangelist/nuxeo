@@ -1,0 +1,1218 @@
+{
+  "item": [
+    {
+      "id": "f6220824-556c-440a-bb53-0f8cd88b0026",
+      "name": "Conversion",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a04598b-a11f-4e54-870e-2cc1b88e5751",
+          "name": "Convert the Blob at the given xpath of the document",
+          "request": {
+            "name": "Convert the Blob at the given xpath of the document",
+            "description": {
+              "content": "One of the 'name', 'type' or 'format' parameters must be passed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@blob",
+                ":blobXpath",
+                "@convert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "The name of the converter to execute"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "The requested mime type for the converted Blob, such as 'application/pdf'"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The requested extension of the converted Blob, such as 'pdf'"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "blobXpath",
+                  "description": "(Required) XPath of the blob"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8092140-3955-475e-880f-d6b3ce431f02",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@blob",
+                    ":blobXpath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blobXpath",
+                      "description": "(Required) XPath of the blob"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"2002-06-18\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    },\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"2023-06-16\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 8072,\n  \"currentPageOffset\": 4946,\n  \"currentPageSize\": 4226,\n  \"erroMessage\": \"string\",\n  \"hasError\": false,\n  \"isLastPageAvailable\": false,\n  \"isNext\": true,\n  \"isPaginable\": true,\n  \"isPreviousPageAvailable\": false,\n  \"isSortable\": true,\n  \"maxPageSize\": 1763,\n  \"numberOfPages\": 4164,\n  \"pageCount\": 4667,\n  \"pageIndex\": 3853,\n  \"pageSize\": 3277,\n  \"resultCount\": 6404,\n  \"totalSize\": 2262\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59dad724-f30a-403d-8032-479d4d2be7ae",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@blob",
+                    ":blobXpath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blobXpath",
+                      "description": "(Required) XPath of the blob"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7f28cdec-de87-47f5-9533-b96a489e5d63",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@blob",
+                    ":blobXpath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blobXpath",
+                      "description": "(Required) XPath of the blob"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40c55067-50f4-4b5b-ae4a-58fd87a6c163",
+          "name": "Convert the main Blob of the document",
+          "request": {
+            "name": "Convert the main Blob of the document",
+            "description": {
+              "content": "One of the 'name', 'type' or 'format' parameters must be passed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@convert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "The name of the converter to execute"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "The requested mime type for the converted Blob, such as 'application/pdf'"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The requested extension of the converted Blob, such as 'pdf'"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b3a7c993-3169-4202-9f51-2b4caee43aa6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1972-03-31\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    },\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1973-07-15\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 5314,\n  \"currentPageOffset\": 6380,\n  \"currentPageSize\": 1614,\n  \"erroMessage\": \"string\",\n  \"hasError\": true,\n  \"isLastPageAvailable\": false,\n  \"isNext\": false,\n  \"isPaginable\": true,\n  \"isPreviousPageAvailable\": false,\n  \"isSortable\": false,\n  \"maxPageSize\": 6845,\n  \"numberOfPages\": 1843,\n  \"pageCount\": 1719,\n  \"pageIndex\": 8852,\n  \"pageSize\": 9443,\n  \"resultCount\": 1238,\n  \"totalSize\": 6943\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0d48973-409d-449c-920e-f706b70362d3",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1e8f9e63-0ec6-4fa8-833a-5f1e5884ac79",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "536e8356-dceb-4a03-a72b-551ff011fee9",
+          "name": "Convert the Blob at the given xpath of the document",
+          "request": {
+            "name": "Convert the Blob at the given xpath of the document",
+            "description": {
+              "content": "One of the 'name', 'type' or 'format' parameters must be passed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@blob",
+                ":blobXpath",
+                "@convert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "The name of the converter to execute"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "The requested mime type for the converted Blob, such as 'application/pdf'"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The requested extension of the converted Blob, such as 'pdf'"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "blobXpath",
+                  "description": "(Required) XPath of the blob"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a5f0633-641c-4590-b455-4c90dc9b20a7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@blob",
+                    ":blobXpath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blobXpath",
+                      "description": "(Required) XPath of the blob"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1972-03-31\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    },\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1973-07-15\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 5314,\n  \"currentPageOffset\": 6380,\n  \"currentPageSize\": 1614,\n  \"erroMessage\": \"string\",\n  \"hasError\": true,\n  \"isLastPageAvailable\": false,\n  \"isNext\": false,\n  \"isPaginable\": true,\n  \"isPreviousPageAvailable\": false,\n  \"isSortable\": false,\n  \"maxPageSize\": 6845,\n  \"numberOfPages\": 1843,\n  \"pageCount\": 1719,\n  \"pageIndex\": 8852,\n  \"pageSize\": 9443,\n  \"resultCount\": 1238,\n  \"totalSize\": 6943\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71d5ba43-f442-472d-8650-f3923013ca60",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@blob",
+                    ":blobXpath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blobXpath",
+                      "description": "(Required) XPath of the blob"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8a45fda4-0d70-4e0a-8193-78be963aac20",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@blob",
+                    ":blobXpath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blobXpath",
+                      "description": "(Required) XPath of the blob"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d7b3132a-76f3-41be-b5ff-c1a3dbf7fc0c",
+          "name": "Convert the main Blob of the document",
+          "request": {
+            "name": "Convert the main Blob of the document",
+            "description": {
+              "content": "One of the 'name', 'type' or 'format' parameters must be passed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@convert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "The name of the converter to execute"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "The requested mime type for the converted Blob, such as 'application/pdf'"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The requested extension of the converted Blob, such as 'pdf'"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "563f319c-a6f9-4010-8a70-b214c2fd6547",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1972-03-31\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    },\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1973-07-15\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 5314,\n  \"currentPageOffset\": 6380,\n  \"currentPageSize\": 1614,\n  \"erroMessage\": \"string\",\n  \"hasError\": true,\n  \"isLastPageAvailable\": false,\n  \"isNext\": false,\n  \"isPaginable\": true,\n  \"isPreviousPageAvailable\": false,\n  \"isSortable\": false,\n  \"maxPageSize\": 6845,\n  \"numberOfPages\": 1843,\n  \"pageCount\": 1719,\n  \"pageIndex\": 8852,\n  \"pageSize\": 9443,\n  \"resultCount\": 1238,\n  \"totalSize\": 6943\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6affbd96-7e72-40c2-ba40-c7ed071d4db0",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1aa2f904-4de8-45af-8b67-0da043ebed1f",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@convert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Nuxeo Platform Host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo.nuxeo.com",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "Nuxeo Platform Port",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "443",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:{{port}}/nuxeo/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "81242afc-5ea3-43e9-aaa5-11b49714f8d1",
+    "name": "Nuxeo Platform ACL Conversion API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Nuxeo Platform https://www.nuxeo.com/\nOpenAPI 3.0 Specification for the Nuxeo Platform.\n\nContact Support:\n Email: support@nuxeo.com",
+      "type": "text/plain"
+    }
+  }
+}

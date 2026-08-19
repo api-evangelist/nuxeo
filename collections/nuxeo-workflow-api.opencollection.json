@@ -1,0 +1,436 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Workflow API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tasks of the given document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@task",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "id of the user who is actor of the task"
+              },
+              {
+                "name": "workflowInstanceId",
+                "value": "",
+                "type": "query",
+                "description": "id of the workflow instance the task belongs to"
+              },
+              {
+                "name": "workflowModelName",
+                "value": "",
+                "type": "query",
+                "description": "name of the workflow model of the task (i.e. 'SerialDocumentReview', 'ParallelDocumentReview'). Deprecated since 11.1 as this parameter forces post-filtering and prevents paginated results."
+              }
+            ]
+          },
+          "docs": "Only task instance which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "List tasks of the given document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@task",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "id of the user who is actor of the task"
+              },
+              {
+                "name": "workflowInstanceId",
+                "value": "",
+                "type": "query",
+                "description": "id of the workflow instance the task belongs to"
+              },
+              {
+                "name": "workflowModelName",
+                "value": "",
+                "type": "query",
+                "description": "name of the workflow model of the task (i.e. 'SerialDocumentReview', 'ParallelDocumentReview'). Deprecated since 11.1 as this parameter forces post-filtering and prevents paginated results."
+              }
+            ]
+          },
+          "docs": "Only task instance which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Query tasks by user and workflow ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/task",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "id of the user who is actor of the task"
+              },
+              {
+                "name": "workflowInstanceId",
+                "value": "",
+                "type": "query",
+                "description": "id of the workflow instance the task belongs to"
+              },
+              {
+                "name": "workflowModelName",
+                "value": "",
+                "type": "query",
+                "description": "name of the workflow model of the task (i.e. 'SerialDocumentReview', 'ParallelDocumentReview'). Deprecated since 11.1 as this parameter forces post-filtering and prevents paginated results."
+              },
+              {
+                "name": "currentPageIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index of the current page"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Size of the page to retrieve. Ignored if offset set"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Maximum results to retrieve"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "Property to sort by, for example 'dc:title'"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, accepts 'asc' or 'desc', default is 'desc'"
+              }
+            ]
+          },
+          "docs": "Only task instance which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Get a task by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/task/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the task"
+              }
+            ]
+          },
+          "docs": "Only task instance which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Delegate a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/task/:taskId/delegate",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the task"
+              },
+              {
+                "name": "delegatedActors",
+                "value": "",
+                "type": "query",
+                "description": "comma separated ids of the delegated actors"
+              },
+              {
+                "name": "comment",
+                "value": "",
+                "type": "query",
+                "description": "comment"
+              }
+            ]
+          },
+          "docs": "See https://doc.nuxeo.com/x/34z1"
+        },
+        {
+          "info": {
+            "name": "Reassign a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/task/:taskId/reassign",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the task"
+              },
+              {
+                "name": "actors",
+                "value": "",
+                "type": "query",
+                "description": "comma separated ids of the new actors"
+              },
+              {
+                "name": "comment",
+                "value": "",
+                "type": "query",
+                "description": "comment"
+              }
+            ]
+          },
+          "docs": "See https://doc.nuxeo.com/x/1YcZAQ"
+        },
+        {
+          "info": {
+            "name": "Complete task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/task/:taskId/:action",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the task"
+              },
+              {
+                "name": "action",
+                "value": "",
+                "type": "path",
+                "description": "the action to be applied when completed the task. The action determines the transition to be followed and the next task within the workflow."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Complete a workflow related task"
+        },
+        {
+          "info": {
+            "name": "Get the workflow instances launched on the given document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@workflow",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ]
+          },
+          "docs": "Only workflow instances launched by current user will be returned"
+        },
+        {
+          "info": {
+            "name": "Start a workflow instance on the given document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@workflow",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start a workflow instance on the given document"
+        },
+        {
+          "info": {
+            "name": "Get the workflow instances launched on the given document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@workflow",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ]
+          },
+          "docs": "Only workflow instances launched by current user will be returned"
+        },
+        {
+          "info": {
+            "name": "Start a workflow instance on the given document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@workflow",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start a workflow instance on the given document"
+        },
+        {
+          "info": {
+            "name": "Get the workflow instances launched by the current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/workflow"
+          },
+          "docs": "Only workflow instances launched by current user will be returned"
+        },
+        {
+          "info": {
+            "name": "Start a workflow instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/workflow",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start a workflow instance"
+        },
+        {
+          "info": {
+            "name": "Find a workflow instance by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/workflow/:workflowInstanceId",
+            "params": [
+              {
+                "name": "workflowInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the workflow instance"
+              }
+            ]
+          },
+          "docs": "Only workflow instance which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Delete a workflow instance by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/workflow/:workflowInstanceId",
+            "params": [
+              {
+                "name": "workflowInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the workflow instance"
+              }
+            ]
+          },
+          "docs": "Only workflow instance which you have permission to see will be returned"
+        },
+        {
+          "info": {
+            "name": "Get the json serialization of a workflow instance graph",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/workflow/:workflowInstanceId/graph",
+            "params": [
+              {
+                "name": "workflowInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the workflow instance"
+              }
+            ]
+          },
+          "docs": "Get the json serialization of a workflow instance graph"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

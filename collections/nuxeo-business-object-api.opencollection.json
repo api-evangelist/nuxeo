@@ -1,0 +1,238 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Business Object API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Business Object",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the business object adapter on a document given its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@bo/:adapterName",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "adapterName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the adapter"
+              }
+            ]
+          },
+          "docs": "Get the business object adapter on a document given its id"
+        },
+        {
+          "info": {
+            "name": "Updates the business object adapter on a document given its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@bo/:adapterName",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "adapterName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the adapter"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the business object adapter on a document given its id"
+        },
+        {
+          "info": {
+            "name": "Creates a document based on its business object",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@bo/:adapterName/:docName",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "adapterName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the adapter"
+              },
+              {
+                "name": "docName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the document"
+              }
+            ]
+          },
+          "docs": "Creates a document based on its business object"
+        },
+        {
+          "info": {
+            "name": "Get the list of business object of the children of a document by its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@children/@bo/:adapterName",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "adapterName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the adapter"
+              }
+            ]
+          },
+          "docs": "<ul><li>If a document can't be adapted, the resulting item will be null</li><li> This type of call works for every API endpoint that responds DocumentList (@search, @pp ...)</li></ul>"
+        },
+        {
+          "info": {
+            "name": "Get the business object adapter on a document given its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@bo/:adapterName",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "adapterName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the adapter"
+              }
+            ]
+          },
+          "docs": "Get the business object adapter on a document given its path"
+        },
+        {
+          "info": {
+            "name": "Updates the business object adapter on a document given its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@bo/:adapterName",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "adapterName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the adapter"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the business object adapter on a document given its path"
+        },
+        {
+          "info": {
+            "name": "Creates a document based on its business object",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@bo/:adapterName/:docName",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "adapterName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the adapter"
+              },
+              {
+                "name": "docName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the document"
+              }
+            ]
+          },
+          "docs": "Creates a document based on its business object"
+        },
+        {
+          "info": {
+            "name": "Get the list of business object of the children of a document by its path",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@children/@bo/:adapterName",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "adapterName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the adapter"
+              }
+            ]
+          },
+          "docs": "<ul><li>If a document can't be adapted, the resulting item will be null</li><li> This type of call works for every API endpoint that responds DocumentList (@search, @pp ...)</li></ul>"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

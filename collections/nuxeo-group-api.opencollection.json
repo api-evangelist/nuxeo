@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Group API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Group",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/group",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a group"
+        },
+        {
+          "info": {
+            "name": "Search a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/group/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Query string. Ex: 'Admin' will return Administrator user"
+              }
+            ]
+          },
+          "docs": "Search a group"
+        },
+        {
+          "info": {
+            "name": "Get a group by its name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/group/:groupName",
+            "params": [
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the group, ex: 'members'"
+              }
+            ]
+          },
+          "docs": "Get a group by its name"
+        },
+        {
+          "info": {
+            "name": "Update a group by its name",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/group/:groupName",
+            "params": [
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the group, ex: 'members'"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a group by its name"
+        },
+        {
+          "info": {
+            "name": "Delete a group by its name",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/group/:groupName",
+            "params": [
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the group, ex: 'members'"
+              }
+            ]
+          },
+          "docs": "Delete a group by its name"
+        },
+        {
+          "info": {
+            "name": "Get the group members of a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/group/:groupName/@groups",
+            "params": [
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the group, ex: 'members'"
+              }
+            ]
+          },
+          "docs": "Get the group members of a group"
+        },
+        {
+          "info": {
+            "name": "Get the user members of a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/group/:groupName/@users",
+            "params": [
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the group, ex: 'members'"
+              }
+            ]
+          },
+          "docs": "Get the user members of a group"
+        },
+        {
+          "info": {
+            "name": "Add a user to a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/group/:groupName/user/:userName",
+            "params": [
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the group, ex: 'members'"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "path",
+                "description": "Username of the user, ex: 'Administrator'"
+              }
+            ]
+          },
+          "docs": "Add a user to a group"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

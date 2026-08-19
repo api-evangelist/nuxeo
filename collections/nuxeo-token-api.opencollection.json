@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Token API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Token",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets all readable authentication tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/token",
+            "params": [
+              {
+                "name": "application",
+                "value": "",
+                "type": "query",
+                "description": "Application symbolic name"
+              }
+            ]
+          },
+          "docs": "Gets all readable authentication tokens"
+        },
+        {
+          "info": {
+            "name": "Acquire new authentication token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/token",
+            "params": [
+              {
+                "name": "application",
+                "value": "",
+                "type": "query",
+                "description": "Application symbolic name"
+              },
+              {
+                "name": "deviceId",
+                "value": "",
+                "type": "query",
+                "description": "Device identifier"
+              },
+              {
+                "name": "deviceDescription",
+                "value": "",
+                "type": "query",
+                "description": "Device description"
+              },
+              {
+                "name": "permission",
+                "value": "",
+                "type": "query",
+                "description": "Permission granted with the authentication token"
+              }
+            ]
+          },
+          "docs": "Acquire new authentication token"
+        },
+        {
+          "info": {
+            "name": "Delete an existing authentication token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/token/:token",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path",
+                "description": "Authentication Token"
+              }
+            ]
+          },
+          "docs": "Delete an existing authentication token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

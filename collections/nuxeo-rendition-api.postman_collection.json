@@ -1,0 +1,540 @@
+{
+  "item": [
+    {
+      "id": "db060a2d-5c17-4552-ac7d-2e25241fce40",
+      "name": "Rendition",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9b92cf99-3fcf-4117-8960-6d08b839f91d",
+          "name": "Returns the specified rendition on document by its id",
+          "request": {
+            "name": "Returns the specified rendition on document by its id",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId",
+                "@rendition",
+                ":renditionName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "renditionName",
+                  "description": "(Required) Name of the rendition, ex: 'pdf'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c728e1e-fd2f-432e-841a-e7cc108f1059",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@rendition",
+                    ":renditionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "renditionName",
+                      "description": "(Required) Name of the rendition, ex: 'pdf'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"2005-03-18\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    },\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1962-12-06\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 6538,\n  \"currentPageOffset\": 5990,\n  \"currentPageSize\": 3396,\n  \"erroMessage\": \"string\",\n  \"hasError\": true,\n  \"isLastPageAvailable\": false,\n  \"isNext\": false,\n  \"isPaginable\": true,\n  \"isPreviousPageAvailable\": true,\n  \"isSortable\": true,\n  \"maxPageSize\": 6714,\n  \"numberOfPages\": 298,\n  \"pageCount\": 9579,\n  \"pageIndex\": 8946,\n  \"pageSize\": 1239,\n  \"resultCount\": 9254,\n  \"totalSize\": 8509\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37c41821-c124-45e0-8d31-5f48a7991dac",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@rendition",
+                    ":renditionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "renditionName",
+                      "description": "(Required) Name of the rendition, ex: 'pdf'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cd9de09b-fe6d-4c42-a1a1-ad7b233049e2",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId",
+                    "@rendition",
+                    ":renditionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "renditionName",
+                      "description": "(Required) Name of the rendition, ex: 'pdf'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1942acd2-a507-474e-8c74-13a9c1d0e345",
+          "name": "Returns the specified rendition on document by its path",
+          "request": {
+            "name": "Returns the specified rendition on document by its path",
+            "description": {},
+            "url": {
+              "path": [
+                "path",
+                ":docPath",
+                "@rendition",
+                ":renditionName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "renditionName",
+                  "description": "(Required) Name of the rendition, ex: 'pdf'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6ccbef2-2960-4c16-90af-9d51ff14a6a9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@rendition",
+                    ":renditionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "renditionName",
+                      "description": "(Required) Name of the rendition, ex: 'pdf'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"entries\": [\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"1992-04-09\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    },\n    {\n      \"entity-type\": \"string\",\n      \"changeToken\": \"string\",\n      \"contextParameters\": {},\n      \"facets\": [\n        \"string\",\n        \"string\"\n      ],\n      \"lastModified\": \"2015-11-01\",\n      \"path\": \"string\",\n      \"properties\": {},\n      \"repository\": \"string\",\n      \"state\": \"string\",\n      \"title\": \"string\",\n      \"type\": \"string\",\n      \"uid\": \"string\",\n      \"versionLabel\": \"string\"\n    }\n  ],\n  \"currentPageIndex\": 7806,\n  \"currentPageOffset\": 9006,\n  \"currentPageSize\": 1813,\n  \"erroMessage\": \"string\",\n  \"hasError\": true,\n  \"isLastPageAvailable\": true,\n  \"isNext\": true,\n  \"isPaginable\": false,\n  \"isPreviousPageAvailable\": true,\n  \"isSortable\": true,\n  \"maxPageSize\": 8928,\n  \"numberOfPages\": 4914,\n  \"pageCount\": 7913,\n  \"pageIndex\": 594,\n  \"pageSize\": 4153,\n  \"resultCount\": 719,\n  \"totalSize\": 6311\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ceff490d-3858-4514-aa08-b3a1016fc9ad",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@rendition",
+                    ":renditionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "renditionName",
+                      "description": "(Required) Name of the rendition, ex: 'pdf'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f5d3e85b-6947-4d79-9295-395fcddf204d",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath",
+                    "@rendition",
+                    ":renditionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "renditionName",
+                      "description": "(Required) Name of the rendition, ex: 'pdf'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Nuxeo Platform Host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo.nuxeo.com",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "Nuxeo Platform Port",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "443",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:{{port}}/nuxeo/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c18553de-3945-4014-b2cf-6371f5be9b42",
+    "name": "Nuxeo Platform ACL Rendition API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Nuxeo Platform https://www.nuxeo.com/\nOpenAPI 3.0 Specification for the Nuxeo Platform.\n\nContact Support:\n Email: support@nuxeo.com",
+      "type": "text/plain"
+    }
+  }
+}

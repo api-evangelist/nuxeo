@@ -1,0 +1,4882 @@
+{
+  "item": [
+    {
+      "id": "51c5a3e8-1ac0-4fd1-b5f2-86778ed64fe0",
+      "name": "Document",
+      "description": {
+        "content": "Document Operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f7316709-df39-4b2a-b5e6-a74978115648",
+          "name": "Deletes a document by its id",
+          "request": {
+            "name": "Deletes a document by its id",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "id",
+                ":docId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b01d4ddf-c065-4861-9799-f2a1f7a48cbc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "caa4c7e4-5230-4bb7-97ed-cc2f0e894ab8",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cd37a9dd-5f33-40f0-8133-bdfef5eca608",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c717588b-ab77-43e0-aacb-746eabb5f195",
+          "name": "Find a document by its id",
+          "request": {
+            "name": "Find a document by its id",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "id",
+                ":docId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05e123b1-9a0c-46a8-bbd1-58d46eb244bc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"string\",\n  \"changeToken\": \"string\",\n  \"contextParameters\": {},\n  \"facets\": [\n    \"string\",\n    \"string\"\n  ],\n  \"lastModified\": \"1951-01-18\",\n  \"path\": \"string\",\n  \"properties\": {},\n  \"repository\": \"string\",\n  \"state\": \"string\",\n  \"title\": \"string\",\n  \"type\": \"string\",\n  \"uid\": \"string\",\n  \"versionLabel\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cec8d83d-b587-461f-aa33-1361411b541a",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e2291e2-721d-4e95-a6b5-dfe5e2102f0f",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6efe1e8c-59e1-492f-82cb-0197e6a170e8",
+          "name": "Creates a document by its parent id",
+          "request": {
+            "name": "Creates a document by its parent id",
+            "description": {},
+            "url": {
+              "path": [
+                "id",
+                ":docId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5356d5b6-aa79-48fc-a5d1-0e0d83717833",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "51feaa59-9df6-4d99-b2fe-22416db3563f",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "66a16af7-04fd-48d7-86e4-915a8d9bd526",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac3c9beb-4068-4233-9b70-53c7e1cb2b39",
+          "name": "Updates a document by its id",
+          "request": {
+            "name": "Updates a document by its id",
+            "description": {
+              "content": "Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "id",
+                ":docId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd4936f5-528e-45e2-9ea8-ff468b202b9f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e558d860-61b1-4249-97f3-bac375083b17",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cddcb2e3-3a23-4235-b8d6-b473bbe91ac7",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2ba0fa7-e374-474d-937f-87105b652155",
+          "name": "Deletes a document by its id",
+          "request": {
+            "name": "Deletes a document by its id",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "repo",
+                ":repoId",
+                "id",
+                ":docId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) The name of the repository"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "65a3bf83-7267-45ba-a8e7-a5a03e9f07ca",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0f744b2d-bfa9-40c6-9e02-60840dc88309",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49945880-5493-41f0-ad36-4a50171b72be",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f84435b-5011-4463-95fe-e34e6ccfd17e",
+          "name": "Find a document by its id",
+          "request": {
+            "name": "Find a document by its id",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "repo",
+                ":repoId",
+                "id",
+                ":docId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) The name of the repository"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5219e09-969a-4036-95a1-bad27cbdec6e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3428cfbc-7262-43c6-a7b1-21d4b3cc94f8",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a1d70f9d-a28f-40fd-94ea-966a960e4622",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d5532458-2bde-4107-812d-73ba7183b04c",
+          "name": "Creates a document by its parent id",
+          "request": {
+            "name": "Creates a document by its parent id",
+            "description": {},
+            "url": {
+              "path": [
+                "repo",
+                ":repoId",
+                "id",
+                ":docId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) The name of the repository"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f5cbd3f7-5f23-40dd-94b2-cc7984fb0147",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2f8ce61e-4c53-48df-a8cf-46c36f12388e",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b604ec5f-86ae-4239-8ef8-32c4e8b841fd",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d101b86-0f01-477e-8f0f-fccd1e0ea4a9",
+          "name": "Updates a document by its id",
+          "request": {
+            "name": "Updates a document by its id",
+            "description": {
+              "content": "Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "repo",
+                ":repoId",
+                "id",
+                ":docId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) The name of the repository"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docId",
+                  "description": "(Required) Id of the document"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "77b65bce-7a96-45bc-892d-cdb8113c715a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a404553-83db-4a11-ba02-491ee8a0f81a",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "65351fd3-dc3e-432e-be3b-4902caf66cb9",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "id",
+                    ":docId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docId",
+                      "description": "(Required) Id of the document"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01ee13fd-3b0f-47b0-ae0d-5e0bcce9bdb1",
+          "name": "Deletes a document by its path",
+          "request": {
+            "name": "Deletes a document by its path",
+            "description": {
+              "content": "Only documents which you have permission can be deleted",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "path",
+                ":docPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f6c2411-a229-4143-9b4d-aa7688753023",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c49e62de-d76f-49f6-9823-66be4e30ef2f",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "800a0221-aba4-4fe4-ac68-984e8d32a10f",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fec63ff6-64cb-4424-9f9a-6db062dee399",
+          "name": "Find a document by its path",
+          "request": {
+            "name": "Find a document by its path",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "path",
+                ":docPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39590611-81ae-4f2a-a7c2-e0b5f3281b36",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba624de3-5897-4d9f-90cc-c63573aed967",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b36cb59e-3f93-4b2f-b50b-f22fe8b6601b",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80378c5b-0427-46b1-8b43-628e8711a9da",
+          "name": "Creates a document by its parent path",
+          "request": {
+            "name": "Creates a document by its parent path",
+            "description": {},
+            "url": {
+              "path": [
+                "path",
+                ":docPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6b7370cd-ed3b-4643-95cf-cc8412df0bac",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ce6aa8f-4f6d-48fc-889f-8db1fc2191a9",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5abe819b-af77-4ce7-9f2b-b22e755f65e4",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b63a95ed-18b5-4876-8bcd-147ed9e00816",
+          "name": "Updates a document by its path",
+          "request": {
+            "name": "Updates a document by its path",
+            "description": {
+              "content": "Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "path",
+                ":docPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c766481d-3afa-4137-851e-a6112a1ecaa0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a684cea3-1815-4b03-9cb7-34a69eb78b75",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a3eb8aa6-3ec8-43b2-b8a4-0aa7918e2729",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11d6d09e-bb19-40d8-9e3f-a77d47ed2552",
+          "name": "Deletes a document by its path",
+          "request": {
+            "name": "Deletes a document by its path",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "repo",
+                ":repoId",
+                "path",
+                ":docPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) The name of the repository"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7fb0cef-53dd-45e8-b335-d6dcdf7e501d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "71390526-6cd2-432e-a041-7e6c9b2b83d1",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81ee194b-ac5a-4d75-a2c4-e6107a7067da",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "287161c4-bbb4-4ec7-90c5-87db99281819",
+          "name": "Find a document by its path",
+          "request": {
+            "name": "Find a document by its path",
+            "description": {
+              "content": "Only documents which you have permission to see will be returned",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "repo",
+                ":repoId",
+                "path",
+                ":docPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) The name of the repository"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6452df66-f034-40e1-a903-aad7f9e8eb80",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2de86fab-386e-452f-bc5c-9e4f3d1c09e8",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "94f680cf-c0f4-4303-8630-225e79a6c2a4",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9526d37-89af-4b3e-beca-c43077b6ff29",
+          "name": "Creates a document by its parent path",
+          "request": {
+            "name": "Creates a document by its parent path",
+            "description": {},
+            "url": {
+              "path": [
+                "repo",
+                ":repoId",
+                "path",
+                ":docPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) The name of the repository"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a27af4b5-e298-474a-9df4-3009c4d77477",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d7e87423-ce2d-43ac-8d24-b8c80e872d23",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2064aa82-ccc2-4f5c-8865-b049c7ec101c",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5be1edbf-5d82-4d43-9921-4c9c8b4dc80c",
+          "name": "Updates a document by its path",
+          "request": {
+            "name": "Updates a document by its path",
+            "description": {
+              "content": "Only documents which you have permission can be updated. Only the properties part of the document object is taken into account for update",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "repo",
+                ":repoId",
+                "path",
+                ":docPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "repoId",
+                  "description": "(Required) The name of the repository"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "docPath",
+                  "description": "(Required) Path of the document, ex: 'default-domain'"
+                },
+                {
+                  "description": "Nuxeo Platform Host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                },
+                {
+                  "description": "Nuxeo Platform Port",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Schemas to be included in response",
+                "key": "X-NXDocumentProperties",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Categories to be included in context parameters map",
+                "key": "X-NXContext-Category",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                "key": "X-Versioning-Option",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "680eeb82-a291-46d7-96e3-8e2cdf3c70da",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7fd87d8f-dab9-4ef7-830b-4784538d0ace",
+              "name": "Not Authorized to get document",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d0692a5-e45e-4120-bccb-925bc7855d48",
+              "name": "Document not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "repo",
+                    ":repoId",
+                    "path",
+                    ":docPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "repoId",
+                      "description": "(Required) The name of the repository"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "docPath",
+                      "description": "(Required) Path of the document, ex: 'default-domain'"
+                    },
+                    {
+                      "description": "Nuxeo Platform Host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    },
+                    {
+                      "description": "Nuxeo Platform Port",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Schemas to be included in response",
+                    "key": "X-NXDocumentProperties",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Categories to be included in context parameters map",
+                    "key": "X-NXContext-Category",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Checkin Document Version. Return the last document version. (not live document) | Values: major or minor or none",
+                    "key": "X-Versioning-Option",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity-type\": \"<string>\",\n  \"changeToken\": \"<string>\",\n  \"contextParameters\": \"<object>\",\n  \"facets\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastModified\": \"<date>\",\n  \"path\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"repository\": \"<string>\",\n  \"state\": \"<string>\",\n  \"title\": \"<string>\",\n  \"type\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"versionLabel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Nuxeo Platform Host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo.nuxeo.com",
+      "key": "host"
+    },
+    {
+      "description": {
+        "content": "Nuxeo Platform Port",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "443",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}:{{port}}/nuxeo/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cbc27285-e253-46b2-9bde-99ea556f6bcd",
+    "name": "Nuxeo Platform ACL Document API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Nuxeo Platform https://www.nuxeo.com/\nOpenAPI 3.0 Specification for the Nuxeo Platform.\n\nContact Support:\n Email: support@nuxeo.com",
+      "type": "text/plain"
+    }
+  }
+}

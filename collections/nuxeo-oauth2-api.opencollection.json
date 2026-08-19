@@ -1,0 +1,413 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL OAuth2 API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OAuth2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves a OAuth2 client.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/client"
+          },
+          "docs": "Retrieves a OAuth2 client."
+        },
+        {
+          "info": {
+            "name": "Adds an OAuth2 client.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/client",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds an OAuth2 client."
+        },
+        {
+          "info": {
+            "name": "Retrieves an OAuth2 client.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/client/:oauth2ClientId",
+            "params": [
+              {
+                "name": "oauth2ClientId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 client"
+              }
+            ]
+          },
+          "docs": "Retrieves an OAuth2 client."
+        },
+        {
+          "info": {
+            "name": "Update an OAuth2 client.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/client/:oauth2ClientId",
+            "params": [
+              {
+                "name": "oauth2ClientId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 client"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an OAuth2 client."
+        },
+        {
+          "info": {
+            "name": "Deletes an OAuth2 client token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/client/:oauth2ClientId",
+            "params": [
+              {
+                "name": "oauth2ClientId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 client"
+              }
+            ]
+          },
+          "docs": "Deletes an OAuth2 client token."
+        },
+        {
+          "info": {
+            "name": "Retrieves the list of available OAuth2 providers.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/provider"
+          },
+          "docs": "Retrieves the list of available OAuth2 providers."
+        },
+        {
+          "info": {
+            "name": "Adds an OAuth2 provider.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/provider",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds an OAuth2 provider."
+        },
+        {
+          "info": {
+            "name": "Retrieves OAuth2 provider data for the current user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/provider/:oauth2ProviderId",
+            "params": [
+              {
+                "name": "oauth2ProviderId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 provider"
+              }
+            ]
+          },
+          "docs": "Retrieves OAuth2 provider data for the current user."
+        },
+        {
+          "info": {
+            "name": "Updates an OAuth2 provider.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/provider/:oauth2ProviderId",
+            "params": [
+              {
+                "name": "oauth2ProviderId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 provider"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an OAuth2 provider."
+        },
+        {
+          "info": {
+            "name": "Retrieves a valid access token to the current user. A new token will be request if the current one is expired.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/provider/:oauth2ProviderId/token",
+            "params": [
+              {
+                "name": "oauth2ProviderId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 provider"
+              }
+            ]
+          },
+          "docs": "Retrieves a valid access token to the current user. A new token will be request if the current one is expired."
+        },
+        {
+          "info": {
+            "name": "Retrieves all OAuth2 tokens.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token"
+          },
+          "docs": "Retrieves all OAuth2 tokens."
+        },
+        {
+          "info": {
+            "name": "Retrieves all OAuth2 client tokens for the current user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/client"
+          },
+          "docs": "Retrieves all OAuth2 client tokens for the current user."
+        },
+        {
+          "info": {
+            "name": "Retrieves a OAuth2 client token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/client/:oauth2ClientId/user/:userName",
+            "params": [
+              {
+                "name": "oauth2ClientId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 client"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "path",
+                "description": "Username of the user, ex: 'Administrator'"
+              }
+            ]
+          },
+          "docs": "Retrieves a OAuth2 client token."
+        },
+        {
+          "info": {
+            "name": "Updates an OAuth2 client token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/client/:oauth2ClientId/user/:userName",
+            "params": [
+              {
+                "name": "oauth2ClientId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 client"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "path",
+                "description": "Username of the user, ex: 'Administrator'"
+              }
+            ]
+          },
+          "docs": "Updates an OAuth2 client token."
+        },
+        {
+          "info": {
+            "name": "Deletes a OAuth2 client token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/client/:oauth2ClientId/user/:userName",
+            "params": [
+              {
+                "name": "oauth2ClientId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 client"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "path",
+                "description": "Username of the user, ex: 'Administrator'"
+              }
+            ]
+          },
+          "docs": "Deletes a OAuth2 client token."
+        },
+        {
+          "info": {
+            "name": "Retrieves all OAuth2 provider tokens for the current user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/provider"
+          },
+          "docs": "Retrieves all OAuth2 provider tokens for the current user."
+        },
+        {
+          "info": {
+            "name": "Gets an OAuth2 provider token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/provider/:oauth2ProviderId/user/:userName",
+            "params": [
+              {
+                "name": "oauth2ProviderId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 provider"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "path",
+                "description": "Username of the user, ex: 'Administrator'"
+              }
+            ]
+          },
+          "docs": "Gets an OAuth2 provider token."
+        },
+        {
+          "info": {
+            "name": "Updates an OAuth2 provider token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/provider/:oauth2ProviderId/user/:userName",
+            "params": [
+              {
+                "name": "oauth2ProviderId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 provider"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "path",
+                "description": "Username of the user, ex: 'Administrator'"
+              }
+            ]
+          },
+          "docs": "Updates an OAuth2 provider token."
+        },
+        {
+          "info": {
+            "name": "Delete an OAuth2 provider token.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/provider/:oauth2ProviderId/user/:userName",
+            "params": [
+              {
+                "name": "oauth2ProviderId",
+                "value": "",
+                "type": "path",
+                "description": "Name of the OAuth2 provider"
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "path",
+                "description": "Username of the user, ex: 'Administrator'"
+              }
+            ]
+          },
+          "docs": "Delete an OAuth2 provider token."
+        },
+        {
+          "info": {
+            "name": "Search tokens that match service name or user parameter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "The service name or user name to match."
+              }
+            ]
+          },
+          "docs": "Search tokens that match service name or user parameter."
+        },
+        {
+          "info": {
+            "name": "Retrieves all OAuth2 tokens by OAuth2 token type. An OAuth2 token can be provided by Nuxeo or consumed.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/oauth2/token/:oAuth2TokenType",
+            "params": [
+              {
+                "name": "oAuth2TokenType",
+                "value": "",
+                "type": "path",
+                "description": "The oAuth2 token type. AS_PROVIDER to retrieve the provided tokens or AS_CLIENT to retrieve those consumed."
+              }
+            ]
+          },
+          "docs": "Retrieves all OAuth2 tokens by OAuth2 token type. An OAuth2 token can be provided by Nuxeo or consumed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

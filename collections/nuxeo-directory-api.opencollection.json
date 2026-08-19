@@ -1,0 +1,175 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Directory API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Directory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get directory entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/directory/:directoryName",
+            "params": [
+              {
+                "name": "directoryName",
+                "value": "",
+                "type": "path",
+                "description": "Directory name. Ex: 'subject'"
+              },
+              {
+                "name": "currentPageIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index of the current page"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset of the page to retrieve. If set, the 'currentPageIndex' parameter is ignored."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Size of the page to retrieve. Ignored if offset set"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Maximum results to retrieve"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "Property to sort by, for example 'dc:title'"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "Sort order, accepts 'asc' or 'desc', default is 'desc'"
+              }
+            ]
+          },
+          "docs": "Get directory entries"
+        },
+        {
+          "info": {
+            "name": "Creates a directory entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/directory/:directoryName",
+            "params": [
+              {
+                "name": "directoryName",
+                "value": "",
+                "type": "path",
+                "description": "Directory name. Ex: 'subject'"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a directory entry"
+        },
+        {
+          "info": {
+            "name": "Get a directory entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/directory/:directoryName/:entryId",
+            "params": [
+              {
+                "name": "directoryName",
+                "value": "",
+                "type": "path",
+                "description": "Directory name. Ex: 'subject'"
+              },
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "path",
+                "description": "Directory entry id"
+              }
+            ]
+          },
+          "docs": "Get a directory entry"
+        },
+        {
+          "info": {
+            "name": "Update a directory entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/directory/:directoryName/:entryId",
+            "params": [
+              {
+                "name": "directoryName",
+                "value": "",
+                "type": "path",
+                "description": "Directory name. Ex: 'subject'"
+              },
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "path",
+                "description": "Directory entry id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a directory entry"
+        },
+        {
+          "info": {
+            "name": "Delete a directory entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/directory/:directoryName/:entryId",
+            "params": [
+              {
+                "name": "directoryName",
+                "value": "",
+                "type": "path",
+                "description": "Directory name. Ex: 'subject'"
+              },
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "path",
+                "description": "Directory entry id"
+              }
+            ]
+          },
+          "docs": "Delete a directory entry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

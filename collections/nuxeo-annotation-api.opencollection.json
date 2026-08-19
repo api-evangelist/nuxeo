@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Annotation API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Annotation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all annotations on a given document blob",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@annotation",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ]
+          },
+          "docs": "Get all annotations on a given document blob"
+        },
+        {
+          "info": {
+            "name": "Create an annotation on a given document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@annotation",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an annotation on a given document"
+        },
+        {
+          "info": {
+            "name": "Update an annotation on a given document",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@annotation",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an annotation on a given document"
+        },
+        {
+          "info": {
+            "name": "Retrieve an annotation on a document given its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@annotation/:annotationId",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "annotationId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the annotation"
+              }
+            ]
+          },
+          "docs": "Retrieve an annotation on a document given its id"
+        },
+        {
+          "info": {
+            "name": "Delete an annotation on a document given its id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}:{port}/nuxeo/api/v1/id/:docId/@annotation/:annotationId",
+            "params": [
+              {
+                "name": "docId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the document"
+              },
+              {
+                "name": "annotationId",
+                "value": "",
+                "type": "path",
+                "description": "Id of the annotation"
+              }
+            ]
+          },
+          "docs": "Delete an annotation on a document given its id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

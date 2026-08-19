@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nuxeo Platform ACL Automation API",
+    "version": "LTS 2021"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Automation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets the list of all operation/chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/automation"
+          },
+          "docs": "Gets the list of all operation/chain"
+        },
+        {
+          "info": {
+            "name": "Gets the description of the operation/chain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}:{port}/nuxeo/api/v1/automation/:operationName",
+            "params": [
+              {
+                "name": "operationName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the operation"
+              }
+            ]
+          },
+          "docs": "Gets the description of the operation/chain"
+        },
+        {
+          "info": {
+            "name": "Execute an operation or a chain on a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/automation/:operationName",
+            "params": [
+              {
+                "name": "operationName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the operation"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute an operation or a chain on a document"
+        },
+        {
+          "info": {
+            "name": "Execute an operation or a chain on the children of a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@children/@op/:operationName",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "operationName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the operation"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This works on every API endpoint that return DocumentList"
+        },
+        {
+          "info": {
+            "name": "Execute an operation or a chain on a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}:{port}/nuxeo/api/v1/path/:docPath/@op/:operationName",
+            "params": [
+              {
+                "name": "docPath",
+                "value": "",
+                "type": "path",
+                "description": "Path of the document, ex: 'default-domain'"
+              },
+              {
+                "name": "operationName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the operation"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute an operation or a chain on a document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
