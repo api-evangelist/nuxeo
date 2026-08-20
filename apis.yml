@@ -32,6 +32,14 @@ tags:
   - Documents
   - Workflows
   - Search
+  - Open-Source
+tags_raw:
+  - Content Management
+  - Digital Asset Management
+  - Enterprise
+  - Documents
+  - Workflows
+  - Search
   - Open Source
 
 apis:
@@ -377,6 +385,8 @@ apis:
   humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
   baseURL: https://{nuxeo-server}/nuxeo/api/v1
   tags:
+  - Authentication
+  tags_raw:
   - OAuth2
   properties:
   - type: OpenAPI
@@ -521,6 +531,8 @@ apis:
   humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
   baseURL: https://{nuxeo-server}/nuxeo/api/v1
   tags:
+  - Workflows
+  tags_raw:
   - Workflow
   properties:
   - type: OpenAPI
