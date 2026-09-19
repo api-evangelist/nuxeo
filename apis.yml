@@ -326,6 +326,8 @@ apis:
   humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
   baseURL: https://{nuxeo-server}/nuxeo/api/v1
   tags:
+  - Documents
+  tags_raw:
   - Document
   properties:
   - type: OpenAPI
@@ -470,6 +472,8 @@ apis:
   humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
   baseURL: https://{nuxeo-server}/nuxeo/api/v1
   tags:
+  - Tokens
+  tags_raw:
   - Token
   properties:
   - type: OpenAPI
@@ -568,6 +572,8 @@ apis:
   humanURL: https://doc.nuxeo.com/nxdoc/rest-api/
   baseURL: https://{nuxeo-server}/nuxeo/api/v1
   tags:
+  - Authentication
+  tags_raw:
   - OAuth2
   properties:
   - type: OpenAPI
