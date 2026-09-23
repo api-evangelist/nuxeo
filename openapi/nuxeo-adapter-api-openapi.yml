@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Adapter API
+  title: Nuxeo Platform Adapter API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -691,7 +691,7 @@ paths:
         '404':
           description: Document not found
       description: 'To retrieve all initialized properties, the ''properties: *'' header must be used'
-      summary: Initialize an empty document with default properties given a document type and a parent
+      summary: Initialize an empty document with default properties given a document type and…
       tags:
       - Adapter
   /path/{docPath}/@emptyWithDefault:
@@ -728,7 +728,7 @@ paths:
         '404':
           description: Document not found
       description: 'To retrieve all initialized properties, the ''properties: *'' header must be used'
-      summary: Initialize an empty document with default properties given a document type and a parent
+      summary: Initialize an empty document with default properties given a document type and…
       tags:
       - Adapter
   /id/{docId}/@pp/{pageProviderName}:
@@ -1157,59 +1157,71 @@ paths:
       - Adapter
 components:
   schemas:
-    LogEntry:
+    annotation:
       properties:
-        category:
+        security:
           type: string
           uniqueItems: false
-        comment:
+        color:
           type: string
           uniqueItems: false
-        docLifeCycle:
+        creationDate:
+          format: date-time
           type: string
           uniqueItems: false
-        docPath:
+        date:
+          format: date-time
           type: string
           uniqueItems: false
-        docType:
-          type: string
-          uniqueItems: false
-        docUUID:
+        documentId:
           type: string
           uniqueItems: false
         entity-type:
           type: string
           uniqueItems: false
-        eventDate:
-          format: date-time
+        flags:
           type: string
           uniqueItems: false
-        eventId:
+        id:
           type: string
           uniqueItems: false
-        logDate:
-          format: date-time
+        lastModifier:
           type: string
           uniqueItems: false
-        principalName:
+        name:
           type: string
           uniqueItems: false
-        repositoryId:
+        opacity:
+          format: double
+          type: number
+          uniqueItems: false
+        page:
+          type: integer
+          uniqueItems: false
+        position:
+          type: string
+          uniqueItems: false
+        subject:
+          type: string
+          uniqueItems: false
+        xpath:
           type: string
           uniqueItems: false
       required:
-      - category
-      - comment
-      - docLifeCycle
-      - docPath
-      - docType
-      - docUUID
+      - creationDate
+      - date
+      - documentId
       - entity-type
-      - eventDate
-      - eventId
-      - logDate
-      - principalName
-      - repositoryId
+      - flags
+      - id
+      - lastModifier
+      - name
+      - opacity
+      - page
+      - position
+      - security
+      - subject
+      - xpath
       uniqueItems: false
     Document:
       properties:
@@ -1258,6 +1270,96 @@ components:
           uniqueItems: false
       required:
       - entity-type
+      uniqueItems: false
+    Acp:
+      properties:
+        acls:
+          items:
+            $ref: '#/components/schemas/Acl'
+          type: array
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    LogEntries:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/LogEntry'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
       uniqueItems: false
     annotationList:
       properties:
@@ -1338,192 +1440,6 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    Acl:
-      properties:
-        ace:
-          items:
-            $ref: '#/components/schemas/Ace'
-          type: array
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-      required:
-      - ace
-      - name
-      uniqueItems: false
-    Ace:
-      properties:
-        granted:
-          type: boolean
-          uniqueItems: false
-        permission:
-          type: string
-          uniqueItems: false
-        username:
-          type: string
-          uniqueItems: false
-      required:
-      - granted
-      - permission
-      - username
-      uniqueItems: false
-    LogEntries:
-      properties:
-        currentPageIndex:
-          type: integer
-          uniqueItems: false
-        currentPageOffset:
-          type: integer
-          uniqueItems: false
-        currentPageSize:
-          type: integer
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/LogEntry'
-          type: array
-          uniqueItems: false
-        erroMessage:
-          type: string
-          uniqueItems: false
-        hasError:
-          type: boolean
-          uniqueItems: false
-        isLastPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isNext:
-          type: boolean
-          uniqueItems: false
-        isPaginable:
-          type: boolean
-          uniqueItems: false
-        isPreviousPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isSortable:
-          type: boolean
-          uniqueItems: false
-        maxPageSize:
-          type: integer
-          uniqueItems: false
-        numberOfPages:
-          type: integer
-          uniqueItems: false
-        pageCount:
-          type: integer
-          uniqueItems: false
-        pageIndex:
-          type: integer
-          uniqueItems: false
-        pageSize:
-          type: integer
-          uniqueItems: false
-        resultCount:
-          type: integer
-          uniqueItems: false
-        totalSize:
-          type: integer
-          uniqueItems: false
-      required:
-      - entity-type
-      - entries
-      uniqueItems: false
-    Acp:
-      properties:
-        acls:
-          items:
-            $ref: '#/components/schemas/Acl'
-          type: array
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      uniqueItems: false
-    annotation:
-      properties:
-        security:
-          type: string
-          uniqueItems: false
-        color:
-          type: string
-          uniqueItems: false
-        creationDate:
-          format: date-time
-          type: string
-          uniqueItems: false
-        date:
-          format: date-time
-          type: string
-          uniqueItems: false
-        documentId:
-          type: string
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        flags:
-          type: string
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        lastModifier:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        opacity:
-          format: double
-          type: number
-          uniqueItems: false
-        page:
-          type: integer
-          uniqueItems: false
-        position:
-          type: string
-          uniqueItems: false
-        subject:
-          type: string
-          uniqueItems: false
-        xpath:
-          type: string
-          uniqueItems: false
-      required:
-      - creationDate
-      - date
-      - documentId
-      - entity-type
-      - flags
-      - id
-      - lastModifier
-      - name
-      - opacity
-      - page
-      - position
-      - security
-      - subject
-      - xpath
-      uniqueItems: false
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
     document:
       properties:
         changeToken:
@@ -1571,6 +1487,90 @@ components:
           uniqueItems: false
       required:
       - entity-type
+      uniqueItems: false
+    LogEntry:
+      properties:
+        category:
+          type: string
+          uniqueItems: false
+        comment:
+          type: string
+          uniqueItems: false
+        docLifeCycle:
+          type: string
+          uniqueItems: false
+        docPath:
+          type: string
+          uniqueItems: false
+        docType:
+          type: string
+          uniqueItems: false
+        docUUID:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        eventDate:
+          format: date-time
+          type: string
+          uniqueItems: false
+        eventId:
+          type: string
+          uniqueItems: false
+        logDate:
+          format: date-time
+          type: string
+          uniqueItems: false
+        principalName:
+          type: string
+          uniqueItems: false
+        repositoryId:
+          type: string
+          uniqueItems: false
+      required:
+      - category
+      - comment
+      - docLifeCycle
+      - docPath
+      - docType
+      - docUUID
+      - entity-type
+      - eventDate
+      - eventId
+      - logDate
+      - principalName
+      - repositoryId
+      uniqueItems: false
+    Ace:
+      properties:
+        granted:
+          type: boolean
+          uniqueItems: false
+        permission:
+          type: string
+          uniqueItems: false
+        username:
+          type: string
+          uniqueItems: false
+      required:
+      - granted
+      - permission
+      - username
+      uniqueItems: false
+    Acl:
+      properties:
+        ace:
+          items:
+            $ref: '#/components/schemas/Ace'
+          type: array
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      required:
+      - ace
+      - name
       uniqueItems: false
   securitySchemes:
     basic_auth:

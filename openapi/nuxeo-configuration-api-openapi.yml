@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Configuration API
+  title: Nuxeo Platform Configuration API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -154,6 +154,15 @@ paths:
       - Configuration
 components:
   schemas:
+    facet:
+      properties:
+        name:
+          type: string
+        schemas:
+          items: {}
+          type: array
+      required:
+      - name
     schema:
       properties:
         '@prefix':
@@ -197,15 +206,6 @@ components:
       - name
       - parent
       - schemas
-    facet:
-      properties:
-        name:
-          type: string
-        schemas:
-          items: {}
-          type: array
-      required:
-      - name
   securitySchemes:
     basic_auth:
       type: http

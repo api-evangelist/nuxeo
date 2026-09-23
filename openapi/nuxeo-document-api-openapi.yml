@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Document API
+  title: Nuxeo Platform Document API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -703,18 +703,6 @@ paths:
       - Document
 components:
   schemas:
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
     document:
       properties:
         changeToken:
@@ -762,6 +750,18 @@ components:
           uniqueItems: false
       required:
       - entity-type
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
       uniqueItems: false
   securitySchemes:
     basic_auth:

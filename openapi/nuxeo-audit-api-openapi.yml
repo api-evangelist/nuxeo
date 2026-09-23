@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Audit API
+  title: Nuxeo Platform Audit API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com

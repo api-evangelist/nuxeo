@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Automation API
+  title: Nuxeo Platform Automation API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com

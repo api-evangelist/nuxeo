@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
   title: Nuxeo Platform ACL API
@@ -78,19 +78,6 @@ paths:
       - ACL
 components:
   schemas:
-    Acp:
-      properties:
-        acls:
-          items:
-            $ref: '#/components/schemas/Acl'
-          type: array
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      uniqueItems: false
     Ace:
       properties:
         granted:
@@ -106,6 +93,19 @@ components:
       - granted
       - permission
       - username
+      uniqueItems: false
+    Acp:
+      properties:
+        acls:
+          items:
+            $ref: '#/components/schemas/Acl'
+          type: array
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
       uniqueItems: false
     Acl:
       properties:

@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Group API
+  title: Nuxeo Platform Group API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -226,6 +226,38 @@ paths:
       - Group
 components:
   schemas:
+    GroupRef:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - label
+      - name
+      - url
+      uniqueItems: false
+    group:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - label
+      - name
+      - url
+      uniqueItems: false
     Document:
       properties:
         changeToken:
@@ -273,6 +305,48 @@ components:
           uniqueItems: false
       required:
       - entity-type
+      uniqueItems: false
+    user:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        extendedGroups:
+          items:
+            $ref: '#/components/schemas/GroupRef'
+          type: object
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        isAdministrator:
+          type: boolean
+          uniqueItems: false
+        isAnonymous:
+          type: boolean
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: false
+      required:
+      - entity-type
+      - id
+      - isAdministrator
+      - isAnonymous
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
       uniqueItems: false
     documents:
       properties:
@@ -339,52 +413,6 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    group:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      required:
-      - label
-      - name
-      - url
-      uniqueItems: false
-    user:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        extendedGroups:
-          items:
-            $ref: '#/components/schemas/GroupRef'
-          type: object
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        isAdministrator:
-          type: boolean
-          uniqueItems: false
-        isAnonymous:
-          type: boolean
-          uniqueItems: false
-        properties:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: false
-      required:
-      - entity-type
-      - id
-      - isAdministrator
-      - isAnonymous
-      uniqueItems: false
     userList:
       properties:
         currentPageIndex:
@@ -449,34 +477,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    GroupRef:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      required:
-      - label
-      - name
-      - url
-      uniqueItems: false
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
       uniqueItems: false
   securitySchemes:
     basic_auth:

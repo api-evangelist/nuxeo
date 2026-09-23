@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL OAuth2 API
+  title: Nuxeo Platform O Auth2 API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -43,7 +43,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves a OAuth2 client.
+      summary: Retrieves a OAuth2 client
       tags:
       - OAuth2
     post:
@@ -64,7 +64,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Adds an OAuth2 client.
+      summary: Adds an OAuth2 client
       tags:
       - OAuth2
   /oauth2/client/{oauth2ClientId}:
@@ -84,7 +84,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Deletes an OAuth2 client token.
+      summary: Deletes an OAuth2 client token
       tags:
       - OAuth2
     get:
@@ -107,7 +107,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves an OAuth2 client.
+      summary: Retrieves an OAuth2 client
       tags:
       - OAuth2
     put:
@@ -135,7 +135,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Update an OAuth2 client.
+      summary: Update an OAuth2 client
       tags:
       - OAuth2
   /oauth2/provider:
@@ -152,7 +152,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves the list of available OAuth2 providers.
+      summary: Retrieves the list of available OAuth2 providers
       tags:
       - OAuth2
     post:
@@ -173,7 +173,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Adds an OAuth2 provider.
+      summary: Adds an OAuth2 provider
       tags:
       - OAuth2
   /oauth2/provider/{oauth2ProviderId}:
@@ -197,7 +197,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves OAuth2 provider data for the current user.
+      summary: Retrieves OAuth2 provider data for the current user
       tags:
       - OAuth2
     put:
@@ -225,7 +225,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Updates an OAuth2 provider.
+      summary: Updates an OAuth2 provider
       tags:
       - OAuth2
   /oauth2/provider/{oauth2ProviderId}/token:
@@ -249,7 +249,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves a valid access token to the current user. A new token will be request if the current one is expired.
+      summary: Retrieves a valid access token to the current user.
       tags:
       - OAuth2
   /oauth2/token:
@@ -266,7 +266,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves all OAuth2 tokens.
+      summary: Retrieves all OAuth2 tokens
       tags:
       - OAuth2
   /oauth2/token/client:
@@ -283,7 +283,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves all OAuth2 client tokens for the current user.
+      summary: Retrieves all OAuth2 client tokens for the current user
       tags:
       - OAuth2
   /oauth2/token/client/{oauth2ClientId}/user/{userName}:
@@ -309,7 +309,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Deletes a OAuth2 client token.
+      summary: Deletes a OAuth2 client token
       tags:
       - OAuth2
     get:
@@ -338,7 +338,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves a OAuth2 client token.
+      summary: Retrieves a OAuth2 client token
       tags:
       - OAuth2
     put:
@@ -367,7 +367,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Updates an OAuth2 client token.
+      summary: Updates an OAuth2 client token
       tags:
       - OAuth2
   /oauth2/token/provider:
@@ -384,7 +384,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves all OAuth2 provider tokens for the current user.
+      summary: Retrieves all OAuth2 provider tokens for the current user
       tags:
       - OAuth2
   /oauth2/token/provider/{oauth2ProviderId}/user/{userName}:
@@ -410,7 +410,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Delete an OAuth2 provider token.
+      summary: Delete an OAuth2 provider token
       tags:
       - OAuth2
     get:
@@ -439,7 +439,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Gets an OAuth2 provider token.
+      summary: Gets an OAuth2 provider token
       tags:
       - OAuth2
     put:
@@ -468,7 +468,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Updates an OAuth2 provider token.
+      summary: Updates an OAuth2 provider token
       tags:
       - OAuth2
   /oauth2/token/search:
@@ -492,7 +492,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Search tokens that match service name or user parameter.
+      summary: Search tokens that match service name or user parameter
       tags:
       - OAuth2
   /oauth2/token/{oAuth2TokenType}:
@@ -516,18 +516,75 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Retrieves all OAuth2 tokens by OAuth2 token type. An OAuth2 token can be provided by Nuxeo or consumed.
+      summary: Retrieves all OAuth2 tokens by OAuth2 token type.
       tags:
       - OAuth2
 components:
   schemas:
-    oauth2ProviderTokenData:
+    oauth2TokenDataList:
       properties:
-        token:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
           type: string
           uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/oauth2TokenData'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
       required:
-      - token
+      - entity-type
+      - entries
       uniqueItems: false
     oauth2ClientData:
       properties:
@@ -625,70 +682,63 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    oauth2TokenDataList:
+    oauth2ProviderData:
       properties:
-        currentPageIndex:
-          type: integer
+        authorizationServerURL:
+          type: string
           uniqueItems: false
-        currentPageOffset:
-          type: integer
+        authorizationURL:
+          type: string
           uniqueItems: false
-        currentPageSize:
-          type: integer
+        clientId:
+          type: string
+          uniqueItems: false
+        clientSecret:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
           uniqueItems: false
         entity-type:
           type: string
           uniqueItems: false
-        entries:
+        isAuthorized:
+          type: boolean
+          uniqueItems: false
+        isAvailable:
+          type: boolean
+          uniqueItems: false
+        isEnabled:
+          type: boolean
+          uniqueItems: false
+        scopes:
           items:
-            $ref: '#/components/schemas/oauth2TokenData'
+            type: string
           type: array
           uniqueItems: false
-        erroMessage:
+        serviceName:
           type: string
           uniqueItems: false
-        hasError:
-          type: boolean
+        tokenServerURL:
+          type: string
           uniqueItems: false
-        isLastPageAvailable:
-          type: boolean
+        userAuthorizationURL:
+          type: string
           uniqueItems: false
-        isNext:
-          type: boolean
-          uniqueItems: false
-        isPaginable:
-          type: boolean
-          uniqueItems: false
-        isPreviousPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isSortable:
-          type: boolean
-          uniqueItems: false
-        maxPageSize:
-          type: integer
-          uniqueItems: false
-        numberOfPages:
-          type: integer
-          uniqueItems: false
-        pageCount:
-          type: integer
-          uniqueItems: false
-        pageIndex:
-          type: integer
-          uniqueItems: false
-        pageSize:
-          type: integer
-          uniqueItems: false
-        resultCount:
-          type: integer
-          uniqueItems: false
-        totalSize:
-          type: integer
+        userId:
+          type: string
           uniqueItems: false
       required:
       - entity-type
-      - entries
+      - serviceName
+      uniqueItems: false
+    oauth2ProviderTokenData:
+      properties:
+        token:
+          type: string
+          uniqueItems: false
+      required:
+      - token
       uniqueItems: false
     oauth2ProviderDataList:
       properties:
@@ -786,56 +836,6 @@ components:
       - entity-type
       - nuxeoLogin
       - serviceLogin
-      - serviceName
-      uniqueItems: false
-    oauth2ProviderData:
-      properties:
-        authorizationServerURL:
-          type: string
-          uniqueItems: false
-        authorizationURL:
-          type: string
-          uniqueItems: false
-        clientId:
-          type: string
-          uniqueItems: false
-        clientSecret:
-          type: string
-          uniqueItems: false
-        description:
-          type: string
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        isAuthorized:
-          type: boolean
-          uniqueItems: false
-        isAvailable:
-          type: boolean
-          uniqueItems: false
-        isEnabled:
-          type: boolean
-          uniqueItems: false
-        scopes:
-          items:
-            type: string
-          type: array
-          uniqueItems: false
-        serviceName:
-          type: string
-          uniqueItems: false
-        tokenServerURL:
-          type: string
-          uniqueItems: false
-        userAuthorizationURL:
-          type: string
-          uniqueItems: false
-        userId:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
       - serviceName
       uniqueItems: false
   securitySchemes:

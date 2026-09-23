@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Workflow API
+  title: Nuxeo Platform Workflow API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -522,26 +522,11 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      description: Get the json serialization of a workflow instance graph
       summary: Get the json serialization of a workflow instance graph
       tags:
       - Workflow
 components:
   schemas:
-    tasks:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/task'
-          type: array
-          uniqueItems: false
-      required:
-      - entity-type
-      - entries
-      uniqueItems: false
     workflowGraph:
       uniqueItems: false
     workflows:
@@ -557,6 +542,34 @@ components:
       required:
       - entity-type
       - entries
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    taskAction:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - label
+      - name
+      - url
       uniqueItems: false
     taskInfo:
       properties:
@@ -581,60 +594,6 @@ components:
       required:
       - actions
       - layoutResource
-      uniqueItems: false
-    taskCompletionRequest:
-      properties:
-        comment:
-          type: string
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        nodeVariables:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
-        worflowVariables:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
-      required:
-      - entity-type
-      uniqueItems: false
-    workflowRequest:
-      properties:
-        documentIds:
-          items:
-            type: string
-          type: array
-        entity-type:
-          type: string
-          uniqueItems: false
-        worflowVariables:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
-        workflowModelName:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      uniqueItems: false
-    taskComments:
-      properties:
-        author:
-          type: string
-          uniqueItems: false
-        date:
-          format: date
-          type: string
-          uniqueItems: false
-      required:
-      - author
-      - date
       uniqueItems: false
     workflow:
       properties:
@@ -720,33 +679,73 @@ components:
       required:
       - entity-type
       uniqueItems: false
-    Property:
+    taskCompletionRequest:
       properties:
-        context:
-          type: object
+        comment:
+          type: string
           uniqueItems: false
-        params:
-          type: object
+        entity-type:
+          type: string
           uniqueItems: false
+        nodeVariables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        worflowVariables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
       required:
-      - context
-      - params
+      - entity-type
       uniqueItems: false
-    taskAction:
+    tasks:
       properties:
-        label:
+        entity-type:
           type: string
           uniqueItems: false
-        name:
+        entries:
+          items:
+            $ref: '#/components/schemas/task'
+          type: array
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    taskComments:
+      properties:
+        author:
           type: string
           uniqueItems: false
-        url:
+        date:
+          format: date
           type: string
           uniqueItems: false
       required:
-      - label
-      - name
-      - url
+      - author
+      - date
+      uniqueItems: false
+    workflowRequest:
+      properties:
+        documentIds:
+          items:
+            type: string
+          type: array
+        entity-type:
+          type: string
+          uniqueItems: false
+        worflowVariables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        workflowModelName:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
       uniqueItems: false
   securitySchemes:
     basic_auth:

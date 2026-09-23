@@ -1,28 +1,7 @@
 {
   "provider": "nuxeo",
   "sources": [
-    "nuxeo-acl-api-openapi.yml",
-    "nuxeo-adapter-api-openapi.yml",
-    "nuxeo-annotation-api-openapi.yml",
-    "nuxeo-audit-api-openapi.yml",
-    "nuxeo-automation-api-openapi.yml",
-    "nuxeo-blob-api-openapi.yml",
-    "nuxeo-business-object-api-openapi.yml",
-    "nuxeo-children-api-openapi.yml",
-    "nuxeo-configuration-api-openapi.yml",
-    "nuxeo-conversion-api-openapi.yml",
-    "nuxeo-directory-api-openapi.yml",
-    "nuxeo-document-api-openapi.yml",
-    "nuxeo-empty-document-api-openapi.yml",
-    "nuxeo-group-api-openapi.yml",
-    "nuxeo-oauth2-api-openapi.yml",
-    "nuxeo-rendition-api-openapi.yml",
-    "nuxeo-search-api-openapi.yml",
-    "nuxeo-task-api-openapi.yml",
-    "nuxeo-token-api-openapi.yml",
-    "nuxeo-user-api-openapi.yml",
-    "nuxeo-workflow-api-openapi.yml",
-    "nuxeo-workflow-model-api-openapi.yml"
+    "_original/nuxeo-rest-api-openapi.yaml"
   ],
   "outputs": [
     "nuxeo-acl-api-openapi.yml",
@@ -48,9 +27,48 @@
     "nuxeo-workflow-api-openapi.yml",
     "nuxeo-workflow-model-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "nuxeo-rest-api-openapi.yaml: upgraded openapi 3.0.2 -> OpenAPI 3.2.0",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: ACL",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: Annotation",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: Audit",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: Blob",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: Children",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: Conversion",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: Empty Document",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: Rendition",
+    "nuxeo-rest-api-openapi.yaml: declared missing tag: Task",
+    "superseded outputs removed: nuxeo-o-auth2-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 22 total)"
+  ],
+  "skipped": [
+    "nuxeo-acl-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-adapter-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-annotation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-audit-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-automation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-blob-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-business-object-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-children-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-configuration-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-conversion-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-directory-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-document-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-empty-document-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-group-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-o-auth2-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-rendition-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-task-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-token-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-user-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-workflow-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-workflow-model-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Search API
+  title: Nuxeo Platform Search API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -366,7 +366,7 @@ paths:
         '404':
           description: Document not found
       description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
-      summary: Performs a bulk action on the query result.
+      summary: Performs a bulk action on the query result
       tags:
       - Search
   /search/lang/{queryLanguage}/execute:
@@ -439,7 +439,7 @@ paths:
         '404':
           description: Document not found
       description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
-      summary: Performs a search query.
+      summary: Performs a search query
       tags:
       - Search
   /search/pp/{providerName}:
@@ -463,7 +463,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Gets the definition of a page provider.
+      summary: Gets the definition of a page provider
       tags:
       - Search
   /search/pp/{providerName}/bulk/{actionId}:
@@ -505,7 +505,7 @@ paths:
         '404':
           description: Document not found
       description: You can have also named parameters in the query. See http://doc.nuxeo.com/x/qAc5AQ
-      summary: Performs a bulk action on the query result.
+      summary: Performs a bulk action on the query result
       tags:
       - Search
   /search/pp/{providerName}/execute:
@@ -596,7 +596,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Returns the list of saved searches.
+      summary: Returns the list of saved searches
       tags:
       - Search
     post:
@@ -617,7 +617,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Saves a search.
+      summary: Saves a search
       tags:
       - Search
   /search/saved/{searchId}:
@@ -637,7 +637,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Deletes the saved search with the supplied id.
+      summary: Deletes the saved search with the supplied id
       tags:
       - Search
     get:
@@ -660,7 +660,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Return the saved search with the supplied id.
+      summary: Return the saved search with the supplied id
       tags:
       - Search
     put:
@@ -688,7 +688,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Updates the saved search with the supplied id.
+      summary: Updates the saved search with the supplied id
       tags:
       - Search
   /search/saved/{searchId}/bulk/{actionId}:
@@ -723,7 +723,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Performs a bulk action on the saved search result.
+      summary: Performs a bulk action on the saved search result
       tags:
       - Search
   /search/saved/{searchId}/execute:
@@ -783,7 +783,7 @@ paths:
           description: Not Authorized to get document
         '404':
           description: Document not found
-      summary: Executes saved searches, returning its results.
+      summary: Executes saved searches, returning its results
       tags:
       - Search
   /id/{docId}/@search:
@@ -982,6 +982,71 @@ paths:
       - Search
 components:
   schemas:
+    savedsearches:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/savedsearch'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
     Document:
       properties:
         changeToken:
@@ -1029,6 +1094,18 @@ components:
           uniqueItems: false
       required:
       - entity-type
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
       uniqueItems: false
     documents:
       properties:
@@ -1139,83 +1216,6 @@ components:
       required:
       - entity-type
       - title
-      uniqueItems: false
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
-    savedsearches:
-      properties:
-        currentPageIndex:
-          type: integer
-          uniqueItems: false
-        currentPageOffset:
-          type: integer
-          uniqueItems: false
-        currentPageSize:
-          type: integer
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/savedsearch'
-          type: array
-          uniqueItems: false
-        erroMessage:
-          type: string
-          uniqueItems: false
-        hasError:
-          type: boolean
-          uniqueItems: false
-        isLastPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isNext:
-          type: boolean
-          uniqueItems: false
-        isPaginable:
-          type: boolean
-          uniqueItems: false
-        isPreviousPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isSortable:
-          type: boolean
-          uniqueItems: false
-        maxPageSize:
-          type: integer
-          uniqueItems: false
-        numberOfPages:
-          type: integer
-          uniqueItems: false
-        pageCount:
-          type: integer
-          uniqueItems: false
-        pageIndex:
-          type: integer
-          uniqueItems: false
-        pageSize:
-          type: integer
-          uniqueItems: false
-        resultCount:
-          type: integer
-          uniqueItems: false
-        totalSize:
-          type: integer
-          uniqueItems: false
-      required:
-      - entity-type
-      - entries
       uniqueItems: false
   securitySchemes:
     basic_auth:

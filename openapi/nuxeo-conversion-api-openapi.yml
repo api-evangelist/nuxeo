@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Conversion API
+  title: Nuxeo Platform Conversion API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -214,6 +214,18 @@ paths:
       - Conversion
 components:
   schemas:
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
     Document:
       properties:
         changeToken:
@@ -261,18 +273,6 @@ components:
           uniqueItems: false
       required:
       - entity-type
-      uniqueItems: false
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
       uniqueItems: false
     documents:
       properties:

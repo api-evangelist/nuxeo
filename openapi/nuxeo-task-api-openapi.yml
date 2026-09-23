@@ -1,7 +1,7 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: LTS 2021
-  title: Nuxeo Platform ACL Task API
+  title: Nuxeo Platform Task API
   termsOfService: https://www.nuxeo.com/about/why-nuxeo/
   contact:
     email: support@nuxeo.com
@@ -226,40 +226,33 @@ paths:
       - Task
 components:
   schemas:
-    tasks:
+    Property:
       properties:
-        entity-type:
-          type: string
+        context:
+          type: object
           uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/task'
-          type: array
+        params:
+          type: object
           uniqueItems: false
       required:
-      - entity-type
-      - entries
+      - context
+      - params
       uniqueItems: false
-    taskCompletionRequest:
+    taskAction:
       properties:
-        comment:
+        label:
           type: string
           uniqueItems: false
-        entity-type:
+        name:
           type: string
           uniqueItems: false
-        nodeVariables:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
-        worflowVariables:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
+        url:
+          type: string
+          uniqueItems: false
       required:
-      - entity-type
+      - label
+      - name
+      - url
       uniqueItems: false
     taskInfo:
       properties:
@@ -284,19 +277,6 @@ components:
       required:
       - actions
       - layoutResource
-      uniqueItems: false
-    taskComments:
-      properties:
-        author:
-          type: string
-          uniqueItems: false
-        date:
-          format: date
-          type: string
-          uniqueItems: false
-      required:
-      - author
-      - date
       uniqueItems: false
     task:
       properties:
@@ -356,33 +336,53 @@ components:
       required:
       - entity-type
       uniqueItems: false
-    Property:
+    taskCompletionRequest:
       properties:
-        context:
-          type: object
+        comment:
+          type: string
           uniqueItems: false
-        params:
-          type: object
+        entity-type:
+          type: string
           uniqueItems: false
+        nodeVariables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        worflowVariables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
       required:
-      - context
-      - params
+      - entity-type
       uniqueItems: false
-    taskAction:
+    tasks:
       properties:
-        label:
+        entity-type:
           type: string
           uniqueItems: false
-        name:
+        entries:
+          items:
+            $ref: '#/components/schemas/task'
+          type: array
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    taskComments:
+      properties:
+        author:
           type: string
           uniqueItems: false
-        url:
+        date:
+          format: date
           type: string
           uniqueItems: false
       required:
-      - label
-      - name
-      - url
+      - author
+      - date
       uniqueItems: false
   securitySchemes:
     basic_auth:
