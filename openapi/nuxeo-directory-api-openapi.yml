@@ -212,6 +212,18 @@ paths:
       - Directory
 components:
   schemas:
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
     directoryEntries:
       properties:
         currentPageIndex:
@@ -276,18 +288,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
       uniqueItems: false
     directoryEntry:
       properties:

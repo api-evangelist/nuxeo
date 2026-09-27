@@ -165,6 +165,20 @@ paths:
       - Annotation
 components:
   schemas:
+    annotationList:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/annotation'
+          type: array
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
     annotation:
       properties:
         security:
@@ -230,20 +244,6 @@ components:
       - security
       - subject
       - xpath
-      uniqueItems: false
-    annotationList:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/annotation'
-          type: array
-          uniqueItems: false
-      required:
-      - entity-type
-      - entries
       uniqueItems: false
   securitySchemes:
     basic_auth:

@@ -78,6 +78,33 @@ paths:
       - ACL
 components:
   schemas:
+    Acl:
+      properties:
+        ace:
+          items:
+            $ref: '#/components/schemas/Ace'
+          type: array
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      required:
+      - ace
+      - name
+      uniqueItems: false
+    Acp:
+      properties:
+        acls:
+          items:
+            $ref: '#/components/schemas/Acl'
+          type: array
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
     Ace:
       properties:
         granted:
@@ -93,33 +120,6 @@ components:
       - granted
       - permission
       - username
-      uniqueItems: false
-    Acp:
-      properties:
-        acls:
-          items:
-            $ref: '#/components/schemas/Acl'
-          type: array
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      uniqueItems: false
-    Acl:
-      properties:
-        ace:
-          items:
-            $ref: '#/components/schemas/Ace'
-          type: array
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-      required:
-      - ace
-      - name
       uniqueItems: false
   securitySchemes:
     basic_auth:

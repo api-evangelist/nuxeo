@@ -163,18 +163,6 @@ paths:
       - Automation
 components:
   schemas:
-    OperationParams:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
     OperationDescription:
       properties:
         category:
@@ -262,6 +250,18 @@ components:
       - name
       - required
       - type
+      uniqueItems: false
+    OperationParams:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
       uniqueItems: false
   securitySchemes:
     basic_auth:

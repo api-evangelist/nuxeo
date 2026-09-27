@@ -27,9 +27,7 @@
     "nuxeo-workflow-api-openapi.yml",
     "nuxeo-workflow-model-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -44,8 +42,7 @@
     "nuxeo-rest-api-openapi.yaml: declared missing tag: Empty Document",
     "nuxeo-rest-api-openapi.yaml: declared missing tag: Rendition",
     "nuxeo-rest-api-openapi.yaml: declared missing tag: Task",
-    "superseded outputs removed: nuxeo-o-auth2-api-openapi.yml",
-    "apis.yml register: written (+1 apis, 22 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "nuxeo-acl-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -62,7 +59,7 @@
     "nuxeo-document-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "nuxeo-empty-document-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "nuxeo-group-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "nuxeo-o-auth2-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nuxeo-oauth2-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "nuxeo-rendition-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "nuxeo-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "nuxeo-task-api-openapi.yml: previously refined output, superseded by openapi/_original/",

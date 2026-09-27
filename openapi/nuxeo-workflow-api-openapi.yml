@@ -527,99 +527,32 @@ paths:
       - Workflow
 components:
   schemas:
-    workflowGraph:
-      uniqueItems: false
-    workflows:
+    tasks:
       properties:
         entity-type:
           type: string
           uniqueItems: false
         entries:
           items:
-            $ref: '#/components/schemas/workflow'
+            $ref: '#/components/schemas/task'
           type: array
           uniqueItems: false
       required:
       - entity-type
       - entries
       uniqueItems: false
-    Property:
+    taskComments:
       properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
-    taskAction:
-      properties:
-        label:
+        author:
           type: string
           uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        url:
+        date:
+          format: date
           type: string
           uniqueItems: false
       required:
-      - label
-      - name
-      - url
-      uniqueItems: false
-    taskInfo:
-      properties:
-        actions:
-          items:
-            $ref: '#/components/schemas/taskAction'
-          type: array
-          uniqueItems: false
-        layoutResource:
-          properties:
-            name:
-              type: string
-              uniqueItems: false
-            url:
-              type: string
-              format: uri
-              uniqueItems: false
-          required:
-          - name
-          - url
-          uniqueItems: false
-      required:
-      - actions
-      - layoutResource
-      uniqueItems: false
-    workflow:
-      properties:
-        attachedDocumentIds:
-          items:
-            type: string
-          type: array
-        entity-type:
-          type: string
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        initiator:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        variables:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
-      required:
-      - entity-type
+      - author
+      - date
       uniqueItems: false
     task:
       properties:
@@ -679,6 +612,58 @@ components:
       required:
       - entity-type
       uniqueItems: false
+    taskInfo:
+      properties:
+        actions:
+          items:
+            $ref: '#/components/schemas/taskAction'
+          type: array
+          uniqueItems: false
+        layoutResource:
+          properties:
+            name:
+              type: string
+              uniqueItems: false
+            url:
+              type: string
+              format: uri
+              uniqueItems: false
+          required:
+          - name
+          - url
+          uniqueItems: false
+      required:
+      - actions
+      - layoutResource
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    workflows:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/workflow'
+          type: array
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    workflowGraph:
+      uniqueItems: false
     taskCompletionRequest:
       properties:
         comment:
@@ -700,32 +685,21 @@ components:
       required:
       - entity-type
       uniqueItems: false
-    tasks:
+    taskAction:
       properties:
-        entity-type:
+        label:
           type: string
           uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/task'
-          type: array
-          uniqueItems: false
-      required:
-      - entity-type
-      - entries
-      uniqueItems: false
-    taskComments:
-      properties:
-        author:
+        name:
           type: string
           uniqueItems: false
-        date:
-          format: date
+        url:
           type: string
           uniqueItems: false
       required:
-      - author
-      - date
+      - label
+      - name
+      - url
       uniqueItems: false
     workflowRequest:
       properties:
@@ -744,6 +718,32 @@ components:
         workflowModelName:
           type: string
           uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+    workflow:
+      properties:
+        attachedDocumentIds:
+          items:
+            type: string
+          type: array
+        entity-type:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        initiator:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        variables:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
       required:
       - entity-type
       uniqueItems: false

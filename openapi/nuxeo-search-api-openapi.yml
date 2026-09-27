@@ -982,6 +982,111 @@ paths:
       - Search
 components:
   schemas:
+    Document:
+      properties:
+        changeToken:
+          type: string
+          uniqueItems: false
+        contextParameters:
+          type: object
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        facets:
+          items:
+            type: string
+          type: array
+        lastModified:
+          format: date
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        repository:
+          type: string
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        uid:
+          type: string
+          uniqueItems: false
+        versionLabel:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
+    savedsearch:
+      properties:
+        currentPageIndex:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        maxResults:
+          type: string
+          uniqueItems: false
+        pageProviderName:
+          type: string
+          uniqueItems: false
+        pageSize:
+          type: string
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+        query:
+          type: string
+          uniqueItems: false
+        queryLanguage:
+          type: string
+          uniqueItems: false
+        queryParams:
+          type: string
+          uniqueItems: false
+        sortBy:
+          type: string
+          uniqueItems: false
+        sortOrder:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      - title
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
     savedsearches:
       properties:
         currentPageIndex:
@@ -1047,66 +1152,6 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    Document:
-      properties:
-        changeToken:
-          type: string
-          uniqueItems: false
-        contextParameters:
-          type: object
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        facets:
-          items:
-            type: string
-          type: array
-        lastModified:
-          format: date
-          type: string
-          uniqueItems: false
-        path:
-          type: string
-          uniqueItems: false
-        properties:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
-        repository:
-          type: string
-          uniqueItems: false
-        state:
-          type: string
-          uniqueItems: false
-        title:
-          type: string
-          uniqueItems: false
-        type:
-          type: string
-          uniqueItems: false
-        uid:
-          type: string
-          uniqueItems: false
-        versionLabel:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      uniqueItems: false
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
     documents:
       properties:
         currentPageIndex:
@@ -1171,51 +1216,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    savedsearch:
-      properties:
-        currentPageIndex:
-          type: string
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        maxResults:
-          type: string
-          uniqueItems: false
-        pageProviderName:
-          type: string
-          uniqueItems: false
-        pageSize:
-          type: string
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-        query:
-          type: string
-          uniqueItems: false
-        queryLanguage:
-          type: string
-          uniqueItems: false
-        queryParams:
-          type: string
-          uniqueItems: false
-        sortBy:
-          type: string
-          uniqueItems: false
-        sortOrder:
-          type: string
-          uniqueItems: false
-        title:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      - title
       uniqueItems: false
   securitySchemes:
     basic_auth:

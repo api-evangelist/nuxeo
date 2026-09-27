@@ -45,7 +45,7 @@ tags:
   - Documents
   - Workflows
   - Search
-  - Open-Source
+  - Open Source
 tags_raw:
   - Content Management
   - Digital Asset Management
@@ -54,6 +54,7 @@ tags_raw:
   - Workflows
   - Search
   - Open Source
+  - Open-Source
 
 apis:
 - aid: nuxeo:nuxeo-acl-api

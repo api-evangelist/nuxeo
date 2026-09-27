@@ -96,7 +96,17 @@ paths:
       - Workflow Model
 components:
   schemas:
-    workflowGraph:
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
       uniqueItems: false
     workflows:
       properties:
@@ -111,18 +121,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
       uniqueItems: false
     workflow:
       properties:
@@ -149,6 +147,8 @@ components:
           uniqueItems: true
       required:
       - entity-type
+      uniqueItems: false
+    workflowGraph:
       uniqueItems: false
   securitySchemes:
     basic_auth:

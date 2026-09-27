@@ -521,6 +521,120 @@ paths:
       - OAuth2
 components:
   schemas:
+    oauth2ProviderData:
+      properties:
+        authorizationServerURL:
+          type: string
+          uniqueItems: false
+        authorizationURL:
+          type: string
+          uniqueItems: false
+        clientId:
+          type: string
+          uniqueItems: false
+        clientSecret:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        isAuthorized:
+          type: boolean
+          uniqueItems: false
+        isAvailable:
+          type: boolean
+          uniqueItems: false
+        isEnabled:
+          type: boolean
+          uniqueItems: false
+        scopes:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        serviceName:
+          type: string
+          uniqueItems: false
+        tokenServerURL:
+          type: string
+          uniqueItems: false
+        userAuthorizationURL:
+          type: string
+          uniqueItems: false
+        userId:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      - serviceName
+      uniqueItems: false
+    oauth2ClientData:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        isAutoGrant:
+          type: boolean
+          uniqueItems: false
+        isEnabled:
+          type: boolean
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        redirectURIs:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        secret:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      - id
+      - name
+      - redirectURIs
+      uniqueItems: false
+    oauth2TokenData:
+      properties:
+        clientId:
+          type: string
+          uniqueItems: false
+        creationDate:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        isShared:
+          type: boolean
+          uniqueItems: false
+        nuxeoLogin:
+          type: string
+          uniqueItems: false
+        serviceLogin:
+          type: string
+          uniqueItems: false
+        serviceName:
+          type: string
+          uniqueItems: false
+        sharedWith:
+          items:
+            type: string
+          type: array
+      required:
+      - entity-type
+      - nuxeoLogin
+      - serviceLogin
+      - serviceName
+      uniqueItems: false
     oauth2TokenDataList:
       properties:
         currentPageIndex:
@@ -585,160 +699,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    oauth2ClientData:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        isAutoGrant:
-          type: boolean
-          uniqueItems: false
-        isEnabled:
-          type: boolean
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        redirectURIs:
-          items:
-            type: string
-          type: array
-          uniqueItems: false
-        secret:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      - id
-      - name
-      - redirectURIs
-      uniqueItems: false
-    oauth2ClientDataList:
-      properties:
-        currentPageIndex:
-          type: integer
-          uniqueItems: false
-        currentPageOffset:
-          type: integer
-          uniqueItems: false
-        currentPageSize:
-          type: integer
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/oauth2ClientData'
-          type: array
-          uniqueItems: false
-        erroMessage:
-          type: string
-          uniqueItems: false
-        hasError:
-          type: boolean
-          uniqueItems: false
-        isLastPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isNext:
-          type: boolean
-          uniqueItems: false
-        isPaginable:
-          type: boolean
-          uniqueItems: false
-        isPreviousPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isSortable:
-          type: boolean
-          uniqueItems: false
-        maxPageSize:
-          type: integer
-          uniqueItems: false
-        numberOfPages:
-          type: integer
-          uniqueItems: false
-        pageCount:
-          type: integer
-          uniqueItems: false
-        pageIndex:
-          type: integer
-          uniqueItems: false
-        pageSize:
-          type: integer
-          uniqueItems: false
-        resultCount:
-          type: integer
-          uniqueItems: false
-        totalSize:
-          type: integer
-          uniqueItems: false
-      required:
-      - entity-type
-      - entries
-      uniqueItems: false
-    oauth2ProviderData:
-      properties:
-        authorizationServerURL:
-          type: string
-          uniqueItems: false
-        authorizationURL:
-          type: string
-          uniqueItems: false
-        clientId:
-          type: string
-          uniqueItems: false
-        clientSecret:
-          type: string
-          uniqueItems: false
-        description:
-          type: string
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        isAuthorized:
-          type: boolean
-          uniqueItems: false
-        isAvailable:
-          type: boolean
-          uniqueItems: false
-        isEnabled:
-          type: boolean
-          uniqueItems: false
-        scopes:
-          items:
-            type: string
-          type: array
-          uniqueItems: false
-        serviceName:
-          type: string
-          uniqueItems: false
-        tokenServerURL:
-          type: string
-          uniqueItems: false
-        userAuthorizationURL:
-          type: string
-          uniqueItems: false
-        userId:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      - serviceName
-      uniqueItems: false
-    oauth2ProviderTokenData:
-      properties:
-        token:
-          type: string
-          uniqueItems: false
-      required:
-      - token
       uniqueItems: false
     oauth2ProviderDataList:
       properties:
@@ -805,38 +765,78 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    oauth2TokenData:
+    oauth2ProviderTokenData:
       properties:
-        clientId:
+        token:
           type: string
           uniqueItems: false
-        creationDate:
-          type: string
+      required:
+      - token
+      uniqueItems: false
+    oauth2ClientDataList:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
           uniqueItems: false
         entity-type:
           type: string
           uniqueItems: false
-        isShared:
+        entries:
+          items:
+            $ref: '#/components/schemas/oauth2ClientData'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
           type: boolean
           uniqueItems: false
-        nuxeoLogin:
-          type: string
+        isLastPageAvailable:
+          type: boolean
           uniqueItems: false
-        serviceLogin:
-          type: string
+        isNext:
+          type: boolean
           uniqueItems: false
-        serviceName:
-          type: string
+        isPaginable:
+          type: boolean
           uniqueItems: false
-        sharedWith:
-          items:
-            type: string
-          type: array
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
       required:
       - entity-type
-      - nuxeoLogin
-      - serviceLogin
-      - serviceName
+      - entries
       uniqueItems: false
   securitySchemes:
     basic_auth:

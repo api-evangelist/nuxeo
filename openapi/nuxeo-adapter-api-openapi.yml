@@ -1157,73 +1157,61 @@ paths:
       - Adapter
 components:
   schemas:
-    annotation:
+    LogEntry:
       properties:
-        security:
+        category:
           type: string
           uniqueItems: false
-        color:
+        comment:
           type: string
           uniqueItems: false
-        creationDate:
-          format: date-time
+        docLifeCycle:
           type: string
           uniqueItems: false
-        date:
-          format: date-time
+        docPath:
           type: string
           uniqueItems: false
-        documentId:
+        docType:
+          type: string
+          uniqueItems: false
+        docUUID:
           type: string
           uniqueItems: false
         entity-type:
           type: string
           uniqueItems: false
-        flags:
+        eventDate:
+          format: date-time
           type: string
           uniqueItems: false
-        id:
+        eventId:
           type: string
           uniqueItems: false
-        lastModifier:
+        logDate:
+          format: date-time
           type: string
           uniqueItems: false
-        name:
+        principalName:
           type: string
           uniqueItems: false
-        opacity:
-          format: double
-          type: number
-          uniqueItems: false
-        page:
-          type: integer
-          uniqueItems: false
-        position:
-          type: string
-          uniqueItems: false
-        subject:
-          type: string
-          uniqueItems: false
-        xpath:
+        repositoryId:
           type: string
           uniqueItems: false
       required:
-      - creationDate
-      - date
-      - documentId
+      - category
+      - comment
+      - docLifeCycle
+      - docPath
+      - docType
+      - docUUID
       - entity-type
-      - flags
-      - id
-      - lastModifier
-      - name
-      - opacity
-      - page
-      - position
-      - security
-      - subject
-      - xpath
+      - eventDate
+      - eventId
+      - logDate
+      - principalName
+      - repositoryId
       uniqueItems: false
-    Document:
+    document:
       properties:
         changeToken:
           type: string
@@ -1284,17 +1272,53 @@ components:
       required:
       - entity-type
       uniqueItems: false
-    Property:
+    Document:
       properties:
-        context:
+        changeToken:
+          type: string
+          uniqueItems: false
+        contextParameters:
           type: object
           uniqueItems: false
-        params:
+        entity-type:
+          type: string
+          uniqueItems: false
+        facets:
+          items:
+            type: string
+          type: array
+        lastModified:
+          format: date
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
           type: object
+          uniqueItems: true
+        repository:
+          type: string
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        uid:
+          type: string
+          uniqueItems: false
+        versionLabel:
+          type: string
           uniqueItems: false
       required:
-      - context
-      - params
+      - entity-type
       uniqueItems: false
     LogEntries:
       properties:
@@ -1361,6 +1385,100 @@ components:
       - entity-type
       - entries
       uniqueItems: false
+    Ace:
+      properties:
+        granted:
+          type: boolean
+          uniqueItems: false
+        permission:
+          type: string
+          uniqueItems: false
+        username:
+          type: string
+          uniqueItems: false
+      required:
+      - granted
+      - permission
+      - username
+      uniqueItems: false
+    annotation:
+      properties:
+        security:
+          type: string
+          uniqueItems: false
+        color:
+          type: string
+          uniqueItems: false
+        creationDate:
+          format: date-time
+          type: string
+          uniqueItems: false
+        date:
+          format: date-time
+          type: string
+          uniqueItems: false
+        documentId:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        flags:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        lastModifier:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        opacity:
+          format: double
+          type: number
+          uniqueItems: false
+        page:
+          type: integer
+          uniqueItems: false
+        position:
+          type: string
+          uniqueItems: false
+        subject:
+          type: string
+          uniqueItems: false
+        xpath:
+          type: string
+          uniqueItems: false
+      required:
+      - creationDate
+      - date
+      - documentId
+      - entity-type
+      - flags
+      - id
+      - lastModifier
+      - name
+      - opacity
+      - page
+      - position
+      - security
+      - subject
+      - xpath
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
     annotationList:
       properties:
         entity-type:
@@ -1374,6 +1492,20 @@ components:
       required:
       - entity-type
       - entries
+      uniqueItems: false
+    Acl:
+      properties:
+        ace:
+          items:
+            $ref: '#/components/schemas/Ace'
+          type: array
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      required:
+      - ace
+      - name
       uniqueItems: false
     documents:
       properties:
@@ -1439,138 +1571,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    document:
-      properties:
-        changeToken:
-          type: string
-          uniqueItems: false
-        contextParameters:
-          type: object
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        facets:
-          items:
-            type: string
-          type: array
-        lastModified:
-          format: date
-          type: string
-          uniqueItems: false
-        path:
-          type: string
-          uniqueItems: false
-        properties:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
-        repository:
-          type: string
-          uniqueItems: false
-        state:
-          type: string
-          uniqueItems: false
-        title:
-          type: string
-          uniqueItems: false
-        type:
-          type: string
-          uniqueItems: false
-        uid:
-          type: string
-          uniqueItems: false
-        versionLabel:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      uniqueItems: false
-    LogEntry:
-      properties:
-        category:
-          type: string
-          uniqueItems: false
-        comment:
-          type: string
-          uniqueItems: false
-        docLifeCycle:
-          type: string
-          uniqueItems: false
-        docPath:
-          type: string
-          uniqueItems: false
-        docType:
-          type: string
-          uniqueItems: false
-        docUUID:
-          type: string
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        eventDate:
-          format: date-time
-          type: string
-          uniqueItems: false
-        eventId:
-          type: string
-          uniqueItems: false
-        logDate:
-          format: date-time
-          type: string
-          uniqueItems: false
-        principalName:
-          type: string
-          uniqueItems: false
-        repositoryId:
-          type: string
-          uniqueItems: false
-      required:
-      - category
-      - comment
-      - docLifeCycle
-      - docPath
-      - docType
-      - docUUID
-      - entity-type
-      - eventDate
-      - eventId
-      - logDate
-      - principalName
-      - repositoryId
-      uniqueItems: false
-    Ace:
-      properties:
-        granted:
-          type: boolean
-          uniqueItems: false
-        permission:
-          type: string
-          uniqueItems: false
-        username:
-          type: string
-          uniqueItems: false
-      required:
-      - granted
-      - permission
-      - username
-      uniqueItems: false
-    Acl:
-      properties:
-        ace:
-          items:
-            $ref: '#/components/schemas/Ace'
-          type: array
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-      required:
-      - ace
-      - name
       uniqueItems: false
   securitySchemes:
     basic_auth:
