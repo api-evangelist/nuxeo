@@ -521,6 +521,14 @@ paths:
       - OAuth2
 components:
   schemas:
+    oauth2ProviderTokenData:
+      properties:
+        token:
+          type: string
+          uniqueItems: false
+      required:
+      - token
+      uniqueItems: false
     oauth2ProviderData:
       properties:
         authorizationServerURL:
@@ -571,69 +579,70 @@ components:
       - entity-type
       - serviceName
       uniqueItems: false
-    oauth2ClientData:
+    oauth2ClientDataList:
       properties:
-        entity-type:
-          type: string
+        currentPageIndex:
+          type: integer
           uniqueItems: false
-        id:
-          type: string
+        currentPageOffset:
+          type: integer
           uniqueItems: false
-        isAutoGrant:
-          type: boolean
-          uniqueItems: false
-        isEnabled:
-          type: boolean
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        redirectURIs:
-          items:
-            type: string
-          type: array
-          uniqueItems: false
-        secret:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
-      - id
-      - name
-      - redirectURIs
-      uniqueItems: false
-    oauth2TokenData:
-      properties:
-        clientId:
-          type: string
-          uniqueItems: false
-        creationDate:
-          type: string
+        currentPageSize:
+          type: integer
           uniqueItems: false
         entity-type:
           type: string
           uniqueItems: false
-        isShared:
+        entries:
+          items:
+            $ref: '#/components/schemas/oauth2ClientData'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
           type: boolean
           uniqueItems: false
-        nuxeoLogin:
-          type: string
+        isLastPageAvailable:
+          type: boolean
           uniqueItems: false
-        serviceLogin:
-          type: string
+        isNext:
+          type: boolean
           uniqueItems: false
-        serviceName:
-          type: string
+        isPaginable:
+          type: boolean
           uniqueItems: false
-        sharedWith:
-          items:
-            type: string
-          type: array
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
       required:
       - entity-type
-      - nuxeoLogin
-      - serviceLogin
-      - serviceName
+      - entries
       uniqueItems: false
     oauth2TokenDataList:
       properties:
@@ -765,78 +774,69 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    oauth2ProviderTokenData:
+    oauth2ClientData:
       properties:
-        token:
+        entity-type:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        isAutoGrant:
+          type: boolean
+          uniqueItems: false
+        isEnabled:
+          type: boolean
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        redirectURIs:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        secret:
           type: string
           uniqueItems: false
       required:
-      - token
+      - entity-type
+      - id
+      - name
+      - redirectURIs
       uniqueItems: false
-    oauth2ClientDataList:
+    oauth2TokenData:
       properties:
-        currentPageIndex:
-          type: integer
+        clientId:
+          type: string
           uniqueItems: false
-        currentPageOffset:
-          type: integer
-          uniqueItems: false
-        currentPageSize:
-          type: integer
+        creationDate:
+          type: string
           uniqueItems: false
         entity-type:
           type: string
           uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/oauth2ClientData'
-          type: array
+        isShared:
+          type: boolean
           uniqueItems: false
-        erroMessage:
+        nuxeoLogin:
           type: string
           uniqueItems: false
-        hasError:
-          type: boolean
+        serviceLogin:
+          type: string
           uniqueItems: false
-        isLastPageAvailable:
-          type: boolean
+        serviceName:
+          type: string
           uniqueItems: false
-        isNext:
-          type: boolean
-          uniqueItems: false
-        isPaginable:
-          type: boolean
-          uniqueItems: false
-        isPreviousPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isSortable:
-          type: boolean
-          uniqueItems: false
-        maxPageSize:
-          type: integer
-          uniqueItems: false
-        numberOfPages:
-          type: integer
-          uniqueItems: false
-        pageCount:
-          type: integer
-          uniqueItems: false
-        pageIndex:
-          type: integer
-          uniqueItems: false
-        pageSize:
-          type: integer
-          uniqueItems: false
-        resultCount:
-          type: integer
-          uniqueItems: false
-        totalSize:
-          type: integer
-          uniqueItems: false
+        sharedWith:
+          items:
+            type: string
+          type: array
       required:
       - entity-type
-      - entries
+      - nuxeoLogin
+      - serviceLogin
+      - serviceName
       uniqueItems: false
   securitySchemes:
     basic_auth:

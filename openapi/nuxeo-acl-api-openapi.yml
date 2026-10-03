@@ -78,6 +78,19 @@ paths:
       - ACL
 components:
   schemas:
+    Acp:
+      properties:
+        acls:
+          items:
+            $ref: '#/components/schemas/Acl'
+          type: array
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
     Acl:
       properties:
         ace:
@@ -91,19 +104,6 @@ components:
       required:
       - ace
       - name
-      uniqueItems: false
-    Acp:
-      properties:
-        acls:
-          items:
-            $ref: '#/components/schemas/Acl'
-          type: array
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
       uniqueItems: false
     Ace:
       properties:

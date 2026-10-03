@@ -200,6 +200,54 @@ components:
       - context
       - params
       uniqueItems: false
+    Document:
+      properties:
+        changeToken:
+          type: string
+          uniqueItems: false
+        contextParameters:
+          type: object
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        facets:
+          items:
+            type: string
+          type: array
+        lastModified:
+          format: date
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: true
+        repository:
+          type: string
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        title:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        uid:
+          type: string
+          uniqueItems: false
+        versionLabel:
+          type: string
+          uniqueItems: false
+      required:
+      - entity-type
+      uniqueItems: false
     documents:
       properties:
         currentPageIndex:
@@ -264,54 +312,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    Document:
-      properties:
-        changeToken:
-          type: string
-          uniqueItems: false
-        contextParameters:
-          type: object
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        facets:
-          items:
-            type: string
-          type: array
-        lastModified:
-          format: date
-          type: string
-          uniqueItems: false
-        path:
-          type: string
-          uniqueItems: false
-        properties:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: true
-        repository:
-          type: string
-          uniqueItems: false
-        state:
-          type: string
-          uniqueItems: false
-        title:
-          type: string
-          uniqueItems: false
-        type:
-          type: string
-          uniqueItems: false
-        uid:
-          type: string
-          uniqueItems: false
-        versionLabel:
-          type: string
-          uniqueItems: false
-      required:
-      - entity-type
       uniqueItems: false
   securitySchemes:
     basic_auth:

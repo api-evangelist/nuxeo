@@ -154,6 +154,15 @@ paths:
       - Configuration
 components:
   schemas:
+    docTypes:
+      properties:
+        doctypes:
+          type: object
+        schemas:
+          type: object
+      required:
+      - doctypes
+      - schemas
     facet:
       properties:
         name:
@@ -184,15 +193,6 @@ components:
       - facets
       - name
       - parent
-      - schemas
-    docTypes:
-      properties:
-        doctypes:
-          type: object
-        schemas:
-          type: object
-      required:
-      - doctypes
       - schemas
     schema:
       properties:

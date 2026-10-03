@@ -163,63 +163,6 @@ paths:
       - Automation
 components:
   schemas:
-    OperationDescription:
-      properties:
-        category:
-          type: string
-          uniqueItems: false
-        description:
-          type: string
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        label:
-          type: string
-          uniqueItems: false
-        params:
-          items:
-            $ref: '#/components/schemas/OperationParamDescription'
-          type: array
-          uniqueItems: false
-        requires:
-          type: string
-          uniqueItems: false
-        signature:
-          items:
-            type: string
-          type: array
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      required:
-      - id
-      - label
-      - params
-      - signature
-      - url
-      uniqueItems: false
-    OperationDescriptionList:
-      properties:
-        codec:
-          items:
-            type: string
-          type: array
-          uniqueItems: false
-        operations:
-          items:
-            $ref: '#/components/schemas/OperationDescription'
-          type: array
-          uniqueItems: false
-        path:
-          type: object
-          uniqueItems: false
-      required:
-      - codec
-      - operations
-      - path
-      uniqueItems: false
     OperationParamDescription:
       properties:
         description:
@@ -262,6 +205,63 @@ components:
       required:
       - context
       - params
+      uniqueItems: false
+    OperationDescriptionList:
+      properties:
+        codec:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        operations:
+          items:
+            $ref: '#/components/schemas/OperationDescription'
+          type: array
+          uniqueItems: false
+        path:
+          type: object
+          uniqueItems: false
+      required:
+      - codec
+      - operations
+      - path
+      uniqueItems: false
+    OperationDescription:
+      properties:
+        category:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        label:
+          type: string
+          uniqueItems: false
+        params:
+          items:
+            $ref: '#/components/schemas/OperationParamDescription'
+          type: array
+          uniqueItems: false
+        requires:
+          type: string
+          uniqueItems: false
+        signature:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - id
+      - label
+      - params
+      - signature
+      - url
       uniqueItems: false
   securitySchemes:
     basic_auth:
