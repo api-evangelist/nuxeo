@@ -135,18 +135,6 @@ paths:
       - Empty Document
 components:
   schemas:
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
     document:
       properties:
         changeToken:
@@ -194,6 +182,18 @@ components:
           uniqueItems: false
       required:
       - entity-type
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
       uniqueItems: false
   securitySchemes:
     basic_auth:

@@ -78,6 +78,60 @@ paths:
       - Audit
 components:
   schemas:
+    LogEntry:
+      properties:
+        category:
+          type: string
+          uniqueItems: false
+        comment:
+          type: string
+          uniqueItems: false
+        docLifeCycle:
+          type: string
+          uniqueItems: false
+        docPath:
+          type: string
+          uniqueItems: false
+        docType:
+          type: string
+          uniqueItems: false
+        docUUID:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        eventDate:
+          format: date-time
+          type: string
+          uniqueItems: false
+        eventId:
+          type: string
+          uniqueItems: false
+        logDate:
+          format: date-time
+          type: string
+          uniqueItems: false
+        principalName:
+          type: string
+          uniqueItems: false
+        repositoryId:
+          type: string
+          uniqueItems: false
+      required:
+      - category
+      - comment
+      - docLifeCycle
+      - docPath
+      - docType
+      - docUUID
+      - entity-type
+      - eventDate
+      - eventId
+      - logDate
+      - principalName
+      - repositoryId
+      uniqueItems: false
     LogEntries:
       properties:
         currentPageIndex:
@@ -142,60 +196,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    LogEntry:
-      properties:
-        category:
-          type: string
-          uniqueItems: false
-        comment:
-          type: string
-          uniqueItems: false
-        docLifeCycle:
-          type: string
-          uniqueItems: false
-        docPath:
-          type: string
-          uniqueItems: false
-        docType:
-          type: string
-          uniqueItems: false
-        docUUID:
-          type: string
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        eventDate:
-          format: date-time
-          type: string
-          uniqueItems: false
-        eventId:
-          type: string
-          uniqueItems: false
-        logDate:
-          format: date-time
-          type: string
-          uniqueItems: false
-        principalName:
-          type: string
-          uniqueItems: false
-        repositoryId:
-          type: string
-          uniqueItems: false
-      required:
-      - category
-      - comment
-      - docLifeCycle
-      - docPath
-      - docType
-      - docUUID
-      - entity-type
-      - eventDate
-      - eventId
-      - logDate
-      - principalName
-      - repositoryId
       uniqueItems: false
   securitySchemes:
     basic_auth:

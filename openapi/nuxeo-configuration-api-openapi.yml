@@ -163,6 +163,18 @@ components:
       required:
       - doctypes
       - schemas
+    schema:
+      properties:
+        '@prefix':
+          type: string
+        fields:
+          type: object
+        name:
+          type: string
+      required:
+      - '@prefix'
+      - fields
+      - name
     facet:
       properties:
         name:
@@ -194,18 +206,6 @@ components:
       - name
       - parent
       - schemas
-    schema:
-      properties:
-        '@prefix':
-          type: string
-        fields:
-          type: object
-        name:
-          type: string
-      required:
-      - '@prefix'
-      - fields
-      - name
   securitySchemes:
     basic_auth:
       type: http

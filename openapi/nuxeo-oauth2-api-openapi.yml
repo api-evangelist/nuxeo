@@ -521,13 +521,70 @@ paths:
       - OAuth2
 components:
   schemas:
-    oauth2ProviderTokenData:
+    oauth2ClientDataList:
       properties:
-        token:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
           type: string
           uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/oauth2ClientData'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
       required:
-      - token
+      - entity-type
+      - entries
       uniqueItems: false
     oauth2ProviderData:
       properties:
@@ -579,7 +636,7 @@ components:
       - entity-type
       - serviceName
       uniqueItems: false
-    oauth2ClientDataList:
+    oauth2ProviderDataList:
       properties:
         currentPageIndex:
           type: integer
@@ -595,7 +652,7 @@ components:
           uniqueItems: false
         entries:
           items:
-            $ref: '#/components/schemas/oauth2ClientData'
+            $ref: '#/components/schemas/oauth2ProviderData'
           type: array
           uniqueItems: false
         erroMessage:
@@ -709,71 +766,6 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    oauth2ProviderDataList:
-      properties:
-        currentPageIndex:
-          type: integer
-          uniqueItems: false
-        currentPageOffset:
-          type: integer
-          uniqueItems: false
-        currentPageSize:
-          type: integer
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/oauth2ProviderData'
-          type: array
-          uniqueItems: false
-        erroMessage:
-          type: string
-          uniqueItems: false
-        hasError:
-          type: boolean
-          uniqueItems: false
-        isLastPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isNext:
-          type: boolean
-          uniqueItems: false
-        isPaginable:
-          type: boolean
-          uniqueItems: false
-        isPreviousPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isSortable:
-          type: boolean
-          uniqueItems: false
-        maxPageSize:
-          type: integer
-          uniqueItems: false
-        numberOfPages:
-          type: integer
-          uniqueItems: false
-        pageCount:
-          type: integer
-          uniqueItems: false
-        pageIndex:
-          type: integer
-          uniqueItems: false
-        pageSize:
-          type: integer
-          uniqueItems: false
-        resultCount:
-          type: integer
-          uniqueItems: false
-        totalSize:
-          type: integer
-          uniqueItems: false
-      required:
-      - entity-type
-      - entries
-      uniqueItems: false
     oauth2ClientData:
       properties:
         entity-type:
@@ -804,6 +796,14 @@ components:
       - id
       - name
       - redirectURIs
+      uniqueItems: false
+    oauth2ProviderTokenData:
+      properties:
+        token:
+          type: string
+          uniqueItems: false
+      required:
+      - token
       uniqueItems: false
     oauth2TokenData:
       properties:

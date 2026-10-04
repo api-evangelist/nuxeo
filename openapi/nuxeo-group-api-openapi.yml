@@ -226,71 +226,6 @@ paths:
       - Group
 components:
   schemas:
-    documents:
-      properties:
-        currentPageIndex:
-          type: integer
-          uniqueItems: false
-        currentPageOffset:
-          type: integer
-          uniqueItems: false
-        currentPageSize:
-          type: integer
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        entries:
-          items:
-            $ref: '#/components/schemas/Document'
-          type: array
-          uniqueItems: false
-        erroMessage:
-          type: string
-          uniqueItems: false
-        hasError:
-          type: boolean
-          uniqueItems: false
-        isLastPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isNext:
-          type: boolean
-          uniqueItems: false
-        isPaginable:
-          type: boolean
-          uniqueItems: false
-        isPreviousPageAvailable:
-          type: boolean
-          uniqueItems: false
-        isSortable:
-          type: boolean
-          uniqueItems: false
-        maxPageSize:
-          type: integer
-          uniqueItems: false
-        numberOfPages:
-          type: integer
-          uniqueItems: false
-        pageCount:
-          type: integer
-          uniqueItems: false
-        pageIndex:
-          type: integer
-          uniqueItems: false
-        pageSize:
-          type: integer
-          uniqueItems: false
-        resultCount:
-          type: integer
-          uniqueItems: false
-        totalSize:
-          type: integer
-          uniqueItems: false
-      required:
-      - entity-type
-      - entries
-      uniqueItems: false
     userList:
       properties:
         currentPageIndex:
@@ -384,6 +319,117 @@ components:
       - name
       - url
       uniqueItems: false
+    user:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        extendedGroups:
+          items:
+            $ref: '#/components/schemas/GroupRef'
+          type: object
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        isAdministrator:
+          type: boolean
+          uniqueItems: false
+        isAnonymous:
+          type: boolean
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: false
+      required:
+      - entity-type
+      - id
+      - isAdministrator
+      - isAnonymous
+      uniqueItems: false
+    documents:
+      properties:
+        currentPageIndex:
+          type: integer
+          uniqueItems: false
+        currentPageOffset:
+          type: integer
+          uniqueItems: false
+        currentPageSize:
+          type: integer
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
+          items:
+            $ref: '#/components/schemas/Document'
+          type: array
+          uniqueItems: false
+        erroMessage:
+          type: string
+          uniqueItems: false
+        hasError:
+          type: boolean
+          uniqueItems: false
+        isLastPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isNext:
+          type: boolean
+          uniqueItems: false
+        isPaginable:
+          type: boolean
+          uniqueItems: false
+        isPreviousPageAvailable:
+          type: boolean
+          uniqueItems: false
+        isSortable:
+          type: boolean
+          uniqueItems: false
+        maxPageSize:
+          type: integer
+          uniqueItems: false
+        numberOfPages:
+          type: integer
+          uniqueItems: false
+        pageCount:
+          type: integer
+          uniqueItems: false
+        pageIndex:
+          type: integer
+          uniqueItems: false
+        pageSize:
+          type: integer
+          uniqueItems: false
+        resultCount:
+          type: integer
+          uniqueItems: false
+        totalSize:
+          type: integer
+          uniqueItems: false
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    GroupRef:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - label
+      - name
+      - url
+      uniqueItems: false
     Document:
       properties:
         changeToken:
@@ -431,52 +477,6 @@ components:
           uniqueItems: false
       required:
       - entity-type
-      uniqueItems: false
-    user:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        extendedGroups:
-          items:
-            $ref: '#/components/schemas/GroupRef'
-          type: object
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        isAdministrator:
-          type: boolean
-          uniqueItems: false
-        isAnonymous:
-          type: boolean
-          uniqueItems: false
-        properties:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: false
-      required:
-      - entity-type
-      - id
-      - isAdministrator
-      - isAnonymous
-      uniqueItems: false
-    GroupRef:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      required:
-      - label
-      - name
-      - url
       uniqueItems: false
   securitySchemes:
     basic_auth:

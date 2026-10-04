@@ -226,29 +226,60 @@ paths:
       - Task
 components:
   schemas:
-    taskInfo:
+    tasks:
       properties:
-        actions:
+        entity-type:
+          type: string
+          uniqueItems: false
+        entries:
           items:
-            $ref: '#/components/schemas/taskAction'
+            $ref: '#/components/schemas/task'
           type: array
           uniqueItems: false
-        layoutResource:
-          properties:
-            name:
-              type: string
-              uniqueItems: false
-            url:
-              type: string
-              format: uri
-              uniqueItems: false
-          required:
-          - name
-          - url
+      required:
+      - entity-type
+      - entries
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
           uniqueItems: false
       required:
-      - actions
-      - layoutResource
+      - context
+      - params
+      uniqueItems: false
+    taskAction:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - label
+      - name
+      - url
+      uniqueItems: false
+    taskComments:
+      properties:
+        author:
+          type: string
+          uniqueItems: false
+        date:
+          format: date
+          type: string
+          uniqueItems: false
+      required:
+      - author
+      - date
       uniqueItems: false
     task:
       properties:
@@ -329,60 +360,29 @@ components:
       required:
       - entity-type
       uniqueItems: false
-    Property:
+    taskInfo:
       properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
-    taskComments:
-      properties:
-        author:
-          type: string
-          uniqueItems: false
-        date:
-          format: date
-          type: string
-          uniqueItems: false
-      required:
-      - author
-      - date
-      uniqueItems: false
-    tasks:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        entries:
+        actions:
           items:
-            $ref: '#/components/schemas/task'
+            $ref: '#/components/schemas/taskAction'
           type: array
           uniqueItems: false
-      required:
-      - entity-type
-      - entries
-      uniqueItems: false
-    taskAction:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
+        layoutResource:
+          properties:
+            name:
+              type: string
+              uniqueItems: false
+            url:
+              type: string
+              format: uri
+              uniqueItems: false
+          required:
+          - name
+          - url
           uniqueItems: false
       required:
-      - label
-      - name
-      - url
+      - actions
+      - layoutResource
       uniqueItems: false
   securitySchemes:
     basic_auth:

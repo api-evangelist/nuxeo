@@ -307,17 +307,6 @@ paths:
       - Business Object
 components:
   schemas:
-    BusinessObject:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        value:
-          type: object
-          uniqueItems: false
-      required:
-      - entity-type
-      uniqueItems: false
     BusinessObjectList:
       properties:
         currentPageIndex:
@@ -382,6 +371,17 @@ components:
       required:
       - entity-type
       - entries
+      uniqueItems: false
+    BusinessObject:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        value:
+          type: object
+          uniqueItems: false
+      required:
+      - entity-type
       uniqueItems: false
   securitySchemes:
     basic_auth:

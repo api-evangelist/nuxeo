@@ -212,6 +212,23 @@ paths:
       - Directory
 components:
   schemas:
+    directoryEntry:
+      properties:
+        directoryName:
+          type: string
+          uniqueItems: false
+        entity-type:
+          type: string
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: false
+      required:
+      - directoryName
+      - entity-type
+      uniqueItems: false
     Property:
       properties:
         context:
@@ -288,23 +305,6 @@ components:
       required:
       - entity-type
       - entries
-      uniqueItems: false
-    directoryEntry:
-      properties:
-        directoryName:
-          type: string
-          uniqueItems: false
-        entity-type:
-          type: string
-          uniqueItems: false
-        properties:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: false
-      required:
-      - directoryName
-      - entity-type
       uniqueItems: false
   securitySchemes:
     basic_auth:

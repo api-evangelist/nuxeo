@@ -221,6 +221,57 @@ paths:
       - User
 components:
   schemas:
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    changePassword:
+      properties:
+        newPassword:
+          type: string
+        oldPassword:
+          type: string
+      required:
+      - newPassword
+      - oldPassword
+    user:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        extendedGroups:
+          items:
+            $ref: '#/components/schemas/GroupRef'
+          type: object
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        isAdministrator:
+          type: boolean
+          uniqueItems: false
+        isAnonymous:
+          type: boolean
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: false
+      required:
+      - entity-type
+      - id
+      - isAdministrator
+      - isAnonymous
+      uniqueItems: false
     documents:
       properties:
         currentPageIndex:
@@ -286,17 +337,21 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    Property:
+    GroupRef:
       properties:
-        context:
-          type: object
+        label:
+          type: string
           uniqueItems: false
-        params:
-          type: object
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
           uniqueItems: false
       required:
-      - context
-      - params
+      - label
+      - name
+      - url
       uniqueItems: false
     Document:
       properties:
@@ -346,61 +401,6 @@ components:
       required:
       - entity-type
       uniqueItems: false
-    user:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        extendedGroups:
-          items:
-            $ref: '#/components/schemas/GroupRef'
-          type: object
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        isAdministrator:
-          type: boolean
-          uniqueItems: false
-        isAnonymous:
-          type: boolean
-          uniqueItems: false
-        properties:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: false
-      required:
-      - entity-type
-      - id
-      - isAdministrator
-      - isAnonymous
-      uniqueItems: false
-    GroupRef:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      required:
-      - label
-      - name
-      - url
-      uniqueItems: false
-    changePassword:
-      properties:
-        newPassword:
-          type: string
-        oldPassword:
-          type: string
-      required:
-      - newPassword
-      - oldPassword
   securitySchemes:
     basic_auth:
       type: http
