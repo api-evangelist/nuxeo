@@ -594,6 +594,9 @@ apis:
   - type: Automation
     url: https://doc.nuxeo.com/nxdoc/content-automation-concepts/
 common:
+  - type: CapabilityMap
+    url: capabilities/nuxeo-capability-edges.yml
+    name: Nuxeo Business Capability Map
   - type: AgenticAccess
     url: agentic-access/nuxeo-agentic-access.yml
   - type: DomainSecurity

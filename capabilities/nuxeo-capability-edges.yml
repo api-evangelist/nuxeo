@@ -1,0 +1,35 @@
+slug: nuxeo
+provider: Nuxeo
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Group
+  spec_file: nuxeo-group-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: '''Create a group'', ''Get the user members of a group'', ''Add a user to a group'''
+  reason: Administration of security groups and their user membership in the platform is identity and
+    access administration (BC-620.20). Confidence moderated because this is the ECM product's own principal
+    store rather than an enterprise IAM service.
+- tag: User
+  spec_file: nuxeo-user-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: '''Create a user'', ''Delete a user by its name'', "Change the logged in user''s password",
+    ''Add a group to a user'''
+  reason: User account lifecycle, credentials and group assignment is identity and access administration
+    (BC-620.20). Scoped to the platform's own directory, hence moderate confidence rather than high.
