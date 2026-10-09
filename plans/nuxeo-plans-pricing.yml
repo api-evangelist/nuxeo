@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: Nuxeo Plans and Pricing
 description: Nuxeo is an enterprise-grade, cloud-native content management platform now part of Hyland Software. Pricing is customized per enterprise client and not publicly listed. Prospective customers must contact Hyland directly for a quote.
 url: https://www.hyland.com/en/resources/nuxeo-download
@@ -35,3 +39,23 @@ notes:
   - Nuxeo was acquired by Hyland Software in 2021.
   - No self-service pricing tiers are publicly available; all commercial plans require direct engagement with the Hyland sales team.
   - The open-source community edition is available under the Apache 2.0 license.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  units: []
+  plans:
+  - name: Community / Open Source
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise (Cloud / On-Premise)
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
