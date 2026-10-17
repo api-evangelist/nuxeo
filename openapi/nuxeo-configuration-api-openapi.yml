@@ -154,15 +154,15 @@ paths:
       - Configuration
 components:
   schemas:
-    docTypes:
+    facet:
       properties:
-        doctypes:
-          type: object
+        name:
+          type: string
         schemas:
-          type: object
+          items: {}
+          type: array
       required:
-      - doctypes
-      - schemas
+      - name
     schema:
       properties:
         '@prefix':
@@ -175,15 +175,15 @@ components:
       - '@prefix'
       - fields
       - name
-    facet:
+    docTypes:
       properties:
-        name:
-          type: string
+        doctypes:
+          type: object
         schemas:
-          items: {}
-          type: array
+          type: object
       required:
-      - name
+      - doctypes
+      - schemas
     docType:
       properties:
         entity-type:

@@ -982,18 +982,6 @@ paths:
       - Search
 components:
   schemas:
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
     savedsearches:
       properties:
         currentPageIndex:
@@ -1168,6 +1156,18 @@ components:
       required:
       - entity-type
       - entries
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
       uniqueItems: false
     Document:
       properties:

@@ -226,7 +226,65 @@ paths:
       - Group
 components:
   schemas:
-    userList:
+    user:
+      properties:
+        entity-type:
+          type: string
+          uniqueItems: false
+        extendedGroups:
+          items:
+            $ref: '#/components/schemas/GroupRef'
+          type: object
+          uniqueItems: false
+        id:
+          type: string
+          uniqueItems: false
+        isAdministrator:
+          type: boolean
+          uniqueItems: false
+        isAnonymous:
+          type: boolean
+          uniqueItems: false
+        properties:
+          items:
+            $ref: '#/components/schemas/Property'
+          type: object
+          uniqueItems: false
+      required:
+      - entity-type
+      - id
+      - isAdministrator
+      - isAnonymous
+      uniqueItems: false
+    group:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      required:
+      - label
+      - name
+      - url
+      uniqueItems: false
+    Property:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
+    documents:
       properties:
         currentPageIndex:
           type: integer
@@ -242,7 +300,7 @@ components:
           uniqueItems: false
         entries:
           items:
-            $ref: '#/components/schemas/user'
+            $ref: '#/components/schemas/Document'
           type: array
           uniqueItems: false
         erroMessage:
@@ -291,65 +349,7 @@ components:
       - entity-type
       - entries
       uniqueItems: false
-    Property:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
-    group:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      required:
-      - label
-      - name
-      - url
-      uniqueItems: false
-    user:
-      properties:
-        entity-type:
-          type: string
-          uniqueItems: false
-        extendedGroups:
-          items:
-            $ref: '#/components/schemas/GroupRef'
-          type: object
-          uniqueItems: false
-        id:
-          type: string
-          uniqueItems: false
-        isAdministrator:
-          type: boolean
-          uniqueItems: false
-        isAnonymous:
-          type: boolean
-          uniqueItems: false
-        properties:
-          items:
-            $ref: '#/components/schemas/Property'
-          type: object
-          uniqueItems: false
-      required:
-      - entity-type
-      - id
-      - isAdministrator
-      - isAnonymous
-      uniqueItems: false
-    documents:
+    userList:
       properties:
         currentPageIndex:
           type: integer
@@ -365,7 +365,7 @@ components:
           uniqueItems: false
         entries:
           items:
-            $ref: '#/components/schemas/Document'
+            $ref: '#/components/schemas/user'
           type: array
           uniqueItems: false
         erroMessage:

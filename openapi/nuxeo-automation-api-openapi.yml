@@ -163,38 +163,6 @@ paths:
       - Automation
 components:
   schemas:
-    OperationParams:
-      properties:
-        context:
-          type: object
-          uniqueItems: false
-        params:
-          type: object
-          uniqueItems: false
-      required:
-      - context
-      - params
-      uniqueItems: false
-    OperationDescriptionList:
-      properties:
-        codec:
-          items:
-            type: string
-          type: array
-          uniqueItems: false
-        operations:
-          items:
-            $ref: '#/components/schemas/OperationDescription'
-          type: array
-          uniqueItems: false
-        path:
-          type: object
-          uniqueItems: false
-      required:
-      - codec
-      - operations
-      - path
-      uniqueItems: false
     OperationDescription:
       properties:
         category:
@@ -232,6 +200,18 @@ components:
       - signature
       - url
       uniqueItems: false
+    OperationParams:
+      properties:
+        context:
+          type: object
+          uniqueItems: false
+        params:
+          type: object
+          uniqueItems: false
+      required:
+      - context
+      - params
+      uniqueItems: false
     OperationParamDescription:
       properties:
         description:
@@ -262,6 +242,26 @@ components:
       - name
       - required
       - type
+      uniqueItems: false
+    OperationDescriptionList:
+      properties:
+        codec:
+          items:
+            type: string
+          type: array
+          uniqueItems: false
+        operations:
+          items:
+            $ref: '#/components/schemas/OperationDescription'
+          type: array
+          uniqueItems: false
+        path:
+          type: object
+          uniqueItems: false
+      required:
+      - codec
+      - operations
+      - path
       uniqueItems: false
   securitySchemes:
     basic_auth:
