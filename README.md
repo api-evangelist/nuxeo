@@ -1,4 +1,4 @@
-# Nuxeo (nuxeo)
+# Nuxeo
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,68 +66,201 @@
 
 Nuxeo is an open-source, cloud-native enterprise content management platform owned by Hyland Software. It provides a comprehensive REST API for managing documents, digital assets, workflows, metadata, search, batch uploads, and cloud file storage in large-scale enterprise environments. The API supports OAuth2, token-based, and basic authentication, and exposes automation chains, content enrichers, and web adapters for flexible integration.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/nuxeo/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/nuxeo/refs/heads/main/apis.yml)
+**Areas:** Content Management · Digital Asset Management · Enterprise · Documents · Workflows · Search · Open Source
 
-## Tags
+## Nuxeo on APIs.io
 
-- Content Management
-- Digital Asset Management
-- Enterprise
-- Documents
-- Workflows
-- Search
-- Open Source
+Everything profiled for Nuxeo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/nuxeo/](https://apis.io/providers/nuxeo/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (22)
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+- [Nuxeo ACL API](https://apis.io/apis/nuxeo/nuxeo-acl-api/) — The ACL API from Nuxeo — 2 operation(s) for acl.
+- [Nuxeo Adapter API](https://apis.io/apis/nuxeo/nuxeo-adapter-api/) — Adaptation Endpoints
+- [Nuxeo Annotation API](https://apis.io/apis/nuxeo/nuxeo-annotation-api/) — The Annotation API from Nuxeo — 2 operation(s) for annotation.
+- [Nuxeo Audit API](https://apis.io/apis/nuxeo/nuxeo-audit-api/) — The Audit API from Nuxeo — 2 operation(s) for audit.
+- [Nuxeo Automation API](https://apis.io/apis/nuxeo/nuxeo-automation-api/) — Automation Operations
+- [Nuxeo Blob API](https://apis.io/apis/nuxeo/nuxeo-blob-api/) — The Blob API from Nuxeo — 2 operation(s) for blob.
+- [Nuxeo Business Object API](https://apis.io/apis/nuxeo/nuxeo-business-object-api/) — Business Object Operations
+- [Nuxeo Children API](https://apis.io/apis/nuxeo/nuxeo-children-api/) — The Children API from Nuxeo — 2 operation(s) for children.
+- [Nuxeo Configuration API](https://apis.io/apis/nuxeo/nuxeo-configuration-api/) — Configuration Information
+- [Nuxeo Conversion API](https://apis.io/apis/nuxeo/nuxeo-conversion-api/) — The Conversion API from Nuxeo — 4 operation(s) for conversion.
+- [Nuxeo Directory API](https://apis.io/apis/nuxeo/nuxeo-directory-api/) — Directory Operations
+- [Nuxeo Document API](https://apis.io/apis/nuxeo/nuxeo-document-api/) — Document Operations
+- [Nuxeo Empty Document API](https://apis.io/apis/nuxeo/nuxeo-empty-document-api/) — The Empty Document API from Nuxeo — 3 operation(s) for empty document.
+- [Nuxeo Group API](https://apis.io/apis/nuxeo/nuxeo-group-api/) — Group Operations
+- [Nuxeo Rendition API](https://apis.io/apis/nuxeo/nuxeo-rendition-api/) — The Rendition API from Nuxeo — 2 operation(s) for rendition.
+- [Nuxeo Search API](https://apis.io/apis/nuxeo/nuxeo-search-api/) — Search Operations
+- [Nuxeo Task API](https://apis.io/apis/nuxeo/nuxeo-task-api/) — The Task API from Nuxeo — 5 operation(s) for task.
+- [Nuxeo Token API](https://apis.io/apis/nuxeo/nuxeo-token-api/) — Authentication Token Operations
+- [Nuxeo User API](https://apis.io/apis/nuxeo/nuxeo-user-api/) — User Operations
+- [Nuxeo Workflow API](https://apis.io/apis/nuxeo/nuxeo-workflow-api/) — Workflow Operations
+- [Nuxeo Workflow Model API](https://apis.io/apis/nuxeo/nuxeo-workflow-model-api/) — Workflow Model Information
+- [Nuxeo O Auth2 API](https://apis.io/apis/nuxeo/nuxeo-oauth2-api/) — OAuth2 Operations
 
-## APIs
+### Published properties
 
-### Nuxeo REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Nuxeo REST API provides HTTP/HTTPS access to the full Nuxeo Platform, enabling CRUD operations on documents, assets, users, groups, directories, workflows, tasks, and configurations. It exposes an automation command endpoint with over 100 server-side operations, batch upload support, search via NXQL and page providers, OAuth2 resource management, and user preferences. All endpoints follow the base path /nuxeo/api/v1/.
+#### Agentic access (1)
 
-- **Human URL:** [https://doc.nuxeo.com/nxdoc/rest-api/](https://doc.nuxeo.com/nxdoc/rest-api/)
-- **Base URL:** `https://{nuxeo-server}/nuxeo/api/v1`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Nuxeo Agentic Access](https://apis.io/agentic-access/nuxeo/nuxeo-agentic-access/)
 
-- Documents
-- Assets
-- Workflows
-- Search
-- Automation
-- Batch Upload
-- OAuth2
+#### JSON Schema (47)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://doc.nuxeo.com/nxdoc/rest-api/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/nuxeo/main/openapi/nuxeo-rest-api-openapi.yaml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Open A P I Source](https://github.com/nuxeo-sandbox/nuxeo-openapi)
-- [Swagger](https://github.com/nuxeo/nuxeo-rest-api-swagger-doc)
-- [Authentication](https://doc.nuxeo.com/rest-api/1/authentication/)
-- [Endpoints](https://doc.nuxeo.com/nxdoc/rest-api-endpoints/)
-- [How Tos](https://doc.nuxeo.com/nxdoc/rest-api-howtos/)
-- [Automation](https://doc.nuxeo.com/nxdoc/content-automation-concepts/)
+- [Ace](https://apis.io/schemas/nuxeo/Ace/)
+- [Acl](https://apis.io/schemas/nuxeo/Acl/)
+- [Acp](https://apis.io/schemas/nuxeo/Acp/)
+- [AuthenticationTokenList](https://apis.io/schemas/nuxeo/AuthenticationTokenList/)
+- [BusinessObject](https://apis.io/schemas/nuxeo/BusinessObject/)
+- [BusinessObjectList](https://apis.io/schemas/nuxeo/BusinessObjectList/)
+- [document](https://apis.io/schemas/nuxeo/Document/)
+- [GroupRef](https://apis.io/schemas/nuxeo/GroupRef/)
+- [LogEntries](https://apis.io/schemas/nuxeo/LogEntries/)
+- [LogEntry](https://apis.io/schemas/nuxeo/LogEntry/)
+- [OperationDescription](https://apis.io/schemas/nuxeo/OperationDescription/)
+- [OperationDescriptionList](https://apis.io/schemas/nuxeo/OperationDescriptionList/)
+- [OperationParamDescription](https://apis.io/schemas/nuxeo/OperationParamDescription/)
+- [OperationParams](https://apis.io/schemas/nuxeo/OperationParams/)
+- [Property](https://apis.io/schemas/nuxeo/Property/)
+- [annotation](https://apis.io/schemas/nuxeo/annotation/)
+- [annotationList](https://apis.io/schemas/nuxeo/annotationList/)
+- [changePassword](https://apis.io/schemas/nuxeo/changePassword/)
+- [directoryEntries](https://apis.io/schemas/nuxeo/directoryEntries/)
+- [directoryEntry](https://apis.io/schemas/nuxeo/directoryEntry/)
+- [docType](https://apis.io/schemas/nuxeo/docType/)
+- [docTypes](https://apis.io/schemas/nuxeo/docTypes/)
+- [documents](https://apis.io/schemas/nuxeo/documents/)
+- [facet](https://apis.io/schemas/nuxeo/facet/)
+- [group](https://apis.io/schemas/nuxeo/group/)
+- …and 22 more published on APIs.io
 
-## Common Properties
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Nuxeo Rest Api Context](https://apis.io/jsonld/nuxeo/nuxeo-rest-api/)
+
+#### Collections (22)
+
+Postman and Open Collection request collections.
+
+- [Nuxeo Platform ACL API](https://apis.io/collections/nuxeo/open-nuxeo-acl-api/)
+- [Nuxeo Platform ACL Adapter API](https://apis.io/collections/nuxeo/open-nuxeo-adapter-api/)
+- [Nuxeo Platform ACL Annotation API](https://apis.io/collections/nuxeo/open-nuxeo-annotation-api/)
+- [Nuxeo Platform ACL Audit API](https://apis.io/collections/nuxeo/open-nuxeo-audit-api/)
+- [Nuxeo Platform ACL Automation API](https://apis.io/collections/nuxeo/open-nuxeo-automation-api/)
+- [Nuxeo Platform ACL Blob API](https://apis.io/collections/nuxeo/open-nuxeo-blob-api/)
+- [Nuxeo Platform ACL Business Object API](https://apis.io/collections/nuxeo/open-nuxeo-business-object-api/)
+- [Nuxeo Platform ACL Children API](https://apis.io/collections/nuxeo/open-nuxeo-children-api/)
+- [Nuxeo Platform ACL Configuration API](https://apis.io/collections/nuxeo/open-nuxeo-configuration-api/)
+- [Nuxeo Platform ACL Conversion API](https://apis.io/collections/nuxeo/open-nuxeo-conversion-api/)
+- [Nuxeo Platform ACL Directory API](https://apis.io/collections/nuxeo/open-nuxeo-directory-api/)
+- [Nuxeo Platform ACL Document API](https://apis.io/collections/nuxeo/open-nuxeo-document-api/)
+- [Nuxeo Platform ACL Empty Document API](https://apis.io/collections/nuxeo/open-nuxeo-empty-document-api/)
+- [Nuxeo Platform ACL Group API](https://apis.io/collections/nuxeo/open-nuxeo-group-api/)
+- [Nuxeo Platform ACL OAuth2 API](https://apis.io/collections/nuxeo/open-nuxeo-oauth2-api/)
+- [Nuxeo Platform ACL Rendition API](https://apis.io/collections/nuxeo/open-nuxeo-rendition-api/)
+- [Nuxeo Platform ACL Search API](https://apis.io/collections/nuxeo/open-nuxeo-search-api/)
+- [Nuxeo Platform ACL Task API](https://apis.io/collections/nuxeo/open-nuxeo-task-api/)
+- [Nuxeo Platform ACL Token API](https://apis.io/collections/nuxeo/open-nuxeo-token-api/)
+- [Nuxeo Platform ACL User API](https://apis.io/collections/nuxeo/open-nuxeo-user-api/)
+- [Nuxeo Platform ACL Workflow API](https://apis.io/collections/nuxeo/open-nuxeo-workflow-api/)
+- [Nuxeo Platform ACL Workflow Model API](https://apis.io/collections/nuxeo/open-nuxeo-workflow-model-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Nuxeo — jsonschema rules](https://apis.io/rules/nuxeo/nuxeo-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Nuxeo Authentication](https://apis.io/security/nuxeo/nuxeo-authentication/)
+- [Nuxeo Domain Security](https://apis.io/security/nuxeo/nuxeo-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Nuxeo Plans Pricing](https://apis.io/plans/nuxeo/nuxeo-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Nuxeo Rate Limits](https://apis.io/rate-limits/nuxeo/nuxeo-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Nuxeo Finops](https://apis.io/finops/nuxeo/nuxeo-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.hyland.com/en/solutions/products/nuxeo-platform)
 - [Documentation](https://doc.nuxeo.com/nxdoc/)
-- [Git Hub Org](https://github.com/nuxeo)
-- [LinkedIn](https://www.linkedin.com/company/nuxeo)
-- [Blog](https://connect.hyland.com/t5/nuxeo-blog/bg-p/nuxeo1blog-board)
 - [Pricing](https://www.hyland.com/en/resources/nuxeo-download)
-- [Status Page](https://doc.nuxeo.com/nxdoc/health-check/)
-- [X (Twitter)](https://x.com/nuxeo)
-- [Plans](plans/nuxeo-plans-pricing.yml)
-- [Rate Limits](rate-limits/nuxeo-rate-limits.yml)
-- [Fin Ops](finops/nuxeo-finops.yml)
+- [Blog](https://connect.hyland.com/t5/nuxeo-blog/bg-p/nuxeo1blog-board)
+- [Status](https://doc.nuxeo.com/nxdoc/health-check/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 49.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 15.8 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/nuxeo/](https://apis.io/providers/nuxeo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Nuxeo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/nuxeo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
